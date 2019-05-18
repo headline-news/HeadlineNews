@@ -10,13 +10,10 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface MultiTabView  : UIView
+@interface MultiTabView : UIView
 
 @property (assign) NSInteger numOfTabs;
-
 -(instancetype)initWithFrame:(CGRect)frame WithCount: (NSInteger) count;
-
-@property (nonatomic,retain) UITableView *tableView;
 
 @end
 

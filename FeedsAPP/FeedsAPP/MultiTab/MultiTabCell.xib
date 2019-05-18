@@ -28,7 +28,6 @@
                 <constraints>
                     <constraint firstItem="KtU-qb-yCo" firstAttribute="leading" secondItem="iqM-PN-3Kb" secondAttribute="leading" id="Gju-iN-7kp"/>
                     <constraint firstAttribute="trailing" secondItem="KtU-qb-yCo" secondAttribute="trailing" id="IxJ-T6-tN3"/>
-                    <constraint firstItem="KtU-qb-yCo" firstAttribute="top" secondItem="iqM-PN-3Kb" secondAttribute="top" id="Mkl-wb-Cl4"/>
                     <constraint firstItem="KtU-qb-yCo" firstAttribute="top" secondItem="iqM-PN-3Kb" secondAttribute="top" id="dJE-3r-Zhr"/>
                     <constraint firstAttribute="bottom" secondItem="KtU-qb-yCo" secondAttribute="bottom" id="obD-0q-qao"/>
                 </constraints>
