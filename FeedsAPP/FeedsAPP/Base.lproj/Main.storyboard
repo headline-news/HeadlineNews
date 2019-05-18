@@ -45,56 +45,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="W5J-7L-Pyd" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="750" y="-320"/>
-        </scene>
-        <!--动态信息-->
-        <scene sceneID="xBM-NX-aIM">
-            <objects>
-                <tableViewController id="nbg-kb-Y0k" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="grouped" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="18" sectionFooterHeight="18" id="ZXc-Yu-oHH">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
-                        <sections>
-                            <tableViewSection id="rxq-QQ-wRN">
-                                <cells>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="Kkq-7V-Huo">
-                                        <rect key="frame" x="0.0" y="35" width="375" height="44"/>
-                                        <autoresizingMask key="autoresizingMask"/>
-                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="Kkq-7V-Huo" id="Kqx-Gc-7H5">
-                                            <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
-                                            <autoresizingMask key="autoresizingMask"/>
-                                        </tableViewCellContentView>
-                                    </tableViewCell>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="cRL-Qx-nRu">
-                                        <rect key="frame" x="0.0" y="79" width="375" height="44"/>
-                                        <autoresizingMask key="autoresizingMask"/>
-                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="cRL-Qx-nRu" id="57p-eg-DI1">
-                                            <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
-                                            <autoresizingMask key="autoresizingMask"/>
-                                        </tableViewCellContentView>
-                                    </tableViewCell>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="lOY-NC-e5r">
-                                        <rect key="frame" x="0.0" y="123" width="375" height="44"/>
-                                        <autoresizingMask key="autoresizingMask"/>
-                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="lOY-NC-e5r" id="L6V-06-m6S">
-                                            <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
-                                            <autoresizingMask key="autoresizingMask"/>
-                                        </tableViewCellContentView>
-                                    </tableViewCell>
-                                </cells>
-                            </tableViewSection>
-                        </sections>
-                        <connections>
-                            <outlet property="dataSource" destination="nbg-kb-Y0k" id="Tqa-wM-pe4"/>
-                            <outlet property="delegate" destination="nbg-kb-Y0k" id="dMX-s8-4vQ"/>
-                        </connections>
-                    </tableView>
-                    <navigationItem key="navigationItem" title="动态信息" id="n2C-nx-qnJ"/>
-                </tableViewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="olJ-Gd-9wh" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="1602" y="1143"/>
+            <point key="canvasLocation" x="823" y="-280"/>
         </scene>
         <!--动态-->
         <scene sceneID="bPj-CO-2rF">
@@ -106,17 +57,32 @@
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <connections>
-                        <segue destination="nbg-kb-Y0k" kind="relationship" relationship="rootViewController" id="2VU-8R-I7q"/>
+                        <segue destination="lqg-FN-9bw" kind="relationship" relationship="rootViewController" id="6nK-IJ-shx"/>
                     </connections>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="NqA-p6-YUE" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="750" y="1143"/>
         </scene>
+        <!--动态信息-->
+        <scene sceneID="K9d-qa-5oV">
+            <objects>
+                <viewController id="lqg-FN-9bw" customClass="SecondViewController" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="CcQ-eX-58f">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <viewLayoutGuide key="safeArea" id="SnS-HD-8iH"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="动态信息" id="rqO-YI-BDO"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="sET-gD-dB2" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1514" y="1143"/>
+        </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="yl2-sM-qoP">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="HuB-VB-40B" sceneMemberID="firstResponder"/>
                 <tabBarController id="49e-Tb-3d3" sceneMemberID="viewController">
                     <tabBar key="tabBar" contentMode="scaleToFill" id="W28-zg-YXA">
                         <rect key="frame" x="0.0" y="975" width="768" height="49"/>
@@ -130,6 +96,7 @@
                         <segue destination="zgR-e7-1Fo" kind="relationship" relationship="viewControllers" id="dwU-Nh-dbU"/>
                     </connections>
                 </tabBarController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="HuB-VB-40B" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="0.0" y="0.0"/>
         </scene>
@@ -145,28 +112,26 @@
                             <rect key="frame" x="0.0" y="346" width="375" height="160"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             <subviews>
-                                <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" bounces="NO" pagingEnabled="YES" showsVerticalScrollIndicator="NO" bouncesZoom="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uLJ-e5-d8U">
-                                    <rect key="frame" x="0.0" y="0.0" width="375" height="160"/>
-                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                    <subviews>
-                                        <pageControl opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" numberOfPages="3" translatesAutoresizingMaskIntoConstraints="NO" id="Gge-BO-9gZ">
-                                            <rect key="frame" x="162" y="120" width="50" height="40"/>
-                                            <constraints>
-                                                <constraint firstAttribute="height" constant="40" id="Bf8-PW-6Z9"/>
-                                                <constraint firstAttribute="width" constant="50" id="bhH-ua-2ni"/>
-                                            </constraints>
-                                            <color key="pageIndicatorTintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                            <color key="currentPageIndicatorTintColor" cocoaTouchSystemColor="lightTextColor"/>
-                                        </pageControl>
-                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="scroll-1" translatesAutoresizingMaskIntoConstraints="NO" id="aqh-IV-FKS">
-                                            <rect key="frame" x="0.0" y="0.0" width="375" height="160"/>
-                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        </imageView>
-                                    </subviews>
-                                    <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
-                                </scrollView>
+                                <pageControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" numberOfPages="3" translatesAutoresizingMaskIntoConstraints="NO" id="Gge-BO-9gZ">
+                                    <rect key="frame" x="162.5" y="120" width="50" height="40"/>
+                                    <constraints>
+                                        <constraint firstAttribute="height" constant="40" id="Bf8-PW-6Z9"/>
+                                        <constraint firstAttribute="width" constant="50" id="bhH-ua-2ni"/>
+                                    </constraints>
+                                    <color key="pageIndicatorTintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    <color key="currentPageIndicatorTintColor" cocoaTouchSystemColor="lightTextColor"/>
+                                </pageControl>
+                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="scroll-1" translatesAutoresizingMaskIntoConstraints="NO" id="aqh-IV-FKS">
+                                    <rect key="frame" x="0.0" y="8" width="375" height="168"/>
+                                </imageView>
                             </subviews>
                             <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                            <constraints>
+                                <constraint firstItem="Gge-BO-9gZ" firstAttribute="centerX" secondItem="3hW-H1-2zz" secondAttribute="centerX" id="HUi-Ti-4fu"/>
+                                <constraint firstAttribute="bottom" secondItem="Gge-BO-9gZ" secondAttribute="bottom" id="R4K-zL-6Eb"/>
+                                <constraint firstItem="Gge-BO-9gZ" firstAttribute="bottom" secondItem="aqh-IV-FKS" secondAttribute="bottom" id="jeq-9M-PNb"/>
+                                <constraint firstItem="Gge-BO-9gZ" firstAttribute="centerX" secondItem="aqh-IV-FKS" secondAttribute="centerX" id="kJO-Nn-gl1"/>
+                            </constraints>
                         </view>
                         <sections>
                             <tableViewSection id="zne-gd-Hu9">
@@ -276,7 +241,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="qMT-IF-4ub" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="750" y="355"/>
+            <point key="canvasLocation" x="821.60000000000002" y="383.65817091454278"/>
         </scene>
         <!--视频-->
         <scene sceneID="4fd-FR-yX4">

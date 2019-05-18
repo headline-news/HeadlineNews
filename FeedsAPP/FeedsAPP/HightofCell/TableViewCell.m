@@ -20,11 +20,11 @@
 }
 //初始化控件
 -(void)initLayuot{
-    _name = [[UILabel alloc] initWithFrame:CGRectMake(85, 25, 250, 40)];
+    _name = [[UILabel alloc] initWithFrame:CGRectMake(65, 15, 250, 40)];
     [self addSubview:_name];
-    _userImage = [[UIImageView alloc] initWithFrame:CGRectMake(5, 5, 75, 75)];
+    _userImage = [[UIImageView alloc] initWithFrame:CGRectMake(5, 15, 45, 45)];
     [self addSubview:_userImage];
-    _introduction = [[UILabel alloc] initWithFrame:CGRectMake(10, 85, 350, 40)];
+    _introduction = [[UILabel alloc] initWithFrame:CGRectMake(10, 75, 350, 40)];
     [self addSubview:_introduction];
 }
 
