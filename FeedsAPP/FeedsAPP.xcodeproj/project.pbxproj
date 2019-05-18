@@ -19,6 +19,12 @@
 		CF3F667C228703A200087C6C /* MultiTabCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = CF3F667B228703A200087C6C /* MultiTabCell.xib */; };
 		CF3F667F2287042100087C6C /* MultiTabCell.m in Sources */ = {isa = PBXBuildFile; fileRef = CF3F667E2287042100087C6C /* MultiTabCell.m */; };
 		CF3F6682228704DA00087C6C /* MultiTabView.m in Sources */ = {isa = PBXBuildFile; fileRef = CF3F6681228704DA00087C6C /* MultiTabView.m */; };
+		CFE64760228FAFB10054D6B4 /* MulitiPicsCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = CFE6475F228FAFB10054D6B4 /* MulitiPicsCell.xib */; };
+		CFE64763228FB3F40054D6B4 /* MulitiPicsCell.m in Sources */ = {isa = PBXBuildFile; fileRef = CFE64762228FB3F40054D6B4 /* MulitiPicsCell.m */; };
+		CFE64767228FB6C80054D6B4 /* PicOnRightCell.m in Sources */ = {isa = PBXBuildFile; fileRef = CFE64765228FB6C80054D6B4 /* PicOnRightCell.m */; };
+		CFE64768228FB6C80054D6B4 /* PicOnRightCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = CFE64766228FB6C80054D6B4 /* PicOnRightCell.xib */; };
+		CFE6476C228FC4AF0054D6B4 /* FocusCell.m in Sources */ = {isa = PBXBuildFile; fileRef = CFE6476A228FC4AF0054D6B4 /* FocusCell.m */; };
+		CFE6476D228FC4AF0054D6B4 /* FocusCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = CFE6476B228FC4AF0054D6B4 /* FocusCell.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -62,6 +68,15 @@
 		CF3F667E2287042100087C6C /* MultiTabCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MultiTabCell.m; sourceTree = "<group>"; };
 		CF3F6680228704DA00087C6C /* MultiTabView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MultiTabView.h; sourceTree = "<group>"; };
 		CF3F6681228704DA00087C6C /* MultiTabView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MultiTabView.m; sourceTree = "<group>"; };
+		CFE6475F228FAFB10054D6B4 /* MulitiPicsCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MulitiPicsCell.xib; sourceTree = "<group>"; };
+		CFE64761228FB3F40054D6B4 /* MulitiPicsCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MulitiPicsCell.h; sourceTree = "<group>"; };
+		CFE64762228FB3F40054D6B4 /* MulitiPicsCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MulitiPicsCell.m; sourceTree = "<group>"; };
+		CFE64764228FB6C80054D6B4 /* PicOnRightCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PicOnRightCell.h; sourceTree = "<group>"; };
+		CFE64765228FB6C80054D6B4 /* PicOnRightCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PicOnRightCell.m; sourceTree = "<group>"; };
+		CFE64766228FB6C80054D6B4 /* PicOnRightCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PicOnRightCell.xib; sourceTree = "<group>"; };
+		CFE64769228FC4AF0054D6B4 /* FocusCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FocusCell.h; sourceTree = "<group>"; };
+		CFE6476A228FC4AF0054D6B4 /* FocusCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FocusCell.m; sourceTree = "<group>"; };
+		CFE6476B228FC4AF0054D6B4 /* FocusCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FocusCell.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -112,6 +127,7 @@
 		CF3F663C228700DA00087C6C /* FeedsAPP */ = {
 			isa = PBXGroup;
 			children = (
+				CFE6475E228FAD230054D6B4 /* HomeView */,
 				CF3F6672228700E600087C6C /* MultiTab */,
 				CF3F663D228700DA00087C6C /* AppDelegate.h */,
 				CF3F663E228700DA00087C6C /* AppDelegate.m */,
@@ -156,6 +172,22 @@
 				CF3F6681228704DA00087C6C /* MultiTabView.m */,
 			);
 			path = MultiTab;
+			sourceTree = "<group>";
+		};
+		CFE6475E228FAD230054D6B4 /* HomeView */ = {
+			isa = PBXGroup;
+			children = (
+				CFE6475F228FAFB10054D6B4 /* MulitiPicsCell.xib */,
+				CFE64761228FB3F40054D6B4 /* MulitiPicsCell.h */,
+				CFE64762228FB3F40054D6B4 /* MulitiPicsCell.m */,
+				CFE64764228FB6C80054D6B4 /* PicOnRightCell.h */,
+				CFE64765228FB6C80054D6B4 /* PicOnRightCell.m */,
+				CFE64766228FB6C80054D6B4 /* PicOnRightCell.xib */,
+				CFE64769228FC4AF0054D6B4 /* FocusCell.h */,
+				CFE6476A228FC4AF0054D6B4 /* FocusCell.m */,
+				CFE6476B228FC4AF0054D6B4 /* FocusCell.xib */,
+			);
+			path = HomeView;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -264,6 +296,9 @@
 				CF3F664D228700DB00087C6C /* LaunchScreen.storyboard in Resources */,
 				CF3F664A228700DB00087C6C /* Assets.xcassets in Resources */,
 				CF3F6648228700DA00087C6C /* Main.storyboard in Resources */,
+				CFE64760228FAFB10054D6B4 /* MulitiPicsCell.xib in Resources */,
+				CFE6476D228FC4AF0054D6B4 /* FocusCell.xib in Resources */,
+				CFE64768228FB6C80054D6B4 /* PicOnRightCell.xib in Resources */,
 				CF3F667C228703A200087C6C /* MultiTabCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -291,8 +326,11 @@
 			files = (
 				CF3F6645228700DA00087C6C /* SecondViewController.m in Sources */,
 				CF3F663F228700DA00087C6C /* AppDelegate.m in Sources */,
+				CFE64767228FB6C80054D6B4 /* PicOnRightCell.m in Sources */,
+				CFE64763228FB3F40054D6B4 /* MulitiPicsCell.m in Sources */,
 				CF3F6682228704DA00087C6C /* MultiTabView.m in Sources */,
 				CF3F667F2287042100087C6C /* MultiTabCell.m in Sources */,
+				CFE6476C228FC4AF0054D6B4 /* FocusCell.m in Sources */,
 				CF3F6650228700DB00087C6C /* main.m in Sources */,
 				CF3F6642228700DA00087C6C /* FirstViewController.m in Sources */,
 			);
