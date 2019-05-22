@@ -27,10 +27,11 @@
 }
 
 -(void) initSlideWithCount: (NSInteger) count{
-    CGRect screenBound = [[UIScreen mainScreen] bounds];
-    screenBound.origin.y = 60;
+    CGRect screenBound = self.view.frame;
+    screenBound.origin.y = 50;
+    screenBound.size.height -= 50;
     
-    _multiTabView = [[MultiTabView alloc] initWithFrame:screenBound WithCount:count];
+    _multiTabView = [[MultiTabView alloc] initWithFrame: screenBound WithCount:count];
     [self.view addSubview:_multiTabView];
 }
 

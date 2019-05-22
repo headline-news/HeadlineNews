@@ -1,16 +1,16 @@
 //
-//  MulitiPicsCell.h
+//  PicOnRightModel.h
 //  FeedsAPP
 //
-//  Created by student4 on 2019/5/18.
+//  Created by Yueyue on 2019/5/22.
 //  Copyright © 2019 iosGroup. All rights reserved.
 //
 
-#import <UIKit/UIKit.h>
+#import <Foundation/Foundation.h>
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface MulitiPicsCell : UITableViewCell
+@interface PicOnRightModel : NSObject
 
 @end
 

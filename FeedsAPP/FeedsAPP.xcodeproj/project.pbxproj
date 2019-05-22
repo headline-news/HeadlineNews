@@ -13,12 +13,12 @@
 		56E4D68F228FF7EF00E32295 /* 4.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 56E4D68C228FF7EF00E32295 /* 4.jpg */; };
 		56E4D690228FF7EF00E32295 /* 6.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 56E4D68D228FF7EF00E32295 /* 6.jpg */; };
 		56E4D691228FF7EF00E32295 /* 5.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 56E4D68E228FF7EF00E32295 /* 5.jpg */; };
-		56E4D69C228FF7FE00E32295 /* MulitiPicsCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 56E4D693228FF7FE00E32295 /* MulitiPicsCell.xib */; };
+		56E4D69C228FF7FE00E32295 /* MultiPicsCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 56E4D693228FF7FE00E32295 /* MultiPicsCell.xib */; };
 		56E4D69D228FF7FE00E32295 /* PicOnRightCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 56E4D696228FF7FE00E32295 /* PicOnRightCell.xib */; };
 		56E4D69E228FF7FE00E32295 /* FocusCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 56E4D697228FF7FE00E32295 /* FocusCell.m */; };
 		56E4D69F228FF7FE00E32295 /* FocusCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 56E4D698228FF7FE00E32295 /* FocusCell.xib */; };
 		56E4D6A0228FF7FE00E32295 /* PicOnRightCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 56E4D699228FF7FE00E32295 /* PicOnRightCell.m */; };
-		56E4D6A1228FF7FE00E32295 /* MulitiPicsCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 56E4D69A228FF7FE00E32295 /* MulitiPicsCell.m */; };
+		56E4D6A1228FF7FE00E32295 /* MultiPicsCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 56E4D69A228FF7FE00E32295 /* MultiPicsCell.m */; };
 		56E4D6A8228FF80B00E32295 /* MultiTabCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 56E4D6A5228FF80B00E32295 /* MultiTabCell.xib */; };
 		56E4D6A9228FF80B00E32295 /* MultiTabCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 56E4D6A6228FF80B00E32295 /* MultiTabCell.m */; };
 		56E4D6AA228FF80B00E32295 /* MultiTabView.m in Sources */ = {isa = PBXBuildFile; fileRef = 56E4D6A7228FF80B00E32295 /* MultiTabView.m */; };
@@ -34,6 +34,9 @@
 		CF3F6650228700DB00087C6C /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = CF3F664F228700DB00087C6C /* main.m */; };
 		CF3F665A228700DB00087C6C /* FeedsAPPTests.m in Sources */ = {isa = PBXBuildFile; fileRef = CF3F6659228700DB00087C6C /* FeedsAPPTests.m */; };
 		CF3F6665228700DB00087C6C /* FeedsAPPUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = CF3F6664228700DB00087C6C /* FeedsAPPUITests.m */; };
+		CFF8CB3222952B7500289D7C /* HomeViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = CFF8CB3122952B7500289D7C /* HomeViewModel.m */; };
+		CFF8CB3522952B9400289D7C /* PicOnRightModel.m in Sources */ = {isa = PBXBuildFile; fileRef = CFF8CB3422952B9300289D7C /* PicOnRightModel.m */; };
+		CFF8CB3722952F2000289D7C /* data.plist in Resources */ = {isa = PBXBuildFile; fileRef = CFF8CB3622952F1F00289D7C /* data.plist */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -60,14 +63,14 @@
 		56E4D68C228FF7EF00E32295 /* 4.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = 4.jpg; sourceTree = "<group>"; };
 		56E4D68D228FF7EF00E32295 /* 6.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = 6.jpg; sourceTree = "<group>"; };
 		56E4D68E228FF7EF00E32295 /* 5.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = 5.jpg; sourceTree = "<group>"; };
-		56E4D693228FF7FE00E32295 /* MulitiPicsCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MulitiPicsCell.xib; sourceTree = "<group>"; };
+		56E4D693228FF7FE00E32295 /* MultiPicsCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MultiPicsCell.xib; sourceTree = "<group>"; };
 		56E4D694228FF7FE00E32295 /* PicOnRightCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PicOnRightCell.h; sourceTree = "<group>"; };
-		56E4D695228FF7FE00E32295 /* MulitiPicsCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MulitiPicsCell.h; sourceTree = "<group>"; };
+		56E4D695228FF7FE00E32295 /* MultiPicsCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MultiPicsCell.h; sourceTree = "<group>"; };
 		56E4D696228FF7FE00E32295 /* PicOnRightCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PicOnRightCell.xib; sourceTree = "<group>"; };
 		56E4D697228FF7FE00E32295 /* FocusCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FocusCell.m; sourceTree = "<group>"; };
 		56E4D698228FF7FE00E32295 /* FocusCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FocusCell.xib; sourceTree = "<group>"; };
 		56E4D699228FF7FE00E32295 /* PicOnRightCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PicOnRightCell.m; sourceTree = "<group>"; };
-		56E4D69A228FF7FE00E32295 /* MulitiPicsCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MulitiPicsCell.m; sourceTree = "<group>"; };
+		56E4D69A228FF7FE00E32295 /* MultiPicsCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MultiPicsCell.m; sourceTree = "<group>"; };
 		56E4D69B228FF7FE00E32295 /* FocusCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FocusCell.h; sourceTree = "<group>"; };
 		56E4D6A3228FF80B00E32295 /* MultiTabCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MultiTabCell.h; sourceTree = "<group>"; };
 		56E4D6A4228FF80B00E32295 /* MultiTabView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MultiTabView.h; sourceTree = "<group>"; };
@@ -98,6 +101,11 @@
 		CF3F6660228700DB00087C6C /* FeedsAPPUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = FeedsAPPUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		CF3F6664228700DB00087C6C /* FeedsAPPUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FeedsAPPUITests.m; sourceTree = "<group>"; };
 		CF3F6666228700DB00087C6C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		CFF8CB3022952B7500289D7C /* HomeViewModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HomeViewModel.h; sourceTree = "<group>"; };
+		CFF8CB3122952B7500289D7C /* HomeViewModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HomeViewModel.m; sourceTree = "<group>"; };
+		CFF8CB3322952B9300289D7C /* PicOnRightModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PicOnRightModel.h; sourceTree = "<group>"; };
+		CFF8CB3422952B9300289D7C /* PicOnRightModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PicOnRightModel.m; sourceTree = "<group>"; };
+		CFF8CB3622952F1F00289D7C /* data.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = data.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -128,14 +136,14 @@
 		56E4D692228FF7FE00E32295 /* HomeView */ = {
 			isa = PBXGroup;
 			children = (
-				56E4D693228FF7FE00E32295 /* MulitiPicsCell.xib */,
+				56E4D693228FF7FE00E32295 /* MultiPicsCell.xib */,
 				56E4D694228FF7FE00E32295 /* PicOnRightCell.h */,
-				56E4D695228FF7FE00E32295 /* MulitiPicsCell.h */,
+				56E4D695228FF7FE00E32295 /* MultiPicsCell.h */,
 				56E4D696228FF7FE00E32295 /* PicOnRightCell.xib */,
 				56E4D697228FF7FE00E32295 /* FocusCell.m */,
 				56E4D698228FF7FE00E32295 /* FocusCell.xib */,
 				56E4D699228FF7FE00E32295 /* PicOnRightCell.m */,
-				56E4D69A228FF7FE00E32295 /* MulitiPicsCell.m */,
+				56E4D69A228FF7FE00E32295 /* MultiPicsCell.m */,
 				56E4D69B228FF7FE00E32295 /* FocusCell.h */,
 			);
 			path = HomeView;
@@ -191,18 +199,17 @@
 		CF3F663C228700DA00087C6C /* FeedsAPP */ = {
 			isa = PBXGroup;
 			children = (
+				56E4D692228FF7FE00E32295 /* HomeView */,
+				CFF8CB38229531CD00289D7C /* HomeViewController */,
+				CFF8CB2F22952AFF00289D7C /* HomeViewModel */,
 				56E4D6AB228FF85700E32295 /* HightofCell */,
 				56E4D6A2228FF80B00E32295 /* MultiTab */,
-				56E4D692228FF7FE00E32295 /* HomeView */,
 				CF3F663D228700DA00087C6C /* AppDelegate.h */,
 				CF3F663E228700DA00087C6C /* AppDelegate.m */,
-				CF3F6640228700DA00087C6C /* FirstViewController.h */,
-				CF3F6641228700DA00087C6C /* FirstViewController.m */,
-				CF3F6643228700DA00087C6C /* SecondViewController.h */,
-				CF3F6644228700DA00087C6C /* SecondViewController.m */,
 				CF3F6646228700DA00087C6C /* Main.storyboard */,
 				CF3F6649228700DB00087C6C /* Assets.xcassets */,
 				CF3F664B228700DB00087C6C /* LaunchScreen.storyboard */,
+				CFF8CB3622952F1F00289D7C /* data.plist */,
 				CF3F664E228700DB00087C6C /* Info.plist */,
 				56E4D687228FF7E400E32295 /* 1@2x.png */,
 				56E4D688228FF7E400E32295 /* 2.jpg */,
@@ -231,6 +238,28 @@
 				CF3F6666228700DB00087C6C /* Info.plist */,
 			);
 			path = FeedsAPPUITests;
+			sourceTree = "<group>";
+		};
+		CFF8CB2F22952AFF00289D7C /* HomeViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				CFF8CB3022952B7500289D7C /* HomeViewModel.h */,
+				CFF8CB3122952B7500289D7C /* HomeViewModel.m */,
+				CFF8CB3322952B9300289D7C /* PicOnRightModel.h */,
+				CFF8CB3422952B9300289D7C /* PicOnRightModel.m */,
+			);
+			path = HomeViewModel;
+			sourceTree = "<group>";
+		};
+		CFF8CB38229531CD00289D7C /* HomeViewController */ = {
+			isa = PBXGroup;
+			children = (
+				CF3F6640228700DA00087C6C /* FirstViewController.h */,
+				CF3F6641228700DA00087C6C /* FirstViewController.m */,
+				CF3F6643228700DA00087C6C /* SecondViewController.h */,
+				CF3F6644228700DA00087C6C /* SecondViewController.m */,
+			);
+			path = HomeViewController;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -339,7 +368,7 @@
 				56E4D690228FF7EF00E32295 /* 6.jpg in Resources */,
 				56E4D69F228FF7FE00E32295 /* FocusCell.xib in Resources */,
 				56E4D691228FF7EF00E32295 /* 5.jpg in Resources */,
-				56E4D69C228FF7FE00E32295 /* MulitiPicsCell.xib in Resources */,
+				56E4D69C228FF7FE00E32295 /* MultiPicsCell.xib in Resources */,
 				56E4D68F228FF7EF00E32295 /* 4.jpg in Resources */,
 				56E4D68A228FF7E400E32295 /* 1@2x.png in Resources */,
 				56E4D689228FF7E400E32295 /* 3.jpg in Resources */,
@@ -348,6 +377,7 @@
 				CF3F664A228700DB00087C6C /* Assets.xcassets in Resources */,
 				CF3F6648228700DA00087C6C /* Main.storyboard in Resources */,
 				56E4D69D228FF7FE00E32295 /* PicOnRightCell.xib in Resources */,
+				CFF8CB3722952F2000289D7C /* data.plist in Resources */,
 				56E4D6A8228FF80B00E32295 /* MultiTabCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -373,8 +403,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				56E4D6A1228FF7FE00E32295 /* MulitiPicsCell.m in Sources */,
+				CFF8CB3522952B9400289D7C /* PicOnRightModel.m in Sources */,
+				56E4D6A1228FF7FE00E32295 /* MultiPicsCell.m in Sources */,
 				CF3F6645228700DA00087C6C /* SecondViewController.m in Sources */,
+				CFF8CB3222952B7500289D7C /* HomeViewModel.m in Sources */,
 				56E4D6AA228FF80B00E32295 /* MultiTabView.m in Sources */,
 				56E4D6B3228FF85700E32295 /* UserModel.m in Sources */,
 				56E4D6B2228FF85700E32295 /* TableViewCell.m in Sources */,

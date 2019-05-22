@@ -19,9 +19,9 @@
                 <rect key="frame" x="0.0" y="0.0" width="267" height="71.5"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VAq-yS-mxI">
-                        <rect key="frame" x="10" y="10" width="42" height="20.5"/>
-                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="4" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VAq-yS-mxI">
+                        <rect key="frame" x="10" y="10" width="139" height="24"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="20"/>
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
                     </label>
@@ -47,6 +47,7 @@
                     </button>
                 </subviews>
                 <constraints>
+                    <constraint firstItem="6vJ-cK-1vF" firstAttribute="leading" secondItem="VAq-yS-mxI" secondAttribute="trailing" constant="8" id="6Oa-Db-7cx"/>
                     <constraint firstItem="VAq-yS-mxI" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="10" id="IBm-ES-T7i"/>
                     <constraint firstItem="ojy-pn-YSs" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="10" id="YDB-6f-9f1"/>
                     <constraint firstItem="OdC-fR-dq1" firstAttribute="top" secondItem="6vJ-cK-1vF" secondAttribute="bottom" constant="10" id="Zrz-4T-gsX"/>

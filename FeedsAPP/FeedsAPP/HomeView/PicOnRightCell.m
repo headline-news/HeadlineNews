@@ -8,16 +8,21 @@
 
 #import "PicOnRightCell.h"
 
+
 @interface PicOnRightCell()
-@property (weak, nonatomic) IBOutlet UILabel *titleLabel;
-@property (weak, nonatomic) IBOutlet UILabel *infoLabel;
-@property (weak, nonatomic) IBOutlet UIImageView *rightImage;
-@property (weak, nonatomic) IBOutlet UIButton *closeButton;
 
 @end
 
 @implementation PicOnRightCell
-
+-(void) setModel:(HomeViewModel *)model
+{
+    _model = model;
+    
+    _titleLabel.text = _model.title;
+    _model.imageType = 1;
+    _rightImage.image = [UIImage imageNamed:_model.rightImage];
+    _infoLabel.text = _model.info;
+}
 - (void)awakeFromNib {
     [super awakeFromNib];
     // Initialization code
