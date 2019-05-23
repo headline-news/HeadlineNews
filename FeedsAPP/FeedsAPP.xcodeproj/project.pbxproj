@@ -35,7 +35,6 @@
 		CF3F665A228700DB00087C6C /* FeedsAPPTests.m in Sources */ = {isa = PBXBuildFile; fileRef = CF3F6659228700DB00087C6C /* FeedsAPPTests.m */; };
 		CF3F6665228700DB00087C6C /* FeedsAPPUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = CF3F6664228700DB00087C6C /* FeedsAPPUITests.m */; };
 		CFF8CB3222952B7500289D7C /* HomeViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = CFF8CB3122952B7500289D7C /* HomeViewModel.m */; };
-		CFF8CB3522952B9400289D7C /* PicOnRightModel.m in Sources */ = {isa = PBXBuildFile; fileRef = CFF8CB3422952B9300289D7C /* PicOnRightModel.m */; };
 		CFF8CB3722952F2000289D7C /* data.plist in Resources */ = {isa = PBXBuildFile; fileRef = CFF8CB3622952F1F00289D7C /* data.plist */; };
 /* End PBXBuildFile section */
 
@@ -103,8 +102,6 @@
 		CF3F6666228700DB00087C6C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		CFF8CB3022952B7500289D7C /* HomeViewModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HomeViewModel.h; sourceTree = "<group>"; };
 		CFF8CB3122952B7500289D7C /* HomeViewModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HomeViewModel.m; sourceTree = "<group>"; };
-		CFF8CB3322952B9300289D7C /* PicOnRightModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PicOnRightModel.h; sourceTree = "<group>"; };
-		CFF8CB3422952B9300289D7C /* PicOnRightModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PicOnRightModel.m; sourceTree = "<group>"; };
 		CFF8CB3622952F1F00289D7C /* data.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = data.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -245,8 +242,6 @@
 			children = (
 				CFF8CB3022952B7500289D7C /* HomeViewModel.h */,
 				CFF8CB3122952B7500289D7C /* HomeViewModel.m */,
-				CFF8CB3322952B9300289D7C /* PicOnRightModel.h */,
-				CFF8CB3422952B9300289D7C /* PicOnRightModel.m */,
 			);
 			path = HomeViewModel;
 			sourceTree = "<group>";
@@ -403,7 +398,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				CFF8CB3522952B9400289D7C /* PicOnRightModel.m in Sources */,
 				56E4D6A1228FF7FE00E32295 /* MultiPicsCell.m in Sources */,
 				CF3F6645228700DA00087C6C /* SecondViewController.m in Sources */,
 				CFF8CB3222952B7500289D7C /* HomeViewModel.m in Sources */,
