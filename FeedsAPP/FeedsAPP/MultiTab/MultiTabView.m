@@ -315,7 +315,7 @@
 -(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
     HomeViewModel *model = [_dataSource[_currentPage] objectAtIndex:indexPath.row];
     if(model.imageType == 0){
-        return 70;
+        return 90;
     }
     else if(model.imageType == 1){
         return 130;

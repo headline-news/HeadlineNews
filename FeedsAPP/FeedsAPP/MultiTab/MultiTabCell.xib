@@ -19,13 +19,13 @@
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KtU-qb-yCo">
-                        <rect key="frame" x="5" y="0.0" width="327" height="24"/>
+                        <rect key="frame" x="5" y="8" width="327" height="24"/>
                         <fontDescription key="fontDescription" type="system" pointSize="20"/>
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
                     </label>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wYl-DV-FzW">
-                        <rect key="frame" x="5" y="53" width="327" height="14.5"/>
+                        <rect key="frame" x="5" y="45" width="327" height="14.5"/>
                         <fontDescription key="fontDescription" type="system" pointSize="12"/>
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
@@ -34,10 +34,10 @@
                 <constraints>
                     <constraint firstItem="wYl-DV-FzW" firstAttribute="leading" secondItem="iqM-PN-3Kb" secondAttribute="leading" constant="5" id="41r-nh-fL5"/>
                     <constraint firstAttribute="trailing" secondItem="wYl-DV-FzW" secondAttribute="trailing" constant="5" id="8Yh-C3-PNn"/>
-                    <constraint firstAttribute="bottom" secondItem="wYl-DV-FzW" secondAttribute="bottom" id="9Sd-VV-DLB"/>
+                    <constraint firstAttribute="bottom" secondItem="wYl-DV-FzW" secondAttribute="bottom" constant="8" id="9Sd-VV-DLB"/>
                     <constraint firstItem="KtU-qb-yCo" firstAttribute="leading" secondItem="iqM-PN-3Kb" secondAttribute="leading" constant="5" id="Gju-iN-7kp"/>
                     <constraint firstAttribute="trailing" secondItem="KtU-qb-yCo" secondAttribute="trailing" constant="5" id="IxJ-T6-tN3"/>
-                    <constraint firstItem="KtU-qb-yCo" firstAttribute="top" secondItem="iqM-PN-3Kb" secondAttribute="top" id="dJE-3r-Zhr"/>
+                    <constraint firstItem="KtU-qb-yCo" firstAttribute="top" secondItem="iqM-PN-3Kb" secondAttribute="top" constant="8" id="dJE-3r-Zhr"/>
                 </constraints>
             </tableViewCellContentView>
             <connections>
