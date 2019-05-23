@@ -314,8 +314,10 @@
 
 -(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
     HomeViewModel *model = [_dataSource[_currentPage] objectAtIndex:indexPath.row];
-
-    if(model.imageType == 1){
+    if(model.imageType == 0){
+        return 70;
+    }
+    else if(model.imageType == 1){
         return 130;
     }
     //return cell.frame.size.height;
@@ -326,15 +328,22 @@
     // 注册MultiTabCell.xib
     BOOL nibsRegistered = NO;
     if (!nibsRegistered) {
-        UINib *nib=[UINib nibWithNibName:@"PicOnRightCell" bundle:nil];
-        [tableView registerNib:nib forCellReuseIdentifier:@"PicOnRightCell"];
+        UINib *nib=[UINib nibWithNibName:@"MultiTabCell" bundle:nil];
+        [tableView registerNib:nib forCellReuseIdentifier:@"MultiTabCell"];
+        UINib *picRightNib=[UINib nibWithNibName:@"PicOnRightCell" bundle:nil];
+        [tableView registerNib:picRightNib forCellReuseIdentifier:@"PicOnRightCell"];
         UINib *multiPicNib=[UINib nibWithNibName:@"MultiPicsCell" bundle:nil];
         [tableView registerNib:multiPicNib forCellReuseIdentifier:@"MultiPicsCell"];
         nibsRegistered=YES;
     }
     HomeViewModel *theModel = _dataSource[_currentPage][indexPath.row];
     //设置数据
-    if(theModel.imageType == 1){
+    if(theModel.imageType == 0){
+        MultiTabCell *cell = [tableView dequeueReusableCellWithIdentifier:@"MultiTabCell"];
+        cell.model = theModel;
+        return cell;
+    }
+    else if(theModel.imageType == 1){
         PicOnRightCell *cell = [tableView dequeueReusableCellWithIdentifier:@"PicOnRightCell"];
         cell.model = theModel;
         return cell;

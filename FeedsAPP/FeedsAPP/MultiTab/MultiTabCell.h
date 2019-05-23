@@ -10,10 +10,12 @@
 #define MultiTabCell_h
 
 #import <UIKit/UIKit.h>
-
+#import "HomeViewModel.h"
 @interface MultiTabCell : UITableViewCell
 @property (strong, nonatomic) IBOutlet UILabel *title;
+@property (weak, nonatomic) IBOutlet UILabel *info;
 
+@property(nonatomic,strong) HomeViewModel *model;
 @end
 
 #endif /* MultiTabCell_h */

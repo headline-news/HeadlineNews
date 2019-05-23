@@ -20,11 +20,11 @@
 		<key>title</key>
 		<string>title2</string>
 		<key>imageType</key>
-		<integer>2</integer>
+		<integer>1</integer>
 		<key>leftImage</key>
-		<string>3.jpg</string>
+		<string></string>
 		<key>middleImage</key>
-		<string>3.jpg</string>
+		<string></string>
 		<key>rightImage</key>
 		<string>3.jpg</string>
 		<key>info</key>
@@ -32,15 +32,15 @@
 	</dict>
 	<dict>
 		<key>title</key>
-		<string>title3</string>
+		<string>title333333333333333333333333333333333333333333333333</string>
 		<key>imageType</key>
-		<integer>2</integer>
+		<integer>0</integer>
 		<key>leftImage</key>
-		<string>4.jpg</string>
+		<string></string>
 		<key>middleImage</key>
-		<string>4.jpg</string>
+		<string></string>
 		<key>rightImage</key>
-		<string>4.jpg</string>
+		<string></string>
 		<key>info</key>
 		<string>4.jpg</string>
 	</dict>
