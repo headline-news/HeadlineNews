@@ -26,6 +26,8 @@
 @property(nonatomic,retain) UILabel *content;
 //点赞按钮
 @property(nonatomic,strong) YHButton *zangBtn;
+//点赞特效
+@property(nonatomic,strong) UIImageView *zangPlusImg;
 //评论按钮
 @property(nonatomic,strong) YHButton *commentBtn;
 //转发按钮
