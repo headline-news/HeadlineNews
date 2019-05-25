@@ -232,7 +232,7 @@
     if ([_topScrollView isEqual:scrollView]) {
         CGFloat contentOffsetX = _topScrollView.contentOffset.x;
         
-        CGFloat width = _indicateView.frame.size.width;
+        CGFloat width = _indicateView.frame.size.width*2;
         
         int count = (int)contentOffsetX/(int)width;
         
