@@ -4,7 +4,7 @@
 <array>
 	<dict>
 		<key>title</key>
-		<string>野比大雄，简称大雄。\n\n大雄性子懦弱，胆小怕事，丢三落四。优点是有责任心，善良正直。是一个“为别人的不幸而伤心，会祈求别人幸福的人”。哆啦A梦即是由野比大雄的玄孙野比世修派来帮助他、挖掘他的潜质，扭转他不幸的命运的。</string>
+		<string>title11111111111111111111111111111111110000000</string>
 		<key>imageType</key>
 		<integer>2</integer>
 		<key>leftImage</key>
@@ -20,11 +20,11 @@
 		<key>title</key>
 		<string>title2</string>
 		<key>imageType</key>
-		<integer>1</integer>
+		<integer>2</integer>
 		<key>leftImage</key>
-		<string></string>
+		<string>3.jpg</string>
 		<key>middleImage</key>
-		<string></string>
+		<string>3.jpg</string>
 		<key>rightImage</key>
 		<string>3.jpg</string>
 		<key>info</key>
@@ -32,15 +32,15 @@
 	</dict>
 	<dict>
 		<key>title</key>
-		<string>title333333333333333333333333333333333333333333333333</string>
+		<string>title3</string>
 		<key>imageType</key>
-		<integer>0</integer>
+		<integer>2</integer>
 		<key>leftImage</key>
-		<string></string>
+		<string>4.jpg</string>
 		<key>middleImage</key>
-		<string></string>
+		<string>4.jpg</string>
 		<key>rightImage</key>
-		<string></string>
+		<string>4.jpg</string>
 		<key>info</key>
 		<string>4.jpg</string>
 	</dict>
