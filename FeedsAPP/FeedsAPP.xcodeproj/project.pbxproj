@@ -22,9 +22,6 @@
 		56E4D6A8228FF80B00E32295 /* MultiTabCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 56E4D6A5228FF80B00E32295 /* MultiTabCell.xib */; };
 		56E4D6A9228FF80B00E32295 /* MultiTabCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 56E4D6A6228FF80B00E32295 /* MultiTabCell.m */; };
 		56E4D6AA228FF80B00E32295 /* MultiTabView.m in Sources */ = {isa = PBXBuildFile; fileRef = 56E4D6A7228FF80B00E32295 /* MultiTabView.m */; };
-		56E4D6B2228FF85700E32295 /* TableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 56E4D6AC228FF85700E32295 /* TableViewCell.m */; };
-		56E4D6B3228FF85700E32295 /* UserModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 56E4D6AE228FF85700E32295 /* UserModel.m */; };
-		56E4D6B4228FF85700E32295 /* TableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 56E4D6B0228FF85700E32295 /* TableViewController.m */; };
 		CF3F663F228700DA00087C6C /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = CF3F663E228700DA00087C6C /* AppDelegate.m */; };
 		CF3F6642228700DA00087C6C /* FirstViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CF3F6641228700DA00087C6C /* FirstViewController.m */; };
 		CF3F6645228700DA00087C6C /* SecondViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CF3F6644228700DA00087C6C /* SecondViewController.m */; };
@@ -38,6 +35,10 @@
 		CFF8CB3522952B9400289D7C /* PicOnRightModel.m in Sources */ = {isa = PBXBuildFile; fileRef = CFF8CB3422952B9300289D7C /* PicOnRightModel.m */; };
 		CFF8CB3722952F2000289D7C /* data.plist in Resources */ = {isa = PBXBuildFile; fileRef = CFF8CB3622952F1F00289D7C /* data.plist */; };
 		D9F988542298F78400E8B3C2 /* XWScanImage.m in Sources */ = {isa = PBXBuildFile; fileRef = D9F988522298F78300E8B3C2 /* XWScanImage.m */; };
+		DFD59C442299212200D0788F /* YHButton.m in Sources */ = {isa = PBXBuildFile; fileRef = DFD59C3C2299212200D0788F /* YHButton.m */; };
+		DFD59C452299212200D0788F /* TableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = DFD59C3D2299212200D0788F /* TableViewCell.m */; };
+		DFD59C462299212200D0788F /* UserModel.m in Sources */ = {isa = PBXBuildFile; fileRef = DFD59C3F2299212200D0788F /* UserModel.m */; };
+		DFD59C472299212200D0788F /* TableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DFD59C422299212200D0788F /* TableViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -78,12 +79,6 @@
 		56E4D6A5228FF80B00E32295 /* MultiTabCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MultiTabCell.xib; sourceTree = "<group>"; };
 		56E4D6A6228FF80B00E32295 /* MultiTabCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MultiTabCell.m; sourceTree = "<group>"; };
 		56E4D6A7228FF80B00E32295 /* MultiTabView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MultiTabView.m; sourceTree = "<group>"; };
-		56E4D6AC228FF85700E32295 /* TableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TableViewCell.m; sourceTree = "<group>"; };
-		56E4D6AD228FF85700E32295 /* TableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TableViewController.h; sourceTree = "<group>"; };
-		56E4D6AE228FF85700E32295 /* UserModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UserModel.m; sourceTree = "<group>"; };
-		56E4D6AF228FF85700E32295 /* TableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TableViewCell.h; sourceTree = "<group>"; };
-		56E4D6B0228FF85700E32295 /* TableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TableViewController.m; sourceTree = "<group>"; };
-		56E4D6B1228FF85700E32295 /* UserModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UserModel.h; sourceTree = "<group>"; };
 		CF3F663A228700DA00087C6C /* FeedsAPP.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FeedsAPP.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CF3F663D228700DA00087C6C /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		CF3F663E228700DA00087C6C /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -109,6 +104,14 @@
 		CFF8CB3622952F1F00289D7C /* data.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = data.plist; sourceTree = "<group>"; };
 		D9F988522298F78300E8B3C2 /* XWScanImage.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XWScanImage.m; sourceTree = "<group>"; };
 		D9F988532298F78300E8B3C2 /* XWScanImage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XWScanImage.h; sourceTree = "<group>"; };
+		DFD59C3C2299212200D0788F /* YHButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YHButton.m; sourceTree = "<group>"; };
+		DFD59C3D2299212200D0788F /* TableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TableViewCell.m; sourceTree = "<group>"; };
+		DFD59C3E2299212200D0788F /* TableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TableViewController.h; sourceTree = "<group>"; };
+		DFD59C3F2299212200D0788F /* UserModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UserModel.m; sourceTree = "<group>"; };
+		DFD59C402299212200D0788F /* YHButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YHButton.h; sourceTree = "<group>"; };
+		DFD59C412299212200D0788F /* TableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TableViewCell.h; sourceTree = "<group>"; };
+		DFD59C422299212200D0788F /* TableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TableViewController.m; sourceTree = "<group>"; };
+		DFD59C432299212200D0788F /* UserModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UserModel.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -165,20 +168,6 @@
 			path = FeedsAPP/MultiTab;
 			sourceTree = SOURCE_ROOT;
 		};
-		56E4D6AB228FF85700E32295 /* HightofCell */ = {
-			isa = PBXGroup;
-			children = (
-				56E4D6AC228FF85700E32295 /* TableViewCell.m */,
-				56E4D6AD228FF85700E32295 /* TableViewController.h */,
-				56E4D6AE228FF85700E32295 /* UserModel.m */,
-				56E4D6AF228FF85700E32295 /* TableViewCell.h */,
-				56E4D6B0228FF85700E32295 /* TableViewController.m */,
-				56E4D6B1228FF85700E32295 /* UserModel.h */,
-			);
-			name = HightofCell;
-			path = FeedsAPP/HightofCell;
-			sourceTree = SOURCE_ROOT;
-		};
 		CF3F6631228700DA00087C6C = {
 			isa = PBXGroup;
 			children = (
@@ -206,7 +195,7 @@
 				56E4D692228FF7FE00E32295 /* HomeView */,
 				CFF8CB38229531CD00289D7C /* HomeViewController */,
 				CFF8CB2F22952AFF00289D7C /* HomeViewModel */,
-				56E4D6AB228FF85700E32295 /* HightofCell */,
+				DFD59C3B2299212200D0788F /* SecondTableView */,
 				56E4D6A2228FF80B00E32295 /* MultiTab */,
 				CF3F663D228700DA00087C6C /* AppDelegate.h */,
 				CF3F663E228700DA00087C6C /* AppDelegate.m */,
@@ -274,6 +263,22 @@
 			);
 			path = BigImg;
 			sourceTree = "<group>";
+		};
+		DFD59C3B2299212200D0788F /* SecondTableView */ = {
+			isa = PBXGroup;
+			children = (
+				DFD59C3C2299212200D0788F /* YHButton.m */,
+				DFD59C3D2299212200D0788F /* TableViewCell.m */,
+				DFD59C3E2299212200D0788F /* TableViewController.h */,
+				DFD59C3F2299212200D0788F /* UserModel.m */,
+				DFD59C402299212200D0788F /* YHButton.h */,
+				DFD59C412299212200D0788F /* TableViewCell.h */,
+				DFD59C422299212200D0788F /* TableViewController.m */,
+				DFD59C432299212200D0788F /* UserModel.h */,
+			);
+			name = SecondTableView;
+			path = FeedsAPP/SecondTableView;
+			sourceTree = SOURCE_ROOT;
 		};
 /* End PBXGroup section */
 
@@ -422,12 +427,13 @@
 				CF3F6645228700DA00087C6C /* SecondViewController.m in Sources */,
 				CFF8CB3222952B7500289D7C /* HomeViewModel.m in Sources */,
 				56E4D6AA228FF80B00E32295 /* MultiTabView.m in Sources */,
-				56E4D6B3228FF85700E32295 /* UserModel.m in Sources */,
-				56E4D6B2228FF85700E32295 /* TableViewCell.m in Sources */,
 				CF3F663F228700DA00087C6C /* AppDelegate.m in Sources */,
+				DFD59C472299212200D0788F /* TableViewController.m in Sources */,
+				DFD59C452299212200D0788F /* TableViewCell.m in Sources */,
 				56E4D6A0228FF7FE00E32295 /* PicOnRightCell.m in Sources */,
-				56E4D6B4228FF85700E32295 /* TableViewController.m in Sources */,
+				DFD59C442299212200D0788F /* YHButton.m in Sources */,
 				CF3F6650228700DB00087C6C /* main.m in Sources */,
+				DFD59C462299212200D0788F /* UserModel.m in Sources */,
 				56E4D6A9228FF80B00E32295 /* MultiTabCell.m in Sources */,
 				CF3F6642228700DA00087C6C /* FirstViewController.m in Sources */,
 				56E4D69E228FF7FE00E32295 /* FocusCell.m in Sources */,

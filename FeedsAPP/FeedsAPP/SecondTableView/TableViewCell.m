@@ -44,9 +44,9 @@
     [self addSubview:_userImage];
     
     //文本内容
-    _introduction = [[UILabel alloc] initWithFrame:CGRectMake(12, 75, _width, 40)];
-    _name.font=[UIFont systemFontOfSize:15];
-    [self addSubview:_introduction];
+    _content = [[UILabel alloc] initWithFrame:CGRectMake(12, 75, _width, 40)];
+    _content.font=[UIFont systemFontOfSize:15];
+    [self addSubview:_content];
     
     //点赞button
     _zangBtn=[YHButton new];
@@ -74,12 +74,12 @@
     //获得当前cell高度
     CGRect frame = [self frame];
     //文本赋值
-    self.introduction.text = text;
+    self.content.text = text;
     //设置label的最大行数
-    self.introduction.numberOfLines = 10;
+    self.content.numberOfLines = 10;
     CGSize size = CGSizeMake(_width-25, 1000);
-    labelSize = [self.introduction.text sizeWithFont:self.introduction.font constrainedToSize:size lineBreakMode:NSLineBreakByClipping];
-    self.introduction.frame = CGRectMake(self.introduction.frame.origin.x, self.introduction.frame.origin.y, labelSize.width, labelSize.height);
+    labelSize = [self.content.text sizeWithFont:self.content.font constrainedToSize:size lineBreakMode:NSLineBreakByClipping];
+    self.content.frame = CGRectMake(self.content.frame.origin.x, self.content.frame.origin.y, labelSize.width, labelSize.height);
     
     //计算出自适应的高度
     frame.size.height = labelSize.height+120;
@@ -108,9 +108,9 @@
     _forwardBtn.imageRect=CGRectMake(_width*5/6-28, labelSize.height+10, 28, 28);
     _forwardBtn.titleRect=CGRectMake(_width*5/6, labelSize.height+16, 80, 16);
     
-    [_introduction addSubview:_zangBtn];
-    [_introduction addSubview:_commentBtn];
-    [_introduction addSubview:_forwardBtn];
+    [_content addSubview:_zangBtn];
+    [_content addSubview:_commentBtn];
+    [_content addSubview:_forwardBtn];
     
     self.frame = frame;
 }

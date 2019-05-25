@@ -23,7 +23,7 @@
 //用户头像
 @property(nonatomic,retain) UIImageView *userImage;
 //文本内容
-@property(nonatomic,retain) UILabel *introduction;
+@property(nonatomic,retain) UILabel *content;
 //点赞按钮
 @property(nonatomic,strong) YHButton *zangBtn;
 //评论按钮

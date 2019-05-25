@@ -19,7 +19,7 @@
 //发布时间
 @property(nonatomic,retain) UILabel *posttime;
 //文本内容
-@property (nonatomic,copy) NSString *introduction;
+@property (nonatomic,copy) NSString *content;
 //头像图片路径
 @property (nonatomic,copy) NSString *imagePath;
 //点赞按钮
