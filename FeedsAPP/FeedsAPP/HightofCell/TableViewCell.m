@@ -20,9 +20,11 @@
 }
 //初始化控件
 -(void)initLayuot{
-    _name = [[UILabel alloc] initWithFrame:CGRectMake(65, 15, 250, 40)];
+    _name = [[UILabel alloc] initWithFrame:CGRectMake(55, 15, 250, 40)];
     [self addSubview:_name];
-    _userImage = [[UIImageView alloc] initWithFrame:CGRectMake(5, 15, 45, 45)];
+    _userImage = [[UIImageView alloc] initWithFrame:CGRectMake(5, 15, 40, 40)];
+    _userImage.layer.cornerRadius = _userImage.frame.size.width / 2;
+    _userImage.layer.masksToBounds = YES;
     [self addSubview:_userImage];
     _introduction = [[UILabel alloc] initWithFrame:CGRectMake(10, 75, 350, 40)];
     [self addSubview:_introduction];

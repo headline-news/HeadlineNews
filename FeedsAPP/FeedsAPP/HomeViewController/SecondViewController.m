@@ -48,7 +48,7 @@
     tableData = [[NSMutableArray alloc] init];
     UserModel *user = [[UserModel alloc] init];
     [user setUsername:@"多啦A梦"];
-    [user setIntroduction:@"我是多啦A梦!!\n我是大雄的好盆友！\n"];
+    [user setIntroduction:@"我是多啦A梦!!\n我是大雄的好盆友！"];
     [user setImagePath:@"1@2x.png"];
     
     UserModel *user2 = [[UserModel alloc] init];
@@ -65,27 +65,27 @@
     
     UserModel *user4 = [[UserModel alloc] init];
     [user4 setUsername:@"小猪佩奇"];
-    [user4 setIntroduction:@"小猪佩奇是一个可爱的小猪。她已经四岁了，与她的妈妈、爸爸和弟弟乔治生活在一起。佩奇最喜欢做的事情是玩游戏，把自己打扮得漂漂亮亮的，去度假，以及在泥坑里快乐的跳上跳下。"];
+    [user4 setIntroduction:@"小猪佩奇是一个可爱的小猪。\n她已经四岁了，与她的妈妈、爸爸和弟弟乔治生活在一起。\n佩奇最喜欢做的事情是玩游戏，把自己打扮得漂漂亮亮的，去度假，以及在泥坑里快乐的跳上跳下。"];
     [user4 setImagePath:@"4.jpg"];
     
     UserModel *user5 = [[UserModel alloc] init];
     [user5 setUsername:@"木之本樱"];
-    [user5 setIntroduction:@"4月1日出生，A型，喜欢的科目是音乐和体育，不喜欢的科目是算数。是个元气满满的女孩。在封印之兽——小可的引导下，成为了收复牌的“魔卡捕获者”。"];
+    [user5 setIntroduction:@"4月1日出生，A型，喜欢的科目是音乐和体育，不喜欢的科目是算数。\n\n是个元气满满的女孩。在封印之兽——小可的引导下，成为了收复牌的“魔卡捕获者”。"];
     [user5 setImagePath:@"5.jpg"];
     
     UserModel *user6 = [[UserModel alloc] init];
     [user6 setUsername:@"小可（可鲁贝洛斯）"];
-    [user6 setIntroduction:@"守护库洛牌之书的“封印之兽”。由于魔力不足的关系，成为了一个玩偶的模样。说话是大阪腔，非常喜欢甜食。"];
+    [user6 setIntroduction:@"守护库洛牌之书的“封印之兽”。\n由于魔力不足的关系，成为了一个玩偶的模样。说话是大阪腔，非常喜欢甜食。"];
     [user6 setImagePath:@"6.jpg"];
     
     
     [tableData addObject:user];
-    [tableData addObject:user2];
-    [tableData addObject:user3];
+    [tableData addObject:user6];
+    [tableData addObject:user5];
     //[tableData addObject:text1];
     [tableData addObject:user4];
-    [tableData addObject:user5];
-    [tableData addObject:user6];
+    [tableData addObject:user3];
+    [tableData addObject:user2];
 }
 
 

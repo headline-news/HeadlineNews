@@ -162,12 +162,12 @@
 		56E4D6AB228FF85700E32295 /* HightofCell */ = {
 			isa = PBXGroup;
 			children = (
-				56E4D6AC228FF85700E32295 /* TableViewCell.m */,
-				56E4D6AD228FF85700E32295 /* TableViewController.h */,
-				56E4D6AE228FF85700E32295 /* UserModel.m */,
 				56E4D6AF228FF85700E32295 /* TableViewCell.h */,
-				56E4D6B0228FF85700E32295 /* TableViewController.m */,
+				56E4D6AC228FF85700E32295 /* TableViewCell.m */,
 				56E4D6B1228FF85700E32295 /* UserModel.h */,
+				56E4D6AE228FF85700E32295 /* UserModel.m */,
+				56E4D6AD228FF85700E32295 /* TableViewController.h */,
+				56E4D6B0228FF85700E32295 /* TableViewController.m */,
 			);
 			name = HightofCell;
 			path = FeedsAPP/HightofCell;
