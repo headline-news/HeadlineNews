@@ -71,7 +71,7 @@
 #pragma mark -- 初始化表格的数据源
 -(void) initDataSource{
     //加载plist文件数据数组
-    [NewsManager httpPostNews];
+    [NewsManager getNewsList];
     _dataSource = [[NSMutableArray alloc] initWithCapacity:_numOfTabs];
     for (int i = 1; i <= _numOfTabs; i ++) {
         NSArray *array = [NSArray arrayWithContentsOfFile:[[NSBundle mainBundle] pathForResource:@"data.plist" ofType:nil]];

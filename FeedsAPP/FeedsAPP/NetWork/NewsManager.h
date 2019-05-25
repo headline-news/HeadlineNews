@@ -9,5 +9,6 @@
 #import <Foundation/Foundation.h>
 @interface NewsManager : NSObject<NSURLSessionDelegate,NSURLSessionDownloadDelegate,NSURLSessionDataDelegate>
 
-+(void) httpPostNews;
++(void) getNewsList;
++(void) getContent;
 @end
