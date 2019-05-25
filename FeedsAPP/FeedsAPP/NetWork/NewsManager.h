@@ -7,8 +7,8 @@
 //
 
 #import <Foundation/Foundation.h>
-@interface NewsManager : NSObject<NSURLSessionDelegate,NSURLSessionDownloadDelegate,NSURLSessionDataDelegate>
+@interface NewsManager : NSObject<NSURLSessionDelegate,NSURLSessionDataDelegate>
 
-+(void) getNewsList;
-+(void) getContent;
++(void) getNewsList:(int)uid: (int)offset: (int)count;
++(void) getContent:(NSString*)groupId;
 @end
