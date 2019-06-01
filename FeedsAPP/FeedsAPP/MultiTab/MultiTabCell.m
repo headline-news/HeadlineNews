@@ -13,5 +13,22 @@
 @end
 
 @implementation MultiTabCell
+-(void) setModel:(HomeViewModel *)model
+{
+    _model = model;
+    
+    _title.text = _model.title;
+    _model.imageType = 0;
+    _info.text = _model.info;
+}
+- (void)awakeFromNib {
+    [super awakeFromNib];
+    // Initialization code
+}
 
+- (void)setSelected:(BOOL)selected animated:(BOOL)animated {
+    [super setSelected:selected animated:animated];
+    
+    // Configure the view for the selected state
+}
 @end

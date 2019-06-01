@@ -21,9 +21,13 @@
 		56E4D69F228FF7FE00E32295 /* FocusCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 56E4D698228FF7FE00E32295 /* FocusCell.xib */; };
 		56E4D6A0228FF7FE00E32295 /* PicOnRightCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 56E4D699228FF7FE00E32295 /* PicOnRightCell.m */; };
 		56E4D6A1228FF7FE00E32295 /* MultiPicsCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 56E4D69A228FF7FE00E32295 /* MultiPicsCell.m */; };
-		56E4D6A8228FF80B00E32295 /* MultiTabCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 56E4D6A5228FF80B00E32295 /* MultiTabCell.xib */; };
-		56E4D6A9228FF80B00E32295 /* MultiTabCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 56E4D6A6228FF80B00E32295 /* MultiTabCell.m */; };
-		56E4D6AA228FF80B00E32295 /* MultiTabView.m in Sources */ = {isa = PBXBuildFile; fileRef = 56E4D6A7228FF80B00E32295 /* MultiTabView.m */; };
+		CF131F0F22A20FA700E218D9 /* RefreshFooterView.m in Sources */ = {isa = PBXBuildFile; fileRef = CF131F0922A20FA700E218D9 /* RefreshFooterView.m */; };
+		CF131F1022A20FA800E218D9 /* UIScrollView+Refresh.m in Sources */ = {isa = PBXBuildFile; fileRef = CF131F0B22A20FA700E218D9 /* UIScrollView+Refresh.m */; };
+		CF131F1122A20FA800E218D9 /* RefreshHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = CF131F0D22A20FA700E218D9 /* RefreshHeaderView.m */; };
+		CF131F1722A20FF200E218D9 /* MultiTabView.m in Sources */ = {isa = PBXBuildFile; fileRef = CF131F1322A20FF200E218D9 /* MultiTabView.m */; };
+		CF131F1822A20FF200E218D9 /* MultiTabCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = CF131F1422A20FF200E218D9 /* MultiTabCell.xib */; };
+		CF131F1922A20FF200E218D9 /* MultiTabCell.m in Sources */ = {isa = PBXBuildFile; fileRef = CF131F1522A20FF200E218D9 /* MultiTabCell.m */; };
+		CF131F1B22A20FFF00E218D9 /* data2.plist in Resources */ = {isa = PBXBuildFile; fileRef = CF131F1A22A20FFE00E218D9 /* data2.plist */; };
 		CF3F663F228700DA00087C6C /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = CF3F663E228700DA00087C6C /* AppDelegate.m */; };
 		CF3F6642228700DA00087C6C /* FirstViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CF3F6641228700DA00087C6C /* FirstViewController.m */; };
 		CF3F6645228700DA00087C6C /* SecondViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CF3F6644228700DA00087C6C /* SecondViewController.m */; };
@@ -80,11 +84,18 @@
 		56E4D699228FF7FE00E32295 /* PicOnRightCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PicOnRightCell.m; sourceTree = "<group>"; };
 		56E4D69A228FF7FE00E32295 /* MultiPicsCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MultiPicsCell.m; sourceTree = "<group>"; };
 		56E4D69B228FF7FE00E32295 /* FocusCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FocusCell.h; sourceTree = "<group>"; };
-		56E4D6A3228FF80B00E32295 /* MultiTabCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MultiTabCell.h; sourceTree = "<group>"; };
-		56E4D6A4228FF80B00E32295 /* MultiTabView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MultiTabView.h; sourceTree = "<group>"; };
-		56E4D6A5228FF80B00E32295 /* MultiTabCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MultiTabCell.xib; sourceTree = "<group>"; };
-		56E4D6A6228FF80B00E32295 /* MultiTabCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MultiTabCell.m; sourceTree = "<group>"; };
-		56E4D6A7228FF80B00E32295 /* MultiTabView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MultiTabView.m; sourceTree = "<group>"; };
+		CF131F0922A20FA700E218D9 /* RefreshFooterView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RefreshFooterView.m; sourceTree = "<group>"; };
+		CF131F0A22A20FA700E218D9 /* RefreshHeaderView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RefreshHeaderView.h; sourceTree = "<group>"; };
+		CF131F0B22A20FA700E218D9 /* UIScrollView+Refresh.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIScrollView+Refresh.m"; sourceTree = "<group>"; };
+		CF131F0C22A20FA700E218D9 /* RefreshFooterView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RefreshFooterView.h; sourceTree = "<group>"; };
+		CF131F0D22A20FA700E218D9 /* RefreshHeaderView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RefreshHeaderView.m; sourceTree = "<group>"; };
+		CF131F0E22A20FA700E218D9 /* UIScrollView+Refresh.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIScrollView+Refresh.h"; sourceTree = "<group>"; };
+		CF131F1222A20FF100E218D9 /* MultiTabCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MultiTabCell.h; sourceTree = "<group>"; };
+		CF131F1322A20FF200E218D9 /* MultiTabView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MultiTabView.m; sourceTree = "<group>"; };
+		CF131F1422A20FF200E218D9 /* MultiTabCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MultiTabCell.xib; sourceTree = "<group>"; };
+		CF131F1522A20FF200E218D9 /* MultiTabCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MultiTabCell.m; sourceTree = "<group>"; };
+		CF131F1622A20FF200E218D9 /* MultiTabView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MultiTabView.h; sourceTree = "<group>"; };
+		CF131F1A22A20FFE00E218D9 /* data2.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = data2.plist; sourceTree = "<group>"; };
 		CF3F663A228700DA00087C6C /* FeedsAPP.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FeedsAPP.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CF3F663D228700DA00087C6C /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		CF3F663E228700DA00087C6C /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -175,15 +186,28 @@
 		56E4D6A2228FF80B00E32295 /* MultiTab */ = {
 			isa = PBXGroup;
 			children = (
-				56E4D6A3228FF80B00E32295 /* MultiTabCell.h */,
-				56E4D6A4228FF80B00E32295 /* MultiTabView.h */,
-				56E4D6A5228FF80B00E32295 /* MultiTabCell.xib */,
-				56E4D6A6228FF80B00E32295 /* MultiTabCell.m */,
-				56E4D6A7228FF80B00E32295 /* MultiTabView.m */,
+				CF131F1222A20FF100E218D9 /* MultiTabCell.h */,
+				CF131F1522A20FF200E218D9 /* MultiTabCell.m */,
+				CF131F1422A20FF200E218D9 /* MultiTabCell.xib */,
+				CF131F1622A20FF200E218D9 /* MultiTabView.h */,
+				CF131F1322A20FF200E218D9 /* MultiTabView.m */,
 			);
 			name = MultiTab;
 			path = FeedsAPP/MultiTab;
 			sourceTree = SOURCE_ROOT;
+		};
+		CF131F0822A20FA700E218D9 /* PullToRefresh */ = {
+			isa = PBXGroup;
+			children = (
+				CF131F0922A20FA700E218D9 /* RefreshFooterView.m */,
+				CF131F0A22A20FA700E218D9 /* RefreshHeaderView.h */,
+				CF131F0B22A20FA700E218D9 /* UIScrollView+Refresh.m */,
+				CF131F0C22A20FA700E218D9 /* RefreshFooterView.h */,
+				CF131F0D22A20FA700E218D9 /* RefreshHeaderView.m */,
+				CF131F0E22A20FA700E218D9 /* UIScrollView+Refresh.h */,
+			);
+			path = PullToRefresh;
+			sourceTree = "<group>";
 		};
 		CF3F6631228700DA00087C6C = {
 			isa = PBXGroup;
@@ -208,6 +232,7 @@
 		CF3F663C228700DA00087C6C /* FeedsAPP */ = {
 			isa = PBXGroup;
 			children = (
+				CF131F0822A20FA700E218D9 /* PullToRefresh */,
 				1F0C4EE622992BD8002FB872 /* NetWork */,
 				D9F988512298F68200E8B3C2 /* BigImg */,
 				56E4D692228FF7FE00E32295 /* HomeView */,
@@ -220,6 +245,7 @@
 				CF3F6646228700DA00087C6C /* Main.storyboard */,
 				CF3F6649228700DB00087C6C /* Assets.xcassets */,
 				CF3F664B228700DB00087C6C /* LaunchScreen.storyboard */,
+				CF131F1A22A20FFE00E218D9 /* data2.plist */,
 				CFF8CB3622952F1F00289D7C /* data.plist */,
 				CF3F664E228700DB00087C6C /* Info.plist */,
 				56E4D687228FF7E400E32295 /* 1@2x.png */,
@@ -405,6 +431,7 @@
 				56E4D69F228FF7FE00E32295 /* FocusCell.xib in Resources */,
 				56E4D691228FF7EF00E32295 /* 5.jpg in Resources */,
 				56E4D69C228FF7FE00E32295 /* MultiPicsCell.xib in Resources */,
+				CF131F1B22A20FFF00E218D9 /* data2.plist in Resources */,
 				56E4D68F228FF7EF00E32295 /* 4.jpg in Resources */,
 				56E4D68A228FF7E400E32295 /* 1@2x.png in Resources */,
 				56E4D689228FF7E400E32295 /* 3.jpg in Resources */,
@@ -414,7 +441,7 @@
 				CF3F6648228700DA00087C6C /* Main.storyboard in Resources */,
 				56E4D69D228FF7FE00E32295 /* PicOnRightCell.xib in Resources */,
 				CFF8CB3722952F2000289D7C /* data.plist in Resources */,
-				56E4D6A8228FF80B00E32295 /* MultiTabCell.xib in Resources */,
+				CF131F1822A20FF200E218D9 /* MultiTabCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -441,22 +468,25 @@
 			files = (
 				D9F988542298F78400E8B3C2 /* XWScanImage.m in Sources */,
 				CFF8CB3522952B9400289D7C /* PicOnRightModel.m in Sources */,
+				CF131F1722A20FF200E218D9 /* MultiTabView.m in Sources */,
 				56E4D6A1228FF7FE00E32295 /* MultiPicsCell.m in Sources */,
 				CF3F6645228700DA00087C6C /* SecondViewController.m in Sources */,
+				CF131F1922A20FF200E218D9 /* MultiTabCell.m in Sources */,
 				1F0C4EE922992BD8002FB872 /* NewsManager.m in Sources */,
 				CFF8CB3222952B7500289D7C /* HomeViewModel.m in Sources */,
-				56E4D6AA228FF80B00E32295 /* MultiTabView.m in Sources */,
 				CF3F663F228700DA00087C6C /* AppDelegate.m in Sources */,
+				CF131F0F22A20FA700E218D9 /* RefreshFooterView.m in Sources */,
 				DFD59C472299212200D0788F /* TableViewController.m in Sources */,
 				1F0C4EEB229937BD002FB872 /* YesManager.m in Sources */,
 				DFD59C452299212200D0788F /* TableViewCell.m in Sources */,
 				56E4D6A0228FF7FE00E32295 /* PicOnRightCell.m in Sources */,
 				DFD59C442299212200D0788F /* YHButton.m in Sources */,
+				CF131F1122A20FA800E218D9 /* RefreshHeaderView.m in Sources */,
 				CF3F6650228700DB00087C6C /* main.m in Sources */,
 				DFD59C462299212200D0788F /* UserModel.m in Sources */,
-				56E4D6A9228FF80B00E32295 /* MultiTabCell.m in Sources */,
 				CF3F6642228700DA00087C6C /* FirstViewController.m in Sources */,
 				56E4D69E228FF7FE00E32295 /* FocusCell.m in Sources */,
+				CF131F1022A20FA800E218D9 /* UIScrollView+Refresh.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

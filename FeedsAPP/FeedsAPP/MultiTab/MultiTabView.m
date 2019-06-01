@@ -14,7 +14,8 @@
 #import "MultiPicsCell.h"
 #import "PicOnRightCell.h"
 #import "HomeViewModel.h"
-#import "NewsManager.h"
+#import "UIScrollView+Refresh.h"
+
 #define TABHEIGHT 50
 
 @interface MultiTabView()<UIScrollViewDelegate,UITableViewDataSource,UITableViewDelegate>
@@ -32,6 +33,8 @@
 @property (strong, nonatomic) UIView *indicateView;
 //下方的ScrollView
 @property (strong, nonatomic) UIScrollView *scrollView;
+//
+@property (strong, nonatomic) UITableView *tableViewNow;
 //下方的表格数组
 @property (strong, nonatomic) NSMutableArray *scrollTableViews;
 //TableViews的数据源
@@ -71,7 +74,6 @@
 #pragma mark -- 初始化表格的数据源
 -(void) initDataSource{
     //加载plist文件数据数组
-    [NewsManager getNewsList];
     _dataSource = [[NSMutableArray alloc] initWithCapacity:_numOfTabs];
     for (int i = 1; i <= _numOfTabs; i ++) {
         NSArray *array = [NSArray arrayWithContentsOfFile:[[NSBundle mainBundle] pathForResource:@"data.plist" ofType:nil]];
@@ -178,6 +180,7 @@
     
     _scrollView.delegate = self;
     [self addSubview:_scrollView];
+    
 }
 
 #pragma mark --初始化下方的TableViews
@@ -190,12 +193,45 @@
         tableView.dataSource = self;
         tableView.tag = i;
         
+        __weak typeof(self)weakSelf = self;
+        [tableView addHeaderRefreshWithBlock:^{
+            [weakSelf pullToRefresh];
+            
+        }];
+        [tableView addFooterRefreshWithBlock:^{
+            [weakSelf pullOnloading];
+        }];
         [_scrollTableViews addObject:tableView];
         [_scrollView addSubview:tableView];
     }
     
+    self.tableViewNow = _scrollTableViews[0];
+    
 }
 
+- (void)pullToRefresh{
+    
+    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(3.0 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+        NSArray *array = [NSArray arrayWithContentsOfFile:[[NSBundle mainBundle] pathForResource:@"data2.plist" ofType:nil]];
+        NSMutableArray *data = [NSMutableArray array];
+        for (NSDictionary *arr in array) {
+            [data addObject:[HomeViewModel newsWithDict:arr]];
+        }
+        
+        [self.dataSource replaceObjectAtIndex:self.currentPage withObject:data];
+        
+        [self.tableViewNow endHeaderRefresh];
+        [self.tableViewNow reloadData];
+    });
+}
+- (void)pullOnloading{
+    
+    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(3.0 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+        
+        [self.tableViewNow endHeaderRefresh];
+        [self.tableViewNow reloadData];
+    });
+}
 
 #pragma mark --根据scrollView的滚动位置复用tableView
 -(void) updateTableWithPageNumber: (NSUInteger) pageNumber{
@@ -209,6 +245,7 @@
     UITableView *reuseTableView = _scrollTableViews[tabviewTag];
     reuseTableView.frame = tableNewFrame;
     [reuseTableView reloadData];
+    _tableViewNow  = reuseTableView;
 }
 
 
@@ -316,26 +353,37 @@
 -(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
     HomeViewModel *model = [_dataSource[_currentPage] objectAtIndex:indexPath.row];
 
-    if(model.imageType == 1){
+    if(model.imageType == 0){
+        return 90;
+    }
+    else if(model.imageType == 1){
         return 130;
     }
     //return cell.frame.size.height;
     return 200;
+    
 }
 
 -(UITableViewCell *)tableView:tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
     // 注册MultiTabCell.xib
     BOOL nibsRegistered = NO;
     if (!nibsRegistered) {
-        UINib *nib=[UINib nibWithNibName:@"PicOnRightCell" bundle:nil];
-        [tableView registerNib:nib forCellReuseIdentifier:@"PicOnRightCell"];
+        UINib *nib=[UINib nibWithNibName:@"MultiTabCell" bundle:nil];
+        [tableView registerNib:nib forCellReuseIdentifier:@"MultiTabCell"];
+        UINib *picRightNib=[UINib nibWithNibName:@"PicOnRightCell" bundle:nil];
+        [tableView registerNib:picRightNib forCellReuseIdentifier:@"PicOnRightCell"];
         UINib *multiPicNib=[UINib nibWithNibName:@"MultiPicsCell" bundle:nil];
         [tableView registerNib:multiPicNib forCellReuseIdentifier:@"MultiPicsCell"];
         nibsRegistered=YES;
     }
     HomeViewModel *theModel = _dataSource[_currentPage][indexPath.row];
     //设置数据
-    if(theModel.imageType == 1){
+    if(theModel.imageType == 0){
+        MultiTabCell *cell = [tableView dequeueReusableCellWithIdentifier:@"MultiTabCell"];
+        cell.model = theModel;
+        return cell;
+    }
+    else if(theModel.imageType == 1){
         PicOnRightCell *cell = [tableView dequeueReusableCellWithIdentifier:@"PicOnRightCell"];
         cell.model = theModel;
         return cell;
