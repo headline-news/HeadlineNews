@@ -37,6 +37,7 @@
 		CF3F6650228700DB00087C6C /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = CF3F664F228700DB00087C6C /* main.m */; };
 		CF3F665A228700DB00087C6C /* FeedsAPPTests.m in Sources */ = {isa = PBXBuildFile; fileRef = CF3F6659228700DB00087C6C /* FeedsAPPTests.m */; };
 		CF3F6665228700DB00087C6C /* FeedsAPPUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = CF3F6664228700DB00087C6C /* FeedsAPPUITests.m */; };
+		CF46D40722A22A7D007B469E /* BigImg.m in Sources */ = {isa = PBXBuildFile; fileRef = CF46D40522A22A7D007B469E /* BigImg.m */; };
 		CFF8CB3222952B7500289D7C /* HomeViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = CFF8CB3122952B7500289D7C /* HomeViewModel.m */; };
 		CFF8CB3522952B9400289D7C /* PicOnRightModel.m in Sources */ = {isa = PBXBuildFile; fileRef = CFF8CB3422952B9300289D7C /* PicOnRightModel.m */; };
 		CFF8CB3722952F2000289D7C /* data.plist in Resources */ = {isa = PBXBuildFile; fileRef = CFF8CB3622952F1F00289D7C /* data.plist */; };
@@ -114,6 +115,8 @@
 		CF3F6660228700DB00087C6C /* FeedsAPPUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = FeedsAPPUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		CF3F6664228700DB00087C6C /* FeedsAPPUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FeedsAPPUITests.m; sourceTree = "<group>"; };
 		CF3F6666228700DB00087C6C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		CF46D40522A22A7D007B469E /* BigImg.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BigImg.m; sourceTree = "<group>"; };
+		CF46D40622A22A7D007B469E /* BigImg.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BigImg.h; sourceTree = "<group>"; };
 		CFF8CB3022952B7500289D7C /* HomeViewModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HomeViewModel.h; sourceTree = "<group>"; };
 		CFF8CB3122952B7500289D7C /* HomeViewModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HomeViewModel.m; sourceTree = "<group>"; };
 		CFF8CB3322952B9300289D7C /* PicOnRightModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PicOnRightModel.h; sourceTree = "<group>"; };
@@ -302,6 +305,8 @@
 		D9F988512298F68200E8B3C2 /* BigImg */ = {
 			isa = PBXGroup;
 			children = (
+				CF46D40622A22A7D007B469E /* BigImg.h */,
+				CF46D40522A22A7D007B469E /* BigImg.m */,
 				D9F988532298F78300E8B3C2 /* XWScanImage.h */,
 				D9F988522298F78300E8B3C2 /* XWScanImage.m */,
 			);
@@ -474,6 +479,7 @@
 				CF131F1922A20FF200E218D9 /* MultiTabCell.m in Sources */,
 				1F0C4EE922992BD8002FB872 /* NewsManager.m in Sources */,
 				CFF8CB3222952B7500289D7C /* HomeViewModel.m in Sources */,
+				CF46D40722A22A7D007B469E /* BigImg.m in Sources */,
 				CF3F663F228700DA00087C6C /* AppDelegate.m in Sources */,
 				CF131F0F22A20FA700E218D9 /* RefreshFooterView.m in Sources */,
 				DFD59C472299212200D0788F /* TableViewController.m in Sources */,
