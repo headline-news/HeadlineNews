@@ -15,6 +15,7 @@
 #import "PicOnRightCell.h"
 #import "HomeViewModel.h"
 #import "NewsManager.h"
+#import "YesManager.h"
 #define TABHEIGHT 50
 
 @interface MultiTabView()<UIScrollViewDelegate,UITableViewDataSource,UITableViewDelegate>
@@ -70,8 +71,33 @@
 
 #pragma mark -- 初始化表格的数据源
 -(void) initDataSource{
+
+    [YesManager status:@"q260BmEU5cED%2bKCdYKa0RQ%3d%3d"];
+    
+    [NewsManager getNewsList:4822:0:8];
+
+    NSString *currentPath = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES)[0];
+    NSString *filePath = [currentPath stringByAppendingPathComponent:@"list.plist"];
+    NSMutableDictionary *dict = [[NSMutableDictionary alloc] initWithContentsOfFile:filePath];
     //加载plist文件数据数组
-    [NewsManager getNewsList];
+    // _dataSource = [[NSMutableArray alloc] initWithCapacity:_numOfTabs];
+    //NSLog(@"---plist一开始保存时候的内容---%@",array);
+    for (int i = 1; i <= _numOfTabs; i ++) {
+        NSDictionary * diction = dict[@"data"];
+        NSArray * diction1 = diction[@"article_feed"];
+        for (NSDictionary *arr in diction1) {
+            //NSString * title = arr[@"title"];
+            NSString * group_id = arr[@"group_id"];
+            [NewsManager getContent:group_id];
+            NSLog(@"%@", arr);
+        }
+     
+    }
+
+    
+    
+    /*
+    //加载plist文件数据数组
     _dataSource = [[NSMutableArray alloc] initWithCapacity:_numOfTabs];
     for (int i = 1; i <= _numOfTabs; i ++) {
         NSArray *array = [NSArray arrayWithContentsOfFile:[[NSBundle mainBundle] pathForResource:@"data.plist" ofType:nil]];
@@ -81,7 +107,9 @@
         }
         
         [_dataSource addObject:data];
-        /*NSMutableArray *tempArray  = [[NSMutableArray alloc] initWithCapacity:20];
+     
+        //
+        NSMutableArray *tempArray  = [[NSMutableArray alloc] initWithCapacity:20];
         
         for (int j = 1; j <= 20; j ++) {
             
@@ -89,8 +117,8 @@
             [tempArray addObject:tempStr];
         }
         
-        [_dataSource addObject:tempArray];*/
-    }
+        [_dataSource addObject:tempArray];
+    }*/
 }
 
 #pragma mark -- 实例化顶部的tab
