@@ -7,7 +7,7 @@
 //
 
 #import "MultiPicsCell.h"
-#import "XWScanImage.h"
+#import "BigImg.h"
 
 @implementation MultiPicsCell
 -(void) setModel:(HomeViewModel *)model
@@ -22,20 +22,20 @@
     _infoLabel.text = _model.info;
     
     //big img right
-    //为UIImageView1添加点击事件
-    UITapGestureRecognizer *tapGestureRecognizer1 = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(scanBigImageClick1:)];
+    //left
+    UITapGestureRecognizer *tapGestureRecognizer1 = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(leftimgClick:)];
     [_leftImage addGestureRecognizer:tapGestureRecognizer1];
     //让UIImageView和它的父类开启用户交互属性
     [_leftImage setUserInteractionEnabled:YES];
     
     
-    //为UIImageView2添加点击事件
-    UITapGestureRecognizer *tapGestureRecognizer2 = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(scanBigImageClick2:)];
+    //middle
+    UITapGestureRecognizer *tapGestureRecognizer2 = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(middleimgClick:)];
     [_middleImage addGestureRecognizer:tapGestureRecognizer2];
     [_middleImage setUserInteractionEnabled:YES];
     
-    //为UIImageView3添加点击事件
-    UITapGestureRecognizer *tapGestureRecognizer3 = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(scanBigImageClick3:)];
+    //right
+    UITapGestureRecognizer *tapGestureRecognizer3 = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(rightimgClick:)];
     [ _rightImage addGestureRecognizer:tapGestureRecognizer3];
     [ _rightImage setUserInteractionEnabled:YES];
     
@@ -57,25 +57,25 @@
 }
 
 #pragma mark - 浏览大图点击事件
--(void)scanBigImageClick1:(UITapGestureRecognizer *)tap{
-    NSLog(@"点击图片");
-    UIImageView *clickedImageView = (UIImageView *)tap.view;
-    [XWScanImage scanBigImageWithImageView:clickedImageView];
+-(void)leftimgClick:(UITapGestureRecognizer *)tap{
+
+    UIImageView *imgview = (UIImageView *)tap.view;
+    [BigImg BigImageWithImageView:imgview];
 }
 
--(void)scanBigImageClick2:(UITapGestureRecognizer *)tap{
-    NSLog(@"点击图片");
-    UIImageView *clickedImageView = (UIImageView *)tap.view;
+-(void)middleimgClick:(UITapGestureRecognizer *)tap{
+
+    UIImageView *imgview = (UIImageView *)tap.view;
     
-    [XWScanImage scanBigImageWithImageView:clickedImageView];
+    [BigImg BigImageWithImageView:imgview];
     
 }
--(void)scanBigImageClick3:(UITapGestureRecognizer *)tap{
-    NSLog(@"点击图片");
-    UIImageView *clickedImageView = (UIImageView *)tap.view;
+-(void)rightimgClick:(UITapGestureRecognizer *)tap{
+
+    UIImageView *imgview = (UIImageView *)tap.view;
     
     UIWindow *window = [UIApplication sharedApplication].keyWindow;
-    [XWScanImage scanBigImageWithImage:clickedImageView.image frame:[clickedImageView convertRect:clickedImageView.bounds toView:window]];
+    [BigImg BigImageWithImage:imgview.image frame:[imgview convertRect:imgview.bounds toView:window]];
     
 }
 
