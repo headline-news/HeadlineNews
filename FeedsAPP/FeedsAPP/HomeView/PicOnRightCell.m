@@ -20,7 +20,8 @@
     
     _titleLabel.text = _model.title;
     _model.imageType = 1;
-    _rightImage.image = [UIImage imageNamed:_model.rightImage];
+
+    _rightImage.image = [UIImage imageWithData:[NSData dataWithContentsOfURL:[NSURL URLWithString:_model.rightImage]]];
     _infoLabel.text = _model.info;
     
     //big img

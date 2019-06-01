@@ -16,9 +16,9 @@
     
     _titleLabel.text = _model.title;
     _model.imageType = 2;
-    _leftImage.image = [UIImage imageNamed:_model.leftImage];
-    _rightImage.image = [UIImage imageNamed:_model.rightImage];
-    _middleImage.image = [UIImage imageNamed:_model.middleImage];
+    _leftImage.image = [UIImage imageWithData:[NSData dataWithContentsOfURL:[NSURL URLWithString:_model.leftImage]]];
+    _rightImage.image = [UIImage imageWithData:[NSData dataWithContentsOfURL:[NSURL URLWithString:_model.rightImage]]];
+    _middleImage.image = [UIImage imageWithData:[NSData dataWithContentsOfURL:[NSURL URLWithString:_model.middleImage]]];
     _infoLabel.text = _model.info;
     
     //big img right

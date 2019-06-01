@@ -83,19 +83,27 @@
 
     filePath = [currentPath stringByAppendingPathComponent:@"list.plist"];
     NSMutableDictionary *dict = [[NSMutableDictionary alloc] initWithContentsOfFile:filePath];
-    //加载plist文件数据数组
-    // _dataSource = [[NSMutableArray alloc] initWithCapacity:_numOfTabs];
-    //NSLog(@"---plist一开始保存时候的内容---%@",array);
+    
+    _dataSource = [[NSMutableArray alloc] initWithCapacity:_numOfTabs];
     for (int i = 1; i <= _numOfTabs; i ++) {
         NSDictionary * diction = dict[@"data"];
         NSArray * diction1 = diction[@"article_feed"];
+        
+        NSMutableArray *data = [NSMutableArray array];
+        
         for (NSDictionary *arr in diction1) {
-            //NSString * title = arr[@"title"];
+            // NSString * title = arr[@"title"];
             NSString * group_id = arr[@"group_id"];
             [NewsManager getContent:group_id];
+            // id temp = [HomeViewModel newsWithDict:arr];
+            
+            //
+            [data addObject:[HomeViewModel newsWithDict:arr]];
             NSLog(@"%@", arr);
         }
-     
+        
+        NSLog(@"test");
+        [_dataSource addObject:data];
     }
 
     

@@ -159,15 +159,15 @@
 		56E4D692228FF7FE00E32295 /* HomeView */ = {
 			isa = PBXGroup;
 			children = (
-				56E4D693228FF7FE00E32295 /* MultiPicsCell.xib */,
-				56E4D694228FF7FE00E32295 /* PicOnRightCell.h */,
-				56E4D695228FF7FE00E32295 /* MultiPicsCell.h */,
-				56E4D696228FF7FE00E32295 /* PicOnRightCell.xib */,
-				56E4D697228FF7FE00E32295 /* FocusCell.m */,
-				56E4D698228FF7FE00E32295 /* FocusCell.xib */,
-				56E4D699228FF7FE00E32295 /* PicOnRightCell.m */,
-				56E4D69A228FF7FE00E32295 /* MultiPicsCell.m */,
 				56E4D69B228FF7FE00E32295 /* FocusCell.h */,
+				56E4D695228FF7FE00E32295 /* MultiPicsCell.h */,
+				56E4D694228FF7FE00E32295 /* PicOnRightCell.h */,
+				56E4D697228FF7FE00E32295 /* FocusCell.m */,
+				56E4D69A228FF7FE00E32295 /* MultiPicsCell.m */,
+				56E4D699228FF7FE00E32295 /* PicOnRightCell.m */,
+				56E4D698228FF7FE00E32295 /* FocusCell.xib */,
+				56E4D693228FF7FE00E32295 /* MultiPicsCell.xib */,
+				56E4D696228FF7FE00E32295 /* PicOnRightCell.xib */,
 			);
 			path = HomeView;
 			sourceTree = "<group>";

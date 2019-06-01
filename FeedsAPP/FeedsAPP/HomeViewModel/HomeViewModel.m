@@ -16,11 +16,36 @@
     if(self = [super init])
     {
         self.title = dict[@"title"];
-        self.imageType = [dict[@"imageType"] intValue];
-        self.middleImage = dict[@"middleImage"];
-        self.leftImage = dict[@"leftImage"];
-        self.rightImage = dict[@"rightImage"];
-        self.info = dict[@"info"];
+        self.groupId = dict[@"group_id"];
+        self.image = dict[@"image_infos"];
+        
+        NSUInteger count = [self.image count];
+        if (count > 2) {
+            self.imageType = 2;
+
+            NSString * pre = self.image[0][@"url_prefix"];
+            NSString * uri =self.image[0][@"web_uri"];
+            self.rightImage = [pre stringByAppendingPathComponent:uri];
+            
+            pre = self.image[1][@"url_prefix"];
+            uri =self.image[1][@"web_uri"];
+            self.middleImage = [pre stringByAppendingPathComponent:uri];
+
+            pre = self.image[2][@"url_prefix"];
+            uri =self.image[2][@"web_uri"];
+            self.leftImage = [pre stringByAppendingPathComponent:uri];
+        }
+        else if (count > 0) {
+            self.imageType = 1;
+            NSString * pre = self.image[0][@"url_prefix"];
+            NSString * uri =self.image[0][@"web_uri"];
+            self.rightImage = [pre stringByAppendingPathComponent:uri];
+        }
+        else if (count == 0)
+            self.imageType = 0;
+        
+        // NSString * _info = [[NSString alloc] initWithFormat:@"Todo"];
+        self.info = @"Todo";
     }
     return self;
 }
