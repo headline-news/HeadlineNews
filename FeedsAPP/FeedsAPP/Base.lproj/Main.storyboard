@@ -234,7 +234,7 @@
         <!--视频-->
         <scene sceneID="4fd-FR-yX4">
             <objects>
-                <viewController id="ljT-hN-GCc" customClass="SecondViewController" sceneMemberID="viewController">
+                <viewController id="ljT-hN-GCc" customClass="ViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="u88-eg-Pxt">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>

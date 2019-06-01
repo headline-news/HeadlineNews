@@ -127,7 +127,7 @@
     
     //设置多个Tab按钮
     _tabData = [[NSMutableArray alloc]init];
-    [_tabData addObjectsFromArray:@[@"推荐", @"热点", @"社会", @"娱乐", @"科技", @"汽车"]];
+    [_tabData addObjectsFromArray:@[@"推荐", @"关注", @"热点", @"社会", @"娱乐", @"科技"]];
     for (int i = 0; i < _numOfTabs; i ++) {
         
         UIView *view = [[UIView alloc] initWithFrame:CGRectMake(i * width, 0, width, TABHEIGHT)];

@@ -38,6 +38,10 @@
 		CF3F665A228700DB00087C6C /* FeedsAPPTests.m in Sources */ = {isa = PBXBuildFile; fileRef = CF3F6659228700DB00087C6C /* FeedsAPPTests.m */; };
 		CF3F6665228700DB00087C6C /* FeedsAPPUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = CF3F6664228700DB00087C6C /* FeedsAPPUITests.m */; };
 		CF46D40722A22A7D007B469E /* BigImg.m in Sources */ = {isa = PBXBuildFile; fileRef = CF46D40522A22A7D007B469E /* BigImg.m */; };
+		CFB99DEB22A24CAF009CA2B0 /* UIView+HSKit.m in Sources */ = {isa = PBXBuildFile; fileRef = CFB99DE722A24CAF009CA2B0 /* UIView+HSKit.m */; };
+		CFB99DEC22A24CAF009CA2B0 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CFB99DE822A24CAF009CA2B0 /* ViewController.m */; };
+		CFB99DF222A24CB6009CA2B0 /* DetailViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = CFB99DEF22A24CB6009CA2B0 /* DetailViewModel.m */; };
+		CFB99DF322A24CB6009CA2B0 /* DetailTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = CFB99DF122A24CB6009CA2B0 /* DetailTableViewCell.m */; };
 		CFF8CB3222952B7500289D7C /* HomeViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = CFF8CB3122952B7500289D7C /* HomeViewModel.m */; };
 		CFF8CB3522952B9400289D7C /* PicOnRightModel.m in Sources */ = {isa = PBXBuildFile; fileRef = CFF8CB3422952B9300289D7C /* PicOnRightModel.m */; };
 		CFF8CB3722952F2000289D7C /* data.plist in Resources */ = {isa = PBXBuildFile; fileRef = CFF8CB3622952F1F00289D7C /* data.plist */; };
@@ -117,6 +121,14 @@
 		CF3F6666228700DB00087C6C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		CF46D40522A22A7D007B469E /* BigImg.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BigImg.m; sourceTree = "<group>"; };
 		CF46D40622A22A7D007B469E /* BigImg.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BigImg.h; sourceTree = "<group>"; };
+		CFB99DE722A24CAF009CA2B0 /* UIView+HSKit.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+HSKit.m"; sourceTree = "<group>"; };
+		CFB99DE822A24CAF009CA2B0 /* ViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		CFB99DE922A24CAF009CA2B0 /* UIView+HSKit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+HSKit.h"; sourceTree = "<group>"; };
+		CFB99DEA22A24CAF009CA2B0 /* ViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
+		CFB99DEE22A24CB6009CA2B0 /* DetailTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DetailTableViewCell.h; sourceTree = "<group>"; };
+		CFB99DEF22A24CB6009CA2B0 /* DetailViewModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DetailViewModel.m; sourceTree = "<group>"; };
+		CFB99DF022A24CB6009CA2B0 /* DetailViewModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DetailViewModel.h; sourceTree = "<group>"; };
+		CFB99DF122A24CB6009CA2B0 /* DetailTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DetailTableViewCell.m; sourceTree = "<group>"; };
 		CFF8CB3022952B7500289D7C /* HomeViewModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HomeViewModel.h; sourceTree = "<group>"; };
 		CFF8CB3122952B7500289D7C /* HomeViewModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HomeViewModel.m; sourceTree = "<group>"; };
 		CFF8CB3322952B9300289D7C /* PicOnRightModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PicOnRightModel.h; sourceTree = "<group>"; };
@@ -235,6 +247,8 @@
 		CF3F663C228700DA00087C6C /* FeedsAPP */ = {
 			isa = PBXGroup;
 			children = (
+				CFB99DED22A24CB6009CA2B0 /* DetailViewModel */,
+				CFB99DE622A24CAF009CA2B0 /* DetailViewController */,
 				CF131F0822A20FA700E218D9 /* PullToRefresh */,
 				1F0C4EE622992BD8002FB872 /* NetWork */,
 				D9F988512298F68200E8B3C2 /* BigImg */,
@@ -278,6 +292,28 @@
 				CF3F6666228700DB00087C6C /* Info.plist */,
 			);
 			path = FeedsAPPUITests;
+			sourceTree = "<group>";
+		};
+		CFB99DE622A24CAF009CA2B0 /* DetailViewController */ = {
+			isa = PBXGroup;
+			children = (
+				CFB99DE722A24CAF009CA2B0 /* UIView+HSKit.m */,
+				CFB99DE822A24CAF009CA2B0 /* ViewController.m */,
+				CFB99DE922A24CAF009CA2B0 /* UIView+HSKit.h */,
+				CFB99DEA22A24CAF009CA2B0 /* ViewController.h */,
+			);
+			path = DetailViewController;
+			sourceTree = "<group>";
+		};
+		CFB99DED22A24CB6009CA2B0 /* DetailViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				CFB99DEE22A24CB6009CA2B0 /* DetailTableViewCell.h */,
+				CFB99DEF22A24CB6009CA2B0 /* DetailViewModel.m */,
+				CFB99DF022A24CB6009CA2B0 /* DetailViewModel.h */,
+				CFB99DF122A24CB6009CA2B0 /* DetailTableViewCell.m */,
+			);
+			path = DetailViewModel;
 			sourceTree = "<group>";
 		};
 		CFF8CB2F22952AFF00289D7C /* HomeViewModel */ = {
@@ -473,8 +509,10 @@
 			files = (
 				D9F988542298F78400E8B3C2 /* XWScanImage.m in Sources */,
 				CFF8CB3522952B9400289D7C /* PicOnRightModel.m in Sources */,
+				CFB99DF322A24CB6009CA2B0 /* DetailTableViewCell.m in Sources */,
 				CF131F1722A20FF200E218D9 /* MultiTabView.m in Sources */,
 				56E4D6A1228FF7FE00E32295 /* MultiPicsCell.m in Sources */,
+				CFB99DF222A24CB6009CA2B0 /* DetailViewModel.m in Sources */,
 				CF3F6645228700DA00087C6C /* SecondViewController.m in Sources */,
 				CF131F1922A20FF200E218D9 /* MultiTabCell.m in Sources */,
 				1F0C4EE922992BD8002FB872 /* NewsManager.m in Sources */,
@@ -487,7 +525,9 @@
 				DFD59C452299212200D0788F /* TableViewCell.m in Sources */,
 				56E4D6A0228FF7FE00E32295 /* PicOnRightCell.m in Sources */,
 				DFD59C442299212200D0788F /* ZanButton.m in Sources */,
+				CFB99DEB22A24CAF009CA2B0 /* UIView+HSKit.m in Sources */,
 				CF131F1122A20FA800E218D9 /* RefreshHeaderView.m in Sources */,
+				CFB99DEC22A24CAF009CA2B0 /* ViewController.m in Sources */,
 				CF3F6650228700DB00087C6C /* main.m in Sources */,
 				DFD59C462299212200D0788F /* UserModel.m in Sources */,
 				CF3F6642228700DA00087C6C /* FirstViewController.m in Sources */,
