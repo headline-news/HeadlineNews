@@ -10,7 +10,7 @@
 
 @implementation NewsManager
 
-+(void) getNewsList:(int)uid :(int)offset :(int)count
++(void) getNewsList:(int)uid :(NSUInteger)offset :(int)count
 {
     
     NSURLSessionConfiguration *defaultConfigObject = [NSURLSessionConfiguration defaultSessionConfiguration];
@@ -42,9 +42,6 @@
                                               // NSLog(@"Data = %@",text);
                                               // NSLog(@"---plist一开始保存时候的内容---%@",array);
                                           }
-                                          else {
-                                              NSLog(@"请求失败:%@",error);
-                                          }
                                       }];
     [dataTask resume];
 }
@@ -74,10 +71,9 @@
                                           NSLog(@"Response:%@ %@\n", response, error);
                                           if(error == nil) {
                                               NSMutableDictionary *dataArray = [NSJSONSerialization JSONObjectWithData:data options:0 error:nil];
-                                              [dataArray writeToFile:filePath atomically:YES];
-                                          }
-                                          else {
-                                              NSLog(@"请求失败:%@",error);
+                                              NSMutableDictionary *dict = [[NSMutableDictionary alloc] initWithContentsOfFile:filePath];
+                                              [dict setObject:dataArray forKey:groupId];
+                                              [dict writeToFile:filePath atomically:YES];
                                           }
                                       }];
     [dataTask resume];

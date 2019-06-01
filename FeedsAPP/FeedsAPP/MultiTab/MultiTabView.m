@@ -72,12 +72,16 @@
 #pragma mark -- 初始化表格的数据源
 -(void) initDataSource{
 
-    [YesManager status:@"q260BmEU5cED%2bKCdYKa0RQ%3d%3d"];
+    //[YesManager status:@"q260BmEU5cED%2bKCdYKa0RQ%3d%3d"];
     
-    [NewsManager getNewsList:4822:0:8];
-
     NSString *currentPath = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES)[0];
-    NSString *filePath = [currentPath stringByAppendingPathComponent:@"list.plist"];
+    NSString *filePath = [currentPath stringByAppendingPathComponent:@"content.plist"];
+    NSMutableDictionary *localdict = [[NSMutableDictionary alloc] initWithContentsOfFile:filePath];
+    NSUInteger offset = [localdict count];
+    
+    [NewsManager getNewsList:1634:offset:8];
+
+    filePath = [currentPath stringByAppendingPathComponent:@"list.plist"];
     NSMutableDictionary *dict = [[NSMutableDictionary alloc] initWithContentsOfFile:filePath];
     //加载plist文件数据数组
     // _dataSource = [[NSMutableArray alloc] initWithCapacity:_numOfTabs];
