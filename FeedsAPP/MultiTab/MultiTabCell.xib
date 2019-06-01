@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" rowHeight="68" id="fng-bq-McU" customClass="MultiTabCell">
+            <rect key="frame" x="0.0" y="0.0" width="337" height="68"/>
+            <autoresizingMask key="autoresizingMask"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="fng-bq-McU" id="iqM-PN-3Kb">
+                <rect key="frame" x="0.0" y="0.0" width="337" height="67.5"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KtU-qb-yCo">
+                        <rect key="frame" x="5" y="8" width="327" height="24"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wYl-DV-FzW">
+                        <rect key="frame" x="5" y="45" width="327" height="14.5"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                </subviews>
+                <constraints>
+                    <constraint firstItem="wYl-DV-FzW" firstAttribute="leading" secondItem="iqM-PN-3Kb" secondAttribute="leading" constant="5" id="41r-nh-fL5"/>
+                    <constraint firstAttribute="trailing" secondItem="wYl-DV-FzW" secondAttribute="trailing" constant="5" id="8Yh-C3-PNn"/>
+                    <constraint firstAttribute="bottom" secondItem="wYl-DV-FzW" secondAttribute="bottom" constant="8" id="9Sd-VV-DLB"/>
+                    <constraint firstItem="KtU-qb-yCo" firstAttribute="leading" secondItem="iqM-PN-3Kb" secondAttribute="leading" constant="5" id="Gju-iN-7kp"/>
+                    <constraint firstAttribute="trailing" secondItem="KtU-qb-yCo" secondAttribute="trailing" constant="5" id="IxJ-T6-tN3"/>
+                    <constraint firstItem="KtU-qb-yCo" firstAttribute="top" secondItem="iqM-PN-3Kb" secondAttribute="top" constant="8" id="dJE-3r-Zhr"/>
+                </constraints>
+            </tableViewCellContentView>
+            <connections>
+                <outlet property="info" destination="wYl-DV-FzW" id="6wH-ke-mKN"/>
+                <outlet property="title" destination="KtU-qb-yCo" id="IYD-eK-BtP"/>
+            </connections>
+            <point key="canvasLocation" x="29.600000000000001" y="143.02848575712144"/>
+        </tableViewCell>
+    </objects>
+</document>
