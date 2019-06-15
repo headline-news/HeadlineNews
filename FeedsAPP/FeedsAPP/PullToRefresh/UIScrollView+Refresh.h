@@ -32,6 +32,7 @@ typedef void(^footerRefresh)();
 @property (nonatomic , copy) headerRefresh headerBlock;
 @property (nonatomic , copy) footerRefresh footerBlock;
 @property (nonatomic , copy) NSString *RefreshStatus;
+@property (nonatomic , assign) BOOL myStatus;
 
 // 下拉刷新
 - (void)addHeaderRefreshWithBlock:(headerRefresh)block;

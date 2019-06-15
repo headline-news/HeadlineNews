@@ -31,12 +31,15 @@
     // 监听偏移量
     [self addObserver:self forKeyPath:@"contentOffset" options:NSKeyValueObservingOptionNew context:nil];
     [self addObserver:self forKeyPath:@"RefreshStatus" options:NSKeyValueObservingOptionNew context:nil];
+    self.myStatus = YES;
 }
 
 - (void)dealloc{
-    //[self removeObserver:self forKeyPath:@"contentOffset"];
-    //[self removeObserver:self forKeyPath:@"RefreshStatus"];
-    //[self removeObserver:self forKeyPath:@"contentSize"];
+    if(self.myStatus){
+        [self removeObserver:self forKeyPath:@"contentOffset"];
+        [self removeObserver:self forKeyPath:@"RefreshStatus"];
+        [self removeObserver:self forKeyPath:@"contentSize"];
+    }
 }
 
 // 停止下拉刷新
@@ -205,5 +208,13 @@
 }
 -(NSString *)RefreshStatus{
     return objc_getAssociatedObject(self, _cmd);
+}
+
+// 添加刷新状态属性
+-(void)setMyStatus:(BOOL)myStatus{
+    objc_setAssociatedObject(self, @selector(myStatus), @(myStatus), OBJC_ASSOCIATION_COPY);
+}
+-(BOOL)myStatus{
+    return [objc_getAssociatedObject(self, _cmd) boolValue];
 }
 @end
