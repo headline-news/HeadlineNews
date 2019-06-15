@@ -11,12 +11,22 @@
 #import "DetailViewModel.h"
 #import <WebKit/WebKit.h>
 #import "UIView+HSKit.h"
-
+//comment
+#import "CommentView.h"
 /**
  * 只有WebView和TableView
  */
+//app的高度
+#define cl_ScreenWidth ([UIScreen mainScreen].bounds.size.width)
+//app的宽度
+#define cl_ScreenHeight ([UIScreen mainScreen].bounds.size.height)
+
+#define UIColorFromHEX(rgb) [UIColor colorWithRed:((float)((rgb & 0xFF0000) >> 16))/255.0 green:((float)((rgb & 0xFF00) >> 8))/255.0 blue:((float)(rgb & 0xFF))/255.0 alpha:1.0]
+
+static CGFloat const kBottomViewHeight = 50.0;
+
 @interface ViewController ()<UITableViewDelegate, UITableViewDataSource, UIScrollViewDelegate,
-WKNavigationDelegate>
+WKNavigationDelegate,cmDelegate>
 
 @property (nonatomic, strong) WKWebView     *webView;
 
@@ -27,7 +37,8 @@ WKNavigationDelegate>
 @property (nonatomic, strong) UIView        *contentView;
 //TableViews的数据源
 @property (strong, nonatomic) NSMutableArray *dataSource;
-
+//cm
+@property (nonatomic, strong) CommentView *commentView;
 
 @end
 
@@ -45,12 +56,14 @@ WKNavigationDelegate>
     [self addObservers];
     [self initDataSource];
     
-    NSString *path = @"https://www.jianshu.com/p/f31e39d3ce41";
+    NSString *path = @"";//@"https://www.jianshu.com/p/f31e39d3ce41";
     NSString *path2 = @"http://127.0.0.1/openItunes.html";
     
     NSMutableURLRequest *request = [[NSMutableURLRequest alloc] initWithURL:[NSURL URLWithString:path]];
     request.cachePolicy = NSURLRequestReloadIgnoringCacheData;
     [self.webView loadRequest:request];
+    //cm
+    [self.view addSubview:self.commentView];
 }
 
 - (void)viewWillAppear:(BOOL)animated{
@@ -245,6 +258,66 @@ WKNavigationDelegate>
     }
     
     return _contentView;
+}
+
+
+//cm
+
+- (void)cl_textViewDidChange:(textView *)textView {
+    if (textView.commentTextView.text.length > 0) {
+        NSString *originalString = [NSString stringWithFormat:@"[草稿]%@",textView.commentTextView.text];
+        NSMutableAttributedString *attriString = [[NSMutableAttributedString alloc] initWithString:originalString];
+        //kColorNavigationBar
+        [attriString addAttributes:@{NSForegroundColorAttributeName: UIColorFromHEX(0xf26220)} range:NSMakeRange(0, 4)];
+        //main text color
+        [attriString addAttributes:@{NSForegroundColorAttributeName: UIColorFromHEX(0x333333)} range:NSMakeRange(4, attriString.length - 4)];
+        
+        self.commentView.editTextField.attributedText = attriString;
+    }
+}
+
+- (CommentView *)commentView {
+    if (!_commentView) {
+        //, [UIScreen mainScreen].bounds.size.width - kBottomViewHeight
+        _commentView = [[CommentView alloc] initWithFrame:CGRectMake(0, cl_ScreenHeight - kBottomViewHeight, cl_ScreenWidth, kBottomViewHeight)];
+        _commentView.delegate = self;
+        _commentView.clTextView.delegate = self;
+    }
+    return _commentView;
+}
+
+- (void)cl_textViewDidEndEditing:(textView *)textView {
+    NSLog(textView.commentTextView.text);
+    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(1.0 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+        [self.commentView clearComment];
+    });
+    
+    DetailViewModel *model = [DetailViewModel newsWithStr:textView.commentTextView.text];
+    [_dataSource addObject:model];
+   /*
+    NSArray *paths=NSSearchPathForDirectoriesInDomains(NSDocumentDirectory,NSUserDomainMask,YES);
+    NSString *path=[paths  objectAtIndex:0];
+    NSString *filename=[path stringByAppendingPathComponent:@"data.plist"];
+    
+    NSDictionary* dic = [NSDictionary dictionaryWithObjectsAndKeys:textView.commentTextView.text,@"title",nil]; //写入数据
+    [dic writeToFile:filename atomically:YES];
+    */
+    /*
+    NSArray *array = [NSArray arrayWithContentsOfFile:[[NSBundle mainBundle] pathForResource:@"data.plist" ofType:nil]];
+    _dataSource = [NSMutableArray array];
+    //for (NSDictionary *arr in array) {
+    //    [_dataSource addObject:[DetailViewModel newsWithDict:arr]];
+    //}
+    
+    //NSDictionary *arr =[NSDictionary dictionary];
+    //[arr setValue:textView.commentTextView.text forKey:@"title"];
+    
+    // [_dataSource addObject:[DetailViewModel newsWithDict:arr]];
+     */
+    
+    
+    [self.tableView reloadData];
+    
 }
 
 @end
