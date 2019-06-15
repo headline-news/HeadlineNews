@@ -9,6 +9,10 @@
 /* Begin PBXBuildFile section */
 		1F001B5B22B4B41B00547035 /* NewsManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F001B4D22B4B41A00547035 /* NewsManager.m */; };
 		1F001B5C22B4B41B00547035 /* YesManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F001B4E22B4B41A00547035 /* YesManager.m */; };
+		1F001B6F22B4CF7400547035 /* textView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1F001B6822B4CF7400547035 /* textView.xib */; };
+		1F001B7022B4CF7400547035 /* CommentView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1F001B6A22B4CF7400547035 /* CommentView.xib */; };
+		1F001B7122B4CF7400547035 /* textView.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F001B6B22B4CF7400547035 /* textView.m */; };
+		1F001B7222B4CF7400547035 /* CommentView.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F001B6D22B4CF7400547035 /* CommentView.m */; };
 		1F0C4EE922992BD8002FB872 /* NewsManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F0C4EE822992BD8002FB872 /* NewsManager.m */; };
 		1F0C4EEB229937BD002FB872 /* YesManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F0C4EEA229937BD002FB872 /* YesManager.m */; };
 		56E4D689228FF7E400E32295 /* 3.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 56E4D686228FF7E400E32295 /* 3.jpg */; };
@@ -77,6 +81,13 @@
 		1F001B4C22B4B41A00547035 /* YesManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YesManager.h; sourceTree = "<group>"; };
 		1F001B4D22B4B41A00547035 /* NewsManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NewsManager.m; sourceTree = "<group>"; };
 		1F001B4E22B4B41A00547035 /* YesManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YesManager.m; sourceTree = "<group>"; };
+		1F001B6822B4CF7400547035 /* textView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = textView.xib; sourceTree = "<group>"; };
+		1F001B6922B4CF7400547035 /* CommentView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CommentView.h; sourceTree = "<group>"; };
+		1F001B6A22B4CF7400547035 /* CommentView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CommentView.xib; sourceTree = "<group>"; };
+		1F001B6B22B4CF7400547035 /* textView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = textView.m; sourceTree = "<group>"; };
+		1F001B6C22B4CF7400547035 /* cmDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = cmDelegate.h; sourceTree = "<group>"; };
+		1F001B6D22B4CF7400547035 /* CommentView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CommentView.m; sourceTree = "<group>"; };
+		1F001B6E22B4CF7400547035 /* textView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = textView.h; sourceTree = "<group>"; };
 		1F0C4EE722992BD8002FB872 /* NewsManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NewsManager.h; sourceTree = "<group>"; };
 		1F0C4EE822992BD8002FB872 /* NewsManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NewsManager.m; sourceTree = "<group>"; };
 		1F0C4EEA229937BD002FB872 /* YesManager.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = YesManager.m; sourceTree = "<group>"; };
@@ -188,6 +199,20 @@
 			path = NetWork;
 			sourceTree = "<group>";
 		};
+		1F001B6722B4CF7400547035 /* comment */ = {
+			isa = PBXGroup;
+			children = (
+				1F001B6822B4CF7400547035 /* textView.xib */,
+				1F001B6922B4CF7400547035 /* CommentView.h */,
+				1F001B6A22B4CF7400547035 /* CommentView.xib */,
+				1F001B6B22B4CF7400547035 /* textView.m */,
+				1F001B6C22B4CF7400547035 /* cmDelegate.h */,
+				1F001B6D22B4CF7400547035 /* CommentView.m */,
+				1F001B6E22B4CF7400547035 /* textView.h */,
+			);
+			path = comment;
+			sourceTree = "<group>";
+		};
 		1F0C4EE622992BD8002FB872 /* NetWork */ = {
 			isa = PBXGroup;
 			children = (
@@ -264,6 +289,7 @@
 		CF3F663C228700DA00087C6C /* FeedsAPP */ = {
 			isa = PBXGroup;
 			children = (
+				1F001B6722B4CF7400547035 /* comment */,
 				1F001B4A22B4B41A00547035 /* NetWork */,
 				CFB99DED22A24CB6009CA2B0 /* DetailViewModel */,
 				CFB99DE622A24CAF009CA2B0 /* DetailViewController */,
@@ -495,9 +521,11 @@
 				56E4D689228FF7E400E32295 /* 3.jpg in Resources */,
 				56E4D68B228FF7E400E32295 /* 2.jpg in Resources */,
 				CF3F664D228700DB00087C6C /* LaunchScreen.storyboard in Resources */,
+				1F001B7022B4CF7400547035 /* CommentView.xib in Resources */,
 				CF3F664A228700DB00087C6C /* Assets.xcassets in Resources */,
 				CF3F6648228700DA00087C6C /* Main.storyboard in Resources */,
 				56E4D69D228FF7FE00E32295 /* PicOnRightCell.xib in Resources */,
+				1F001B6F22B4CF7400547035 /* textView.xib in Resources */,
 				CFF8CB3722952F2000289D7C /* data.plist in Resources */,
 				CF131F1822A20FF200E218D9 /* MultiTabCell.xib in Resources */,
 			);
@@ -524,9 +552,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1F001B7122B4CF7400547035 /* textView.m in Sources */,
 				D9F988542298F78400E8B3C2 /* XWScanImage.m in Sources */,
 				CFF8CB3522952B9400289D7C /* PicOnRightModel.m in Sources */,
 				CFB99DF322A24CB6009CA2B0 /* DetailTableViewCell.m in Sources */,
+				1F001B7222B4CF7400547035 /* CommentView.m in Sources */,
 				CF131F1722A20FF200E218D9 /* MultiTabView.m in Sources */,
 				56E4D6A1228FF7FE00E32295 /* MultiPicsCell.m in Sources */,
 				CFB99DF222A24CB6009CA2B0 /* DetailViewModel.m in Sources */,
