@@ -20,9 +20,11 @@ NS_ASSUME_NONNULL_BEGIN
 
 //自定义构造方法
 -(id) initWithDict:(NSDictionary *)dict;
+-(id) initWithStr:(NSString *)mytitle;
 
 //类方法（规范）
 +(id) newsWithDict:(NSDictionary *)dict;
++(id) newsWithStr:(NSString *)mytitle;
 
 @end
 
