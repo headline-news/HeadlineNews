@@ -56,7 +56,7 @@
     //_zangBtn.selected = YES;
     [_zangBtn setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
     _zangBtn.titleLabel.font=[UIFont systemFontOfSize:13];
-    [_zangBtn addTarget:self action:@selector(zangAction:) forControlEvents:UIControlEventTouchUpInside];
+    [_zangBtn addTarget:self action:@selector(ZangClicked:) forControlEvents:UIControlEventTouchUpInside];
     
     //评论button
     _commentBtn=[ZanButton new];
@@ -72,9 +72,47 @@
     
 }
 
--(void)zangAction:(id)sender
+-(void)ZangClicked:(id)sender
 {
     _zangBtn.selected = !(_zangBtn.selected);
+    int ZanNum = [_zangBtn.titleLabel.text intValue];
+    if (_zangBtn.selected) {
+        ZanNum = ZanNum + 1;
+    } else {
+        ZanNum = ZanNum - 1;
+    }
+    NSString *NumToString = [NSString stringWithFormat:@"%d",ZanNum];
+    [_zangBtn setTitle:NumToString forState:UIControlStateNormal];
+    [self ZangAction];
+}
+
+-(void)ZangAction{
+    self.transform = CGAffineTransformIdentity;
+    [UIView animateKeyframesWithDuration:0.5 delay:0 options:0 animations: ^{
+        [UIView addKeyframeWithRelativeStartTime:0 relativeDuration:1 / 3.0 animations: ^{
+            self.zangBtn.transform = CGAffineTransformMakeScale(1.3f, 1.3f); // 放大
+        }];
+        [UIView addKeyframeWithRelativeStartTime:1/3.0 relativeDuration:1/3.0 animations: ^{
+            self.zangBtn.transform = CGAffineTransformMakeScale(0.8f, 0.8f); // 放小
+        }];
+        [UIView addKeyframeWithRelativeStartTime:2/3.0 relativeDuration:1/3.0 animations: ^{
+            self.zangBtn.transform = CGAffineTransformMakeScale(1.0f, 1.0f); //恢复原样
+        }];
+    } completion:nil];
+    
+    self.zangPlusImg.alpha=1;
+    self.zangPlusImg.frame=CGRectMake(66, 0, 15, 15);
+    CAKeyframeAnimation *animation = [CAKeyframeAnimation animationWithKeyPath:@"position"];
+    animation.duration = 1.5;
+    animation.rotationMode = kCAAnimationRotateAuto;
+    animation.removedOnCompletion = NO;
+    animation.fillMode = kCAFillModeForwards;
+    NSValue *value1=[NSValue valueWithCGPoint:CGPointMake(66, 8)];
+    NSValue *value2=[NSValue valueWithCGPoint:CGPointMake(66, -6)];
+    animation.delegate = self;
+    animation.timingFunction=[CAMediaTimingFunction functionWithName:kCAMediaTimingFunctionEaseInEaseOut];
+    animation.values=@[value1,value2];
+    [self.zangPlusImg.layer addAnimation:animation forKey:nil];
 }
 
 //赋值 and 自动换行,计算出cell的高度
@@ -121,9 +159,9 @@
     [_forwardBtn setTitle:@"0" forState:UIControlStateNormal];
     
     //添加赞、转发、评论button,对点赞数、评论数、转发数赋值
-    [_zangBtn setTitle:@"1.1k" forState:UIControlStateNormal];
-    [_commentBtn setTitle:@"1.1k" forState:UIControlStateNormal];
-    [_forwardBtn setTitle:@"1.1k" forState:UIControlStateNormal];
+    [_zangBtn setTitle:@"120" forState:UIControlStateNormal];
+    [_commentBtn setTitle:@"125" forState:UIControlStateNormal];
+    [_forwardBtn setTitle:@"50" forState:UIControlStateNormal];
     //_zangBtn.imageRect=CGRectMake(_width/6-30, labelSize.height+8, 28, 28);
     _zangBtn.frame = CGRectMake(_width/6-30, labelSize.height+88, 28, 28);
     _zangBtn.titleRect=CGRectMake(28, 9, 80, 16);
