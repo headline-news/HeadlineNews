@@ -25,7 +25,7 @@
 //文本内容
 @property(nonatomic,retain) UILabel *content;
 //点赞按钮
-@property(nonatomic,strong) ZanButton *zangBtn;
+@property(nonatomic,strong) UIButton *zangBtn;
 //点赞特效
 @property(nonatomic,strong) UIImageView *zangPlusImg;
 //评论按钮

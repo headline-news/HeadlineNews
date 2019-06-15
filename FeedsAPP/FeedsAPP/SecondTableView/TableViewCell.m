@@ -49,10 +49,14 @@
     [self addSubview:_content];
     
     //点赞button
-    _zangBtn=[ZanButton new];
+    //_zangBtn=[[UIButton alloc] initWithFrame:CGRectMake(_width/6-30, labelSize.height+88, 28, 28)];
+    _zangBtn = [ZanButton new];
     [_zangBtn setImage:[UIImage imageNamed:@"c_comment_like_icon"] forState:UIControlStateNormal];
+    [_zangBtn setImage:[UIImage imageNamed:@"comment_like_icon_press"] forState:UIControlStateSelected];
+    //_zangBtn.selected = YES;
     [_zangBtn setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
     _zangBtn.titleLabel.font=[UIFont systemFontOfSize:13];
+    [_zangBtn addTarget:self action:@selector(zangAction:) forControlEvents:UIControlEventTouchUpInside];
     
     //评论button
     _commentBtn=[ZanButton new];
@@ -66,6 +70,11 @@
     [_forwardBtn setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
     _forwardBtn.titleLabel.font=[UIFont systemFontOfSize:13];
     
+}
+
+-(void)zangAction:(id)sender
+{
+    _zangBtn.selected = !(_zangBtn.selected);
 }
 
 //赋值 and 自动换行,计算出cell的高度
@@ -98,7 +107,7 @@
     self.content.frame = CGRectMake(self.content.frame.origin.x, self.content.frame.origin.y, labelSize.width, labelSize.height);
     
     //计算出自适应的高度
-    frame.size.height = labelSize.height+120;
+    frame.size.height = labelSize.height+130;
     
     //frame高度
     NSString *hightofcell = [NSString stringWithFormat:@"%.0f",frame.size.height];
@@ -115,18 +124,19 @@
     [_zangBtn setTitle:@"1.1k" forState:UIControlStateNormal];
     [_commentBtn setTitle:@"1.1k" forState:UIControlStateNormal];
     [_forwardBtn setTitle:@"1.1k" forState:UIControlStateNormal];
-    _zangBtn.imageRect=CGRectMake(_width/6-30, labelSize.height+8, 28, 28);
-    _zangBtn.titleRect=CGRectMake(_width/6-2, labelSize.height+16, 80, 16);
+    //_zangBtn.imageRect=CGRectMake(_width/6-30, labelSize.height+8, 28, 28);
+    _zangBtn.frame = CGRectMake(_width/6-30, labelSize.height+88, 28, 28);
+    _zangBtn.titleRect=CGRectMake(28, 9, 80, 16);
     
-    _commentBtn.imageRect=CGRectMake(_width/2-28, labelSize.height+10, 28, 28);
-    _commentBtn.titleRect=CGRectMake(_width/2, labelSize.height+16, 80, 16);
+    _commentBtn.frame=CGRectMake(_width/2-28, labelSize.height+93, 28, 28);
+    _commentBtn.titleRect=CGRectMake(28, 5, 80, 16);
     
-    _forwardBtn.imageRect=CGRectMake(_width*5/6-28, labelSize.height+10, 28, 28);
-    _forwardBtn.titleRect=CGRectMake(_width*5/6, labelSize.height+16, 80, 16);
+    _forwardBtn.frame=CGRectMake(_width*5/6-28, labelSize.height+90, 28, 28);
+    _forwardBtn.titleRect=CGRectMake(28, 8, 80, 16);
     
-    [_content addSubview:_zangBtn];
-    [_content addSubview:_commentBtn];
-    [_content addSubview:_forwardBtn];
+    [self addSubview:_zangBtn];
+    [self addSubview:_commentBtn];
+    [self addSubview:_forwardBtn];
     
     self.frame = frame;
 }
