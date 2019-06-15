@@ -30,38 +30,26 @@
     
     static NSMutableDictionary * dict = nil;
     
-    NSBlockOperation *oper1 =[NSBlockOperation blockOperationWithBlock:^{
+    // network 1
+    //NSBlockOperation *oper1 =[NSBlockOperation blockOperationWithBlock:^{
         NSURLSessionDataTask * dataTask =[delegateFreeSession dataTaskWithRequest:urlRequest
                                                                 completionHandler:^(NSData *data, NSURLResponse *response, NSError *error) {
                                                                     NSLog(@"Response:%@ %@\n", response, error);
                                                                     if(error == nil) {
                                                                         dict = [NSJSONSerialization JSONObjectWithData:data options:0 error:nil];
                                                                         [dict writeToFile:filePath atomically:YES];
-                                                                        
+                                                                        NSDictionary * diction = dict[@"data"];
+                                                                        NSArray * diction1 = diction[@"article_feed"];
+                                                                        for (NSDictionary *arr in diction1) {
+                                                                            NSString * group_id = arr[@"group_id"];
+                                                                            [NewsManager getContent:group_id];
+                                                                        }
                                                                     }
                                                                 }];
         
         [dataTask resume];
-    }];
+    //}];
     
-    // 任务2
-    NSBlockOperation *oper2 = [NSBlockOperation blockOperationWithBlock:^{
-        NSDictionary * diction = dict[@"data"];
-        NSArray * diction1 = diction[@"article_feed"];
-        for (NSDictionary *arr in diction1) {
-            NSString * group_id = arr[@"group_id"];
-            [NewsManager getContent:group_id];
-        }
-    }];
-    // 添加依赖
-    [oper2 addDependency:oper1];
-    
-    // 创建队列
-    NSOperationQueue *queue = [[NSOperationQueue alloc] init];
-    [queue addOperations:@[oper1, oper2] waitUntilFinished:YES];
-
-
-
 }
 
 +(void) getContent:(NSString*)groupId

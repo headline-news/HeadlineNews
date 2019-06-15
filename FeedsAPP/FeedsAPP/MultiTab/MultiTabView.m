@@ -223,13 +223,13 @@
     // pull new list according to the last update
     
     
+    NSMutableArray *data = [NSMutableArray array];
     NSBlockOperation *oper1 =[NSBlockOperation blockOperationWithBlock:^{
         [NewsManager getNewsList:1634:offset:8];
     }];
     
     // 任务2
     NSBlockOperation *oper2 = [NSBlockOperation blockOperationWithBlock:^{
-        NSMutableArray *data = [NSMutableArray array];
         for (NSDictionary *arr in diction1) {
             [data addObject:[HomeViewModel newsWithDict:arr]];
         }
@@ -251,7 +251,7 @@
     // try to update content according to list, but failed
 
     
-    return [NSMutableArray array];
+    return data;
 }
 
 - (void)pullToRefresh{
