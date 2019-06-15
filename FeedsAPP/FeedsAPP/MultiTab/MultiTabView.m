@@ -224,33 +224,12 @@
     
     
     NSMutableArray *data = [NSMutableArray array];
-    NSBlockOperation *oper1 =[NSBlockOperation blockOperationWithBlock:^{
-        [NewsManager getNewsList:1634:offset:8];
-    }];
-    
-    // 任务2
-    NSBlockOperation *oper2 = [NSBlockOperation blockOperationWithBlock:^{
-        for (NSDictionary *arr in diction1) {
-            [data addObject:[HomeViewModel newsWithDict:arr]];
-        }
-    }];
-    // 添加依赖
-    [oper2 addDependency:oper1];
-    
-    // 创建队列
-    NSOperationQueue *queue = [[NSOperationQueue alloc] init];
-    [queue addOperations:@[oper1, oper2] waitUntilFinished:YES];
+    [NewsManager getNewsList:1634:offset:8];
 
-    
-//    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(10 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
-//
-//
-//    });
-    
-    
-    // try to update content according to list, but failed
+    for (NSDictionary *arr in diction1) {
+        [data addObject:[HomeViewModel newsWithDict:arr]];
+    }
 
-    
     return data;
 }
 

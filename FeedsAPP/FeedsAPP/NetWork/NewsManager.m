@@ -30,8 +30,6 @@
     
     static NSMutableDictionary * dict = nil;
     
-    // network 1
-    //NSBlockOperation *oper1 =[NSBlockOperation blockOperationWithBlock:^{
         NSURLSessionDataTask * dataTask =[delegateFreeSession dataTaskWithRequest:urlRequest
                                                                 completionHandler:^(NSData *data, NSURLResponse *response, NSError *error) {
                                                                     NSLog(@"Response:%@ %@\n", response, error);
