@@ -23,23 +23,10 @@
     }
     return self;
 }
--(id) initWithStr:(NSString *)mytitle{
-    if(self = [super init]){
-        self.mainText = mytitle;
-        self.username = @"我的评论";
-        self.likeNum= 0;
-        self.headImage=@"2.jpg";
-        self.time=@"2019.5.6";
-    }
-    return self;
-}
+
 +(id) newsWithDict:(NSDictionary *)dict
 {
     return  [[self alloc] initWithDict:dict];
-}
-+(id) newsWithStr:(NSString *)mytitle
-{
-    return  [[self alloc] initWithStr:mytitle];
 }
 
 @end
