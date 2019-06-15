@@ -10,77 +10,84 @@
 
 @implementation NewsManager
 
-+(void) getNewsList:(int)uid :(int)offset :(int)count
++(void) getNewsList:(int)uid :(NSNumber*)offset :(int)count
 {
+    
     NSURLSessionConfiguration *defaultConfigObject = [NSURLSessionConfiguration defaultSessionConfiguration];
-    NSURLSession *delegateFreeSession = [NSURLSession sessionWithConfiguration: defaultConfigObject
-                                                                      delegate: nil delegateQueue: [NSOperationQueue mainQueue]];
+    NSURLSession *delegateFreeSession = [NSURLSession sessionWithConfiguration: defaultConfigObject delegate: nil delegateQueue: [NSOperationQueue mainQueue]];
     
     //获取当前目录（directory）既 文件夹
     NSString *currentPath = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES)[0];
     NSString *filePath = [currentPath stringByAppendingPathComponent:@"list.plist"];
-    NSLog(@"Current directory path is: %@",filePath);
-    
+    // NSLog(@"Current directory path is: %@",filePath);
     
     NSURL * url = [NSURL URLWithString:@"https://i.snssdk.com/course/article_feed"];
     NSMutableURLRequest * urlRequest = [NSMutableURLRequest requestWithURL:url];
     [urlRequest setHTTPMethod:@"POST"];
-    NSString * params = [[NSString alloc] initWithString:[NSString stringWithFormat:@"uid=%d&offset=%d&count=%d",uid,offset,count]];
+    int off = [offset intValue];
+    NSString * params = [NSString stringWithFormat:@"uid=%d&offset=%d&count=%d",uid,off,count];
     [urlRequest setHTTPBody:[params dataUsingEncoding:NSUTF8StringEncoding]];
     
+    static NSMutableDictionary * dict = nil;
     
-    NSURLSessionDataTask * dataTask =[delegateFreeSession dataTaskWithRequest:urlRequest
-                                                            completionHandler:^(NSData *data, NSURLResponse *response, NSError *error) {
-                                                                NSLog(@"Response:%@ %@\n", response, error);
-                                                                if(error == nil) {
-                                                                    NSString * text = [[NSString alloc] initWithData: data encoding: NSUTF8StringEncoding];
-                                                                    NSArray *dataArray = [NSJSONSerialization JSONObjectWithData:data options:0 error:nil];
-                                                                    NSLog(@"Data = %@",text);
-                                                                    [dataArray writeToFile:filePath atomically:YES];
-                                                                    
-                                                                    NSArray *array = [NSArray arrayWithContentsOfFile:filePath];
-                                                                    NSLog(@"---plist一开始保存时候的内容---%@",array);
-                                                                }
-                                                            }];
-    [dataTask resume];
+        NSURLSessionDataTask * dataTask =[delegateFreeSession dataTaskWithRequest:urlRequest
+                                                                completionHandler:^(NSData *data, NSURLResponse *response, NSError *error) {
+                                                                    NSLog(@"Response:%@ %@\n", response, error);
+                                                                    if(error == nil) {
+                                                                        dict = [NSJSONSerialization JSONObjectWithData:data options:0 error:nil];
+                                                                        [dict writeToFile:filePath atomically:YES];
+                                                                        NSDictionary * diction = dict[@"data"];
+                                                                        NSArray * diction1 = diction[@"article_feed"];
+                                                                        for (NSDictionary *arr in diction1) {
+                                                                            NSString * group_id = arr[@"group_id"];
+                                                                            [NewsManager getContent:group_id];
+                                                                        }
+                                                                    }
+                                                                }];
+        
+        [dataTask resume];
+    //}];
+    
 }
 
 +(void) getContent:(NSString*)groupId
 {
+    
     NSURLSessionConfiguration *defaultConfigObject = [NSURLSessionConfiguration defaultSessionConfiguration];
-    NSURLSession *delegateFreeSession = [NSURLSession sessionWithConfiguration: defaultConfigObject
-                                                                      delegate: nil delegateQueue: [NSOperationQueue mainQueue]];
+    NSURLSession *delegateFreeSession = [NSURLSession sessionWithConfiguration: defaultConfigObject delegate: nil delegateQueue: [NSOperationQueue mainQueue]];
     
     //获取当前目录（directory）既 文件夹
     NSString *currentPath = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES)[0];
     NSString *filePath = [currentPath stringByAppendingPathComponent:@"content.plist"];
-    NSLog(@"Current directory path is: %@",filePath);
+    // NSLog(@"Current directory path is: %@",filePath);
     
     //groupId = @"q260BmEU5cED%2bKCdYKa0RQ%3d%3d";
     NSURL * url = [NSURL URLWithString:@"https://i.snssdk.com/course/article_content"];
     NSMutableURLRequest * urlRequest = [NSMutableURLRequest requestWithURL:url];
     [urlRequest setHTTPMethod:@"POST"];
-    NSString * pre =@"groupId=";
-    NSString * params = [pre stringByAppendingString:groupId];
+    NSString * params = [NSString stringWithFormat:@"groupId=%@",groupId];
     [urlRequest setHTTPBody:[params dataUsingEncoding:NSUTF8StringEncoding]];
     
+    static NSMutableDictionary *dataArray = nil;
     
-    NSURLSessionDataTask * dataTask =[delegateFreeSession dataTaskWithRequest:urlRequest completionHandler:^(NSData *data, NSURLResponse *response, NSError *error)
-    {
-        NSLog(@"Response:%@ %@\n", response, error);
-        if(error == nil) {
-            NSString * text = [[NSString alloc] initWithData: data encoding: NSUTF8StringEncoding];
-            NSArray *dataArray = [NSJSONSerialization JSONObjectWithData:data options:0 error:nil];
-            NSLog(@"Data = %@",text);
-            [dataArray writeToFile:filePath atomically:YES];
-            
-            NSArray *array = [NSArray arrayWithContentsOfFile:filePath];
-            NSLog(@"---plist一开始保存时候的内容---%@",array);
-        }
-    }];
-    
+    NSURLSessionDataTask * dataTask =[delegateFreeSession dataTaskWithRequest:urlRequest
+                                                            completionHandler:^(NSData *data, NSURLResponse *response, NSError *error) {
+                                                                NSLog(@"Response:%@ %@\n", response, error);
+                                          if(error == nil) {
+                                              
+                                              dataArray = [NSJSONSerialization JSONObjectWithData:data options:0 error:nil];
+                                              // judge if the file exist
+                                              NSFileManager *fileManager = [NSFileManager defaultManager];
+                                              BOOL result = [fileManager fileExistsAtPath:filePath];
+                                              NSMutableDictionary *dict =[[NSMutableDictionary alloc] init];
+                                              if (result) {
+                                                   dict = [[NSMutableDictionary alloc] initWithContentsOfFile:filePath];
+                                              }
+                                              [dict setObject:dataArray forKey:groupId];
+                                              [dict writeToFile:filePath atomically:YES];
+                                          }
+                                      }];
     [dataTask resume];
-    
     
 }
 @end

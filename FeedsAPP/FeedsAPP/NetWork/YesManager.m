@@ -10,54 +10,56 @@
 
 @implementation YesManager
 
-+(void) status:(NSString*)groupId
++(Boolean) status:(NSString*)groupId
 {
+    __block Boolean status;
     NSURLSessionConfiguration *defaultConfigObject = [NSURLSessionConfiguration defaultSessionConfiguration];
-    NSURLSession *delegateFreeSession = [NSURLSession sessionWithConfiguration: defaultConfigObject
-                                                                      delegate: nil delegateQueue: [NSOperationQueue mainQueue]];
+    NSURLSession *delegateFreeSession = [NSURLSession sessionWithConfiguration: defaultConfigObject delegate: nil delegateQueue: [NSOperationQueue mainQueue]];
     
     
-    NSURL * url = [NSURL URLWithString:@"http://172.19.20.232:8080/HelloWeb/NewInq"];
+    NSURL * url = [NSURL URLWithString:@"http://172.19.25.167:8080/HelloWeb/NewInq"];
     NSMutableURLRequest * urlRequest = [NSMutableURLRequest requestWithURL:url];
     [urlRequest setHTTPMethod:@"POST"];
-    NSString * params =@"id=q260BmEU5cED%2bKCdYKa0RQ%3d%3d&type=queryStatus";
+    NSString * params = [[NSString alloc] initWithString:[NSString stringWithFormat:@"id=%@&type=queryStatus",groupId]];
+    // NSString * params =@"id=q260BmEU5cED%2bKCdYKa0RQ%3d%3d&type=queryStatus";
     [urlRequest setHTTPBody:[params dataUsingEncoding:NSUTF8StringEncoding]];
     
     
-    NSURLSessionDataTask * dataTask =[delegateFreeSession dataTaskWithRequest:urlRequest
-                                                            completionHandler:^(NSData *data, NSURLResponse *response, NSError *error) {
-                                                                NSLog(@"Response:%@ %@\n", response, error);
-                                                                if(error == nil) {
-                                                                    NSString * text = [[NSString alloc] initWithData: data encoding: NSUTF8StringEncoding];
-                                                                    NSLog(@"Data = %@",text);
-                                                                }
-                                                            }];
+    NSURLSessionDataTask * dataTask =[delegateFreeSession dataTaskWithRequest:urlRequest completionHandler:^(NSData *data, NSURLResponse *response, NSError *error)
+                                      {
+                                          NSLog(@"Response:%@ %@\n", response, error);
+                                          if(error == nil) {
+                                              NSString * text = [[NSString alloc] initWithData: data encoding: NSUTF8StringEncoding];
+                                              NSLog(@"Data = %@",text);
+                                              status = [text boolValue];
+                                          }
+                                      }];
     [dataTask resume];
-    
+    return status;
 }
 
 +(void) addCount:(NSString*)groupId
 {
     NSURLSessionConfiguration *defaultConfigObject = [NSURLSessionConfiguration defaultSessionConfiguration];
-    NSURLSession *delegateFreeSession = [NSURLSession sessionWithConfiguration: defaultConfigObject
-                                                                      delegate: nil delegateQueue: [NSOperationQueue mainQueue]];
+    NSURLSession *delegateFreeSession = [NSURLSession sessionWithConfiguration: defaultConfigObject delegate: nil delegateQueue: [NSOperationQueue mainQueue]];
     
     
-    NSURL * url = [NSURL URLWithString:@"http://172.19.20.232:8080/HelloWeb/NewInq"];
+    NSURL * url = [NSURL URLWithString:@"http://172.19.25.167:8080/HelloWeb/NewInq"];
     NSMutableURLRequest * urlRequest = [NSMutableURLRequest requestWithURL:url];
     [urlRequest setHTTPMethod:@"POST"];
-    NSString * params =@"id=q260BmEU5cED%2bKCdYKa0RQ%3d%3d&type=add";
+    NSString * params = [[NSString alloc] initWithString:[NSString stringWithFormat:@"id=%@&type=add",groupId]];
+    // NSString * params =@"id=q260BmEU5cED%2bKCdYKa0RQ%3d%3d&type=add";
     [urlRequest setHTTPBody:[params dataUsingEncoding:NSUTF8StringEncoding]];
     
     
-    NSURLSessionDataTask * dataTask =[delegateFreeSession dataTaskWithRequest:urlRequest
-                                                            completionHandler:^(NSData *data, NSURLResponse *response, NSError *error) {
-                                                                NSLog(@"Response:%@ %@\n", response, error);
-                                                                if(error == nil) {
-                                                                    NSString * text = [[NSString alloc] initWithData: data encoding: NSUTF8StringEncoding];
-                                                                    NSLog(@"Data = %@",text);
-                                                                }
-                                                            }];
+    NSURLSessionDataTask * dataTask =[delegateFreeSession dataTaskWithRequest:urlRequest completionHandler:^(NSData *data, NSURLResponse *response, NSError *error)
+                                      {
+                                          NSLog(@"Response:%@ %@\n", response, error);
+                                          if(error == nil) {
+                                              NSString * text = [[NSString alloc] initWithData: data encoding: NSUTF8StringEncoding];
+                                              NSLog(@"Data = %@",text);
+                                          }
+                                      }];
     [dataTask resume];
     
 }
@@ -65,52 +67,54 @@
 +(void) deleteYes:(NSString*)groupId
 {
     NSURLSessionConfiguration *defaultConfigObject = [NSURLSessionConfiguration defaultSessionConfiguration];
-    NSURLSession *delegateFreeSession = [NSURLSession sessionWithConfiguration: defaultConfigObject
-                                                                      delegate: nil delegateQueue: [NSOperationQueue mainQueue]];
+    NSURLSession *delegateFreeSession = [NSURLSession sessionWithConfiguration: defaultConfigObject delegate: nil delegateQueue: [NSOperationQueue mainQueue]];
     
     
-    NSURL * url = [NSURL URLWithString:@"http://172.19.20.232:8080/HelloWeb/NewInq"];
+    NSURL * url = [NSURL URLWithString:@"http://172.19.25.167:8080/HelloWeb/NewInq"];
     NSMutableURLRequest * urlRequest = [NSMutableURLRequest requestWithURL:url];
     [urlRequest setHTTPMethod:@"POST"];
-    NSString * params =@"id=q260BmEU5cED%2bKCdYKa0RQ%3d%3d&type=delete";
+    NSString * params = [[NSString alloc] initWithString:[NSString stringWithFormat:@"id=%@&type=delete",groupId]];
+    // NSString * params =@"id=q260BmEU5cED%2bKCdYKa0RQ%3d%3d&type=delete";
     [urlRequest setHTTPBody:[params dataUsingEncoding:NSUTF8StringEncoding]];
     
     
-    NSURLSessionDataTask * dataTask =[delegateFreeSession dataTaskWithRequest:urlRequest
-                                                            completionHandler:^(NSData *data, NSURLResponse *response, NSError *error) {
-                                                                NSLog(@"Response:%@ %@\n", response, error);
-                                                                if(error == nil) {
-                                                                    NSString * text = [[NSString alloc] initWithData: data encoding: NSUTF8StringEncoding];
-                                                                    NSLog(@"Data = %@",text);
-                                                                }
-                                                            }];
+    NSURLSessionDataTask * dataTask =[delegateFreeSession dataTaskWithRequest:urlRequest completionHandler:^(NSData *data, NSURLResponse *response, NSError *error)
+                                      {
+                                          NSLog(@"Response:%@ %@\n", response, error);
+                                          if(error == nil) {
+                                              NSString * text = [[NSString alloc] initWithData: data encoding: NSUTF8StringEncoding];
+                                              NSLog(@"Data = %@",text);
+                                          }
+                                      }];
     [dataTask resume];
     
 }
-+(void) getCount:(NSString*)groupId
++(int) getCount:(NSString*)groupId
 {
+    __block int count = -1;
     NSURLSessionConfiguration *defaultConfigObject = [NSURLSessionConfiguration defaultSessionConfiguration];
-    NSURLSession *delegateFreeSession = [NSURLSession sessionWithConfiguration: defaultConfigObject
-                                                                      delegate: nil delegateQueue: [NSOperationQueue mainQueue]];
+    NSURLSession *delegateFreeSession = [NSURLSession sessionWithConfiguration: defaultConfigObject delegate: nil delegateQueue: [NSOperationQueue mainQueue]];
     
     
-    NSURL * url = [NSURL URLWithString:@"http://172.19.20.232:8080/HelloWeb/NewInq"];
+    NSURL * url = [NSURL URLWithString:@"http://172.19.25.167:8080/HelloWeb/NewInq"];
     NSMutableURLRequest * urlRequest = [NSMutableURLRequest requestWithURL:url];
     [urlRequest setHTTPMethod:@"POST"];
-    NSString * params =@"id=q260BmEU5cED%2bKCdYKa0RQ%3d%3d&type=queryCount";
+    NSString * params = [[NSString alloc] initWithString:[NSString stringWithFormat:@"id=%@&type=queryCount",groupId]];
+    // NSString * params =@"id=q260BmEU5cED%2bKCdYKa0RQ%3d%3d&type=queryCount";
     [urlRequest setHTTPBody:[params dataUsingEncoding:NSUTF8StringEncoding]];
     
     
-    NSURLSessionDataTask * dataTask =[delegateFreeSession dataTaskWithRequest:urlRequest
-                                                            completionHandler:^(NSData *data, NSURLResponse *response, NSError *error) {
-                                                                NSLog(@"Response:%@ %@\n", response, error);
-                                                                if(error == nil) {
-                                                                    NSString * text = [[NSString alloc] initWithData: data encoding: NSUTF8StringEncoding];
-                                                                    NSLog(@"Data = %@",text);
-                                                                }
-                                                            }];
+    NSURLSessionDataTask * dataTask =[delegateFreeSession dataTaskWithRequest:urlRequest completionHandler:^(NSData *data, NSURLResponse *response, NSError *error)
+                                      {
+                                          NSLog(@"Response:%@ %@\n", response, error);
+                                          if(error == nil) {
+                                              NSString * text = [[NSString alloc] initWithData: data encoding: NSUTF8StringEncoding];
+                                              NSLog(@"Data = %@",text);
+                                              count = [text intValue];
+                                          }
+                                      }];
     [dataTask resume];
-    
+    return count;
 }
 
 @end

@@ -13,6 +13,12 @@ NS_ASSUME_NONNULL_BEGIN
 @interface HomeViewModel : NSObject
 
 @property (nonatomic,copy) NSString *title;
+@property (nonatomic,copy) NSString *groupId;
+@property (nonatomic,copy) NSArray *image;
+
+// type 0 no image
+// type 1 single image
+// type 2 multiple image
 @property (nonatomic,assign) int imageType;
 @property (nonatomic,copy) NSString *leftImage;
 @property (nonatomic,copy) NSString *middleImage;

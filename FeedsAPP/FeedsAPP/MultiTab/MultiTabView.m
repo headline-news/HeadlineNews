@@ -17,6 +17,8 @@
 #import "UIScrollView+Refresh.h"
 #import "ViewController.h"
 #import "SecondViewController.h"
+
+#import "NewsManager.h"
 #define TABHEIGHT 50
 
 @interface MultiTabView()<UIScrollViewDelegate,UITableViewDataSource,UITableViewDelegate>
@@ -74,28 +76,44 @@
 
 #pragma mark -- 初始化表格的数据源
 -(void) initDataSource{
-    //加载plist文件数据数组
     _dataSource = [[NSMutableArray alloc] initWithCapacity:_numOfTabs];
     for (int i = 1; i <= _numOfTabs; i ++) {
-        NSArray *array = [NSArray arrayWithContentsOfFile:[[NSBundle mainBundle] pathForResource:@"data.plist" ofType:nil]];
-        NSMutableArray *data = [NSMutableArray array];
-        for (NSDictionary *arr in array) {
-            [data addObject:[HomeViewModel newsWithDict:arr]];
-        }
-        
+        NSMutableArray * data = [self refresh];
         [_dataSource addObject:data];
-        /*NSMutableArray *tempArray  = [[NSMutableArray alloc] initWithCapacity:20];
-        
-        for (int j = 1; j <= 20; j ++) {
-            
-            NSString *tempStr = [NSString stringWithFormat:@"第%d个TableView的第%d条数据。", i, j];
-            [tempArray addObject:tempStr];
-        }
-        
-        [_dataSource addObject:tempArray];*/
     }
 }
-
+-(NSMutableArray *) refresh{
+    // define file path
+    NSString *currentPath = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES)[0];
+    NSString *filePath = [currentPath stringByAppendingPathComponent:@"list.plist"];
+    
+    // judge if the file exist
+    NSFileManager *fileManager = [NSFileManager defaultManager];
+    BOOL result = [fileManager fileExistsAtPath:filePath];
+    if (!result) {
+        // if not, add a file
+        [NewsManager getNewsList:1634:0:8];
+    }
+    
+    // load local data from the file(aready updated)
+    NSMutableDictionary *dict = [[NSMutableDictionary alloc] initWithContentsOfFile:filePath];
+    
+    NSDictionary * diction = dict[@"data"];
+    NSArray * diction1 = diction[@"article_feed"];
+    NSNumber * offset = diction[@"offset"];
+    
+    // pull new list according to the last update
+    
+    
+    NSMutableArray *data = [NSMutableArray array];
+    [NewsManager getNewsList:1634:offset:8];
+    
+    for (NSDictionary *arr in diction1) {
+        [data addObject:[HomeViewModel newsWithDict:arr]];
+    }
+    
+    return data;
+}
 #pragma mark -- 实例化顶部的tab
 -(void) initTopTabs{
     CGFloat width;
@@ -214,12 +232,7 @@
 - (void)pullToRefresh{
     
     dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(3.0 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
-        NSArray *array = [NSArray arrayWithContentsOfFile:[[NSBundle mainBundle] pathForResource:@"data2.plist" ofType:nil]];
-        NSMutableArray *data = [NSMutableArray array];
-        for (NSDictionary *arr in array) {
-            [data addObject:[HomeViewModel newsWithDict:arr]];
-        }
-        
+        NSMutableArray * data = [self refresh];
         [self.dataSource replaceObjectAtIndex:self.currentPage withObject:data];
         
         [self.tableViewNow endHeaderRefresh];
@@ -229,6 +242,8 @@
 - (void)pullOnloading{
     
     dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(3.0 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+        NSMutableArray * data = [self refresh];
+        [self.dataSource replaceObjectAtIndex:self.currentPage withObject:data];
         
         [self.tableViewNow endHeaderRefresh];
         [self.tableViewNow reloadData];

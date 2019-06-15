@@ -7,6 +7,7 @@
 //
 
 #import "HomeViewModel.h"
+#import "NewsManager.h"
 
 @implementation HomeViewModel
 
@@ -16,11 +17,51 @@
     if(self = [super init])
     {
         self.title = dict[@"title"];
-        self.imageType = [dict[@"imageType"] intValue];
-        self.middleImage = dict[@"middleImage"];
-        self.leftImage = dict[@"leftImage"];
-        self.rightImage = dict[@"rightImage"];
-        self.info = dict[@"info"];
+        self.groupId = dict[@"group_id"];
+        self.image = dict[@"image_infos"];
+        
+        NSString *currentPath = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES)[0];
+        NSString *filePath = [currentPath stringByAppendingPathComponent:@"content.plist"];
+        NSMutableDictionary *contentt = [[NSMutableDictionary alloc] initWithContentsOfFile:filePath];
+        NSMutableDictionary *content = contentt[self.groupId];
+        
+        NSUInteger count = [self.image count];
+        if (count > 2) {
+            self.imageType = 2;
+            
+            NSString * pre = self.image[0][@"url_prefix"];
+            NSString * uri =self.image[0][@"web_uri"];
+            self.rightImage = [pre stringByAppendingPathComponent:uri];
+            
+            pre = self.image[1][@"url_prefix"];
+            uri =self.image[1][@"web_uri"];
+            self.middleImage = [pre stringByAppendingPathComponent:uri];
+            
+            pre = self.image[2][@"url_prefix"];
+            uri =self.image[2][@"web_uri"];
+            self.leftImage = [pre stringByAppendingPathComponent:uri];
+        }
+        else if (count > 0) {
+            self.imageType = 1;
+            NSString * pre = self.image[0][@"url_prefix"];
+            NSString * uri =self.image[0][@"web_uri"];
+            self.rightImage = [pre stringByAppendingPathComponent:uri];
+        }
+        else if (count == 0)
+            self.imageType = 0;
+        
+        // NSString * _info = [[NSString alloc] initWithFormat:@"Todo"];
+        NSString * code = content[@"code"];
+        if ([code isEqualToString:@"0"]) {
+            self.info = content[@"data"][@"article_content"];
+        }
+        else if ([code isEqualToString:@"-1"]) {
+            self.info = @"Error";
+        }
+        else {
+            self.info = @"Todo";
+        }
+        // self.info = @"Todo";
     }
     return self;
 }

@@ -9,6 +9,7 @@
 #import <Foundation/Foundation.h>
 @interface NewsManager : NSObject<NSURLSessionDelegate,NSURLSessionDataDelegate>
 
-+(void) getNewsList:(int)uid: (int)offset: (int)count;
++(void) getNewsList:(int)uid :(NSNumber*)offset :(int)count;
 +(void) getContent:(NSString*)groupId;
 @end
+

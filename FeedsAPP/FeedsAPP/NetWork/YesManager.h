@@ -9,9 +9,9 @@
 #import <Foundation/Foundation.h>
 @interface YesManager : NSObject<NSURLSessionDelegate,NSURLSessionDataDelegate>
 
-+(void) getCount:(NSString*)groupId;
++(int) getCount:(NSString*)groupId;
 +(void) deleteYes:(NSString*)groupId;
 +(void) addCount:(NSString*)groupId;
-+(void) status:(NSString*)groupId;
++(Boolean) status:(NSString*)groupId;
 
 @end
