@@ -7,7 +7,7 @@
 //
 
 #import "PicOnRightCell.h"
-#import "XWScanImage.h"
+#import "BigImg.h"
 
 @interface PicOnRightCell()
 
@@ -20,14 +20,12 @@
     
     _titleLabel.text = _model.title;
     _model.imageType = 1;
-
     _rightImage.image = [UIImage imageWithData:[NSData dataWithContentsOfURL:[NSURL URLWithString:_model.rightImage]]];
     _infoLabel.text = _model.info;
     
     //big img
-    UITapGestureRecognizer *tapGestureRecognizer1 = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(scanBigImageClick1:)];
+    UITapGestureRecognizer *tapGestureRecognizer1 = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(imgClick:)];
     [_rightImage addGestureRecognizer:tapGestureRecognizer1];
-    //让UIImageView和它的父类开启用户交互属性
     [_rightImage setUserInteractionEnabled:YES];
 }
 - (void)awakeFromNib {
@@ -42,10 +40,9 @@
 }
 
 #pragma mark - 浏览大图点击事件
--(void)scanBigImageClick1:(UITapGestureRecognizer *)tap{
-    NSLog(@"点击图片");
-    UIImageView *clickedImageView = (UIImageView *)tap.view;
-    [XWScanImage scanBigImageWithImageView:clickedImageView];
+-(void)imgClick:(UITapGestureRecognizer *)tap{
+    UIImageView *imgview = (UIImageView *)tap.view;
+    [BigImg BigImageWithImageView:imgview];
 }
 
 @end

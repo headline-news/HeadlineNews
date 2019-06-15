@@ -15,7 +15,8 @@
 #import "PicOnRightCell.h"
 #import "HomeViewModel.h"
 #import "NewsManager.h"
-#import "YesManager.h"
+#import "UIScrollView+Refresh.h"
+
 #define TABHEIGHT 50
 
 @interface MultiTabView()<UIScrollViewDelegate,UITableViewDataSource,UITableViewDelegate>
@@ -33,6 +34,8 @@
 @property (strong, nonatomic) UIView *indicateView;
 //下方的ScrollView
 @property (strong, nonatomic) UIScrollView *scrollView;
+//
+@property (strong, nonatomic) UITableView *tableViewNow;
 //下方的表格数组
 @property (strong, nonatomic) NSMutableArray *scrollTableViews;
 //TableViews的数据源
@@ -69,68 +72,18 @@
     return self;
 }
 
+
 #pragma mark -- 初始化表格的数据源
 -(void) initDataSource{
-
-    //[YesManager status:@"q260BmEU5cED%2bKCdYKa0RQ%3d%3d"];
-    
-    NSString *currentPath = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES)[0];
-    NSString *filePath = [currentPath stringByAppendingPathComponent:@"content.plist"];
-    NSMutableDictionary *localdict = [[NSMutableDictionary alloc] initWithContentsOfFile:filePath];
-    NSUInteger offset = [localdict count];
-    
-    [NewsManager getNewsList:1634:offset:8];
-
-    filePath = [currentPath stringByAppendingPathComponent:@"list.plist"];
-    NSMutableDictionary *dict = [[NSMutableDictionary alloc] initWithContentsOfFile:filePath];
+    //加载plist文件数据数组
     
     _dataSource = [[NSMutableArray alloc] initWithCapacity:_numOfTabs];
     for (int i = 1; i <= _numOfTabs; i ++) {
-        NSDictionary * diction = dict[@"data"];
-        NSArray * diction1 = diction[@"article_feed"];
-        
-        NSMutableArray *data = [NSMutableArray array];
-        
-        for (NSDictionary *arr in diction1) {
-            // NSString * title = arr[@"title"];
-            NSString * group_id = arr[@"group_id"];
-            [NewsManager getContent:group_id];
-            // id temp = [HomeViewModel newsWithDict:arr];
-            
-            //
-            [data addObject:[HomeViewModel newsWithDict:arr]];
-            NSLog(@"%@", arr);
-        }
-        
-        NSLog(@"test");
+        NSMutableArray * data = [self refresh];
         [_dataSource addObject:data];
     }
 
-    
-    
-    /*
-    //加载plist文件数据数组
-    _dataSource = [[NSMutableArray alloc] initWithCapacity:_numOfTabs];
-    for (int i = 1; i <= _numOfTabs; i ++) {
-        NSArray *array = [NSArray arrayWithContentsOfFile:[[NSBundle mainBundle] pathForResource:@"data.plist" ofType:nil]];
-        NSMutableArray *data = [NSMutableArray array];
-        for (NSDictionary *arr in array) {
-            [data addObject:[HomeViewModel newsWithDict:arr]];
-        }
-        
-        [_dataSource addObject:data];
-     
-        //
-        NSMutableArray *tempArray  = [[NSMutableArray alloc] initWithCapacity:20];
-        
-        for (int j = 1; j <= 20; j ++) {
-            
-            NSString *tempStr = [NSString stringWithFormat:@"第%d个TableView的第%d条数据。", i, j];
-            [tempArray addObject:tempStr];
-        }
-        
-        [_dataSource addObject:tempArray];
-    }*/
+
 }
 
 #pragma mark -- 实例化顶部的tab
@@ -165,7 +118,7 @@
     
     //设置多个Tab按钮
     _tabData = [[NSMutableArray alloc]init];
-    [_tabData addObjectsFromArray:@[@"推荐", @"热点", @"社会", @"娱乐", @"科技", @"汽车"]];
+    [_tabData addObjectsFromArray:@[@"推荐", @"关注", @"热点", @"社会", @"娱乐", @"科技"]];
     for (int i = 0; i < _numOfTabs; i ++) {
         
         UIView *view = [[UIView alloc] initWithFrame:CGRectMake(i * width, 0, width, TABHEIGHT)];
@@ -218,6 +171,7 @@
     
     _scrollView.delegate = self;
     [self addSubview:_scrollView];
+    
 }
 
 #pragma mark --初始化下方的TableViews
@@ -230,12 +184,95 @@
         tableView.dataSource = self;
         tableView.tag = i;
         
+        __weak typeof(self)weakSelf = self;
+        [tableView addHeaderRefreshWithBlock:^{
+            [weakSelf pullToRefresh];
+            
+        }];
+        [tableView addFooterRefreshWithBlock:^{
+            [weakSelf pullOnloading];
+        }];
         [_scrollTableViews addObject:tableView];
         [_scrollView addSubview:tableView];
     }
     
+    self.tableViewNow = _scrollTableViews[0];
+    
 }
 
+-(NSMutableArray *) refresh{
+    // define file path
+    NSString *currentPath = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES)[0];
+    NSString *filePath = [currentPath stringByAppendingPathComponent:@"list.plist"];
+    
+    // judge if the file exist
+    NSFileManager *fileManager = [NSFileManager defaultManager];
+    BOOL result = [fileManager fileExistsAtPath:filePath];
+    if (!result) {
+        // if not, add a file
+        [NewsManager getNewsList:1634:0:8];
+    }
+    
+    // load local data from the file(aready updated)
+    NSMutableDictionary *dict = [[NSMutableDictionary alloc] initWithContentsOfFile:filePath];
+    
+    NSDictionary * diction = dict[@"data"];
+    NSArray * diction1 = diction[@"article_feed"];
+    NSNumber * offset = diction[@"offset"];
+    
+    // pull new list according to the last update
+    
+    
+    NSBlockOperation *oper1 =[NSBlockOperation blockOperationWithBlock:^{
+        [NewsManager getNewsList:1634:offset:8];
+    }];
+    
+    // 任务2
+    NSBlockOperation *oper2 = [NSBlockOperation blockOperationWithBlock:^{
+        NSMutableArray *data = [NSMutableArray array];
+        for (NSDictionary *arr in diction1) {
+            [data addObject:[HomeViewModel newsWithDict:arr]];
+        }
+    }];
+    // 添加依赖
+    [oper2 addDependency:oper1];
+    
+    // 创建队列
+    NSOperationQueue *queue = [[NSOperationQueue alloc] init];
+    [queue addOperations:@[oper1, oper2] waitUntilFinished:YES];
+
+    
+//    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(10 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+//
+//
+//    });
+    
+    
+    // try to update content according to list, but failed
+
+    
+    return [NSMutableArray array];
+}
+
+- (void)pullToRefresh{
+    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(3.0 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+        NSMutableArray * data = [self refresh];
+        [self.dataSource replaceObjectAtIndex:self.currentPage withObject:data];
+        
+        [self.tableViewNow endHeaderRefresh];
+        [self.tableViewNow reloadData];
+    });
+}
+- (void)pullOnloading{
+    
+    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(3.0 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+        NSMutableArray * data = [self refresh];
+        [self.dataSource replaceObjectAtIndex:self.currentPage withObject:data];
+        
+        [self.tableViewNow endHeaderRefresh];
+        [self.tableViewNow reloadData];
+    });
+}
 
 #pragma mark --根据scrollView的滚动位置复用tableView
 -(void) updateTableWithPageNumber: (NSUInteger) pageNumber{
@@ -249,6 +286,7 @@
     UITableView *reuseTableView = _scrollTableViews[tabviewTag];
     reuseTableView.frame = tableNewFrame;
     [reuseTableView reloadData];
+    _tableViewNow  = reuseTableView;
 }
 
 
@@ -356,26 +394,37 @@
 -(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
     HomeViewModel *model = [_dataSource[_currentPage] objectAtIndex:indexPath.row];
 
-    if(model.imageType == 1){
+    if(model.imageType == 0){
+        return 90;
+    }
+    else if(model.imageType == 1){
         return 130;
     }
     //return cell.frame.size.height;
     return 200;
+    
 }
 
 -(UITableViewCell *)tableView:tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
     // 注册MultiTabCell.xib
     BOOL nibsRegistered = NO;
     if (!nibsRegistered) {
-        UINib *nib=[UINib nibWithNibName:@"PicOnRightCell" bundle:nil];
-        [tableView registerNib:nib forCellReuseIdentifier:@"PicOnRightCell"];
+        UINib *nib=[UINib nibWithNibName:@"MultiTabCell" bundle:nil];
+        [tableView registerNib:nib forCellReuseIdentifier:@"MultiTabCell"];
+        UINib *picRightNib=[UINib nibWithNibName:@"PicOnRightCell" bundle:nil];
+        [tableView registerNib:picRightNib forCellReuseIdentifier:@"PicOnRightCell"];
         UINib *multiPicNib=[UINib nibWithNibName:@"MultiPicsCell" bundle:nil];
         [tableView registerNib:multiPicNib forCellReuseIdentifier:@"MultiPicsCell"];
         nibsRegistered=YES;
     }
     HomeViewModel *theModel = _dataSource[_currentPage][indexPath.row];
     //设置数据
-    if(theModel.imageType == 1){
+    if(theModel.imageType == 0){
+        MultiTabCell *cell = [tableView dequeueReusableCellWithIdentifier:@"MultiTabCell"];
+        cell.model = theModel;
+        return cell;
+    }
+    else if(theModel.imageType == 1){
         PicOnRightCell *cell = [tableView dequeueReusableCellWithIdentifier:@"PicOnRightCell"];
         cell.model = theModel;
         return cell;

@@ -6,7 +6,7 @@
 //  Copyright © 2019 iosGroup. All rights reserved.
 //
 
-#import "YHButton.h"
+#import "ZanButton.h"
 #import <objc/runtime.h>
 
 @implementation UIButton (Layout)
@@ -82,7 +82,7 @@ void MethodSwizzle(Class c,SEL origSEL,SEL overrideSEL)
 @end
 
 
-@implementation YHButton
+@implementation ZanButton
 
 
 - (CGRect)titleRectForContentRect:(CGRect)contentRect{

@@ -18,9 +18,9 @@
 	</dict>
 	<dict>
 		<key>title</key>
-		<string>title2</string>
+		<string>title222222222222222222222222222222222222222222222222222222222222</string>
 		<key>imageType</key>
-		<integer>2</integer>
+		<integer>0</integer>
 		<key>leftImage</key>
 		<string>3.jpg</string>
 		<key>middleImage</key>
@@ -34,7 +34,7 @@
 		<key>title</key>
 		<string>title3</string>
 		<key>imageType</key>
-		<integer>2</integer>
+		<integer>1</integer>
 		<key>leftImage</key>
 		<string>4.jpg</string>
 		<key>middleImage</key>

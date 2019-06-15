@@ -49,19 +49,19 @@
     [self addSubview:_content];
     
     //点赞button
-    _zangBtn=[YHButton new];
+    _zangBtn=[ZanButton new];
     [_zangBtn setImage:[UIImage imageNamed:@"c_comment_like_icon"] forState:UIControlStateNormal];
     [_zangBtn setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
     _zangBtn.titleLabel.font=[UIFont systemFontOfSize:13];
     
     //评论button
-    _commentBtn=[YHButton new];
+    _commentBtn=[ZanButton new];
     [_commentBtn setImage:[UIImage imageNamed:@"comment_feed"] forState:UIControlStateNormal];
     [_commentBtn setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
     _commentBtn.titleLabel.font=[UIFont systemFontOfSize:13];
     
     //转发button
-    _forwardBtn=[YHButton new];
+    _forwardBtn=[ZanButton new];
     [_forwardBtn setImage:[UIImage imageNamed:@"feed_share"] forState:UIControlStateNormal];
     [_forwardBtn setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
     _forwardBtn.titleLabel.font=[UIFont systemFontOfSize:13];
@@ -75,6 +75,22 @@
     CGRect frame = [self frame];
     //文本赋值
     self.content.text = text;
+    
+    
+    if(self.content.text.length>97)
+    {
+        NSString *mainShow = [self.content.text substringWithRange:NSMakeRange(0, 97)];
+        mainShow=[mainShow stringByAppendingString:@"... 展开"];
+        //mainShow.font
+        NSMutableAttributedString *temp  = [[NSMutableAttributedString alloc] initWithString: mainShow];
+        [temp addAttribute:NSFontAttributeName value:[UIFont systemFontOfSize:14] range:NSMakeRange(97, 6)];
+        [temp addAttribute:NSForegroundColorAttributeName value:[UIColor colorWithRed:255 green:0 blue:0 alpha:0.8] range:NSMakeRange(101, 2)];
+        self.content.attributedText = temp;
+        //self.content.text = mainShow;
+        
+    }
+    
+    
     //设置label的最大行数
     self.content.numberOfLines = 10;
     CGSize size = CGSizeMake(_width-25, 1000);

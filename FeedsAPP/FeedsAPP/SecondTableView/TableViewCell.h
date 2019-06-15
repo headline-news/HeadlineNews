@@ -10,7 +10,7 @@
 #define TableViewCell_h
 
 #import <UIKit/UIKit.h>
-#import "YHButton.h"
+#import "ZanButton.h"
 
 @interface TableViewCell : UITableViewCell{
     
@@ -25,11 +25,13 @@
 //文本内容
 @property(nonatomic,retain) UILabel *content;
 //点赞按钮
-@property(nonatomic,strong) YHButton *zangBtn;
+@property(nonatomic,strong) ZanButton *zangBtn;
+//点赞特效
+@property(nonatomic,strong) UIImageView *zangPlusImg;
 //评论按钮
-@property(nonatomic,strong) YHButton *commentBtn;
+@property(nonatomic,strong) ZanButton *commentBtn;
 //转发按钮
-@property(nonatomic,strong) YHButton *forwardBtn;
+@property(nonatomic,strong) ZanButton *forwardBtn;
 //给用户介绍赋值并且实现自动换行
 -(void)setIntroductionText:(NSString*)text;
 //初始化cell类

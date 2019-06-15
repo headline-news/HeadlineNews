@@ -1,5 +1,5 @@
 //
-//  YHButton.h
+//  ZanButton.h
 //  FeedsAPP
 //
 //  Created by student on 2019/5/18.
@@ -18,9 +18,10 @@
 @end
 
 
-@interface YHButton : UIButton
+@interface ZanButton : UIButton
 
 @property (nonatomic,assign) CGRect titleRect;
 
 @property (nonatomic,assign) CGRect imageRect;
+
 @end
