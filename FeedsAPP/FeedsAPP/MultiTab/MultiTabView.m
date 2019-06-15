@@ -15,7 +15,8 @@
 #import "PicOnRightCell.h"
 #import "HomeViewModel.h"
 #import "UIScrollView+Refresh.h"
-
+#import "ViewController.h"
+#import "SecondViewController.h"
 #define TABHEIGHT 50
 
 @interface MultiTabView()<UIScrollViewDelegate,UITableViewDataSource,UITableViewDelegate>
@@ -107,6 +108,7 @@
     }
     
     _topMainView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, _mViewFrame.size.width, TABHEIGHT)];
+    [_topMainView setBackgroundColor:[UIColor whiteColor]];
     
     _topScrollView = [[UIScrollView alloc] initWithFrame:CGRectMake(0, 0, _mViewFrame.size.width, TABHEIGHT-3)];
     //显示水平滚动条
@@ -173,8 +175,8 @@
 #pragma mark -- 实例化下方的ScrollView
 -(void) initScrollView{
     //设置起点和宽高
-    _scrollView = [[UIScrollView alloc] initWithFrame:CGRectMake(0, _mViewFrame.origin.y, _mViewFrame.size.width, _mViewFrame.size.height - TABHEIGHT-50)];
-    _scrollView.contentSize = CGSizeMake(_mViewFrame.size.width * _numOfTabs, _mViewFrame.size.height - TABHEIGHT-50);
+    _scrollView = [[UIScrollView alloc] initWithFrame:CGRectMake(0, _mViewFrame.origin.y, _mViewFrame.size.width, _mViewFrame.size.height - TABHEIGHT-100)];
+    _scrollView.contentSize = CGSizeMake(_mViewFrame.size.width * _numOfTabs, _mViewFrame.size.height - TABHEIGHT-100);
     
     _scrollView.pagingEnabled = YES;
     
@@ -188,7 +190,7 @@
     
     for (int i = 0; i < 2; i ++) {
         
-        UITableView *tableView = [[UITableView alloc] initWithFrame:CGRectMake(i * _mViewFrame.size.width, 0, _mViewFrame.size.width, _mViewFrame.size.height - TABHEIGHT-50)];
+        UITableView *tableView = [[UITableView alloc] initWithFrame:CGRectMake(i * _mViewFrame.size.width, 0, _mViewFrame.size.width, _mViewFrame.size.height - TABHEIGHT-100)];
         tableView.delegate = self;
         tableView.dataSource = self;
         tableView.tag = i;
@@ -400,6 +402,17 @@
     
 }
 
+-(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
+
+{
+    
+    ViewController *detailView = [[ViewController alloc]init];
+    HomeViewModel *theModel = _dataSource[_currentPage][indexPath.row];
+    detailView.title = theModel.title;
+    
+    [self.homevc.navigationController pushViewController:detailView animated:YES];
+    
+}
 
 - (void)didReceiveMemoryWarning
 {

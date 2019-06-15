@@ -17,6 +17,7 @@ NS_ASSUME_NONNULL_BEGIN
 -(instancetype)initWithFrame:(CGRect)frame WithCount: (NSInteger) count;
 
 @property (nonatomic,retain) UITableView *tableView;
+@property (nonatomic,retain) UIViewController *homevc;
 
 @end
 

@@ -28,6 +28,7 @@
 		CF131F1822A20FF200E218D9 /* MultiTabCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = CF131F1422A20FF200E218D9 /* MultiTabCell.xib */; };
 		CF131F1922A20FF200E218D9 /* MultiTabCell.m in Sources */ = {isa = PBXBuildFile; fileRef = CF131F1522A20FF200E218D9 /* MultiTabCell.m */; };
 		CF131F1B22A20FFF00E218D9 /* data2.plist in Resources */ = {isa = PBXBuildFile; fileRef = CF131F1A22A20FFE00E218D9 /* data2.plist */; };
+		CF15F83F22AFDE960097BD38 /* MultiTabView.m in Sources */ = {isa = PBXBuildFile; fileRef = CF131F1322A20FF200E218D9 /* MultiTabView.m */; };
 		CF3F663F228700DA00087C6C /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = CF3F663E228700DA00087C6C /* AppDelegate.m */; };
 		CF3F6642228700DA00087C6C /* FirstViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CF3F6641228700DA00087C6C /* FirstViewController.m */; };
 		CF3F6645228700DA00087C6C /* SecondViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CF3F6644228700DA00087C6C /* SecondViewController.m */; };
@@ -548,6 +549,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CF15F83F22AFDE960097BD38 /* MultiTabView.m in Sources */,
 				CF3F6665228700DB00087C6C /* FeedsAPPUITests.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -13,7 +13,7 @@
 
 #define SW [UIScreen mainScreen].bounds.size.width
 #define SH [UIScreen mainScreen].bounds.size.height
-@interface UIScrollView()
+@interface UIScrollView()<UIScrollViewDelegate>
 
 @property (nonatomic , strong) RefreshHeaderView *headerView;
 @property (nonatomic , strong) RefreshFooterView *footerView;
@@ -31,6 +31,12 @@
     // 监听偏移量
     [self addObserver:self forKeyPath:@"contentOffset" options:NSKeyValueObservingOptionNew context:nil];
     [self addObserver:self forKeyPath:@"RefreshStatus" options:NSKeyValueObservingOptionNew context:nil];
+}
+
+- (void)dealloc{
+    //[self removeObserver:self forKeyPath:@"contentOffset"];
+    //[self removeObserver:self forKeyPath:@"RefreshStatus"];
+    //[self removeObserver:self forKeyPath:@"contentSize"];
 }
 
 // 停止下拉刷新
@@ -51,8 +57,8 @@
     [self addSubview:self.footerView];
     //    self.jw_loading = NO;
     // 监听偏移量
-    [self addObserver:self forKeyPath:@"contentOffset" options:NSKeyValueObservingOptionNew context:nil];
-    [self addObserver:self forKeyPath:@"RefreshStatu" options:NSKeyValueObservingOptionNew context:nil];
+    //[self addObserver:self forKeyPath:@"contentOffset" options:NSKeyValueObservingOptionNew context:nil];
+    //[self addObserver:self forKeyPath:@"RefreshStatu" options:NSKeyValueObservingOptionNew context:nil];
     [self addObserver:self forKeyPath:@"contentSize" options:NSKeyValueObservingOptionNew context:nil];
 }
 
@@ -161,11 +167,6 @@
             self.footerView.frame = CGRectMake(0, load_y, SW, 50);
         }
     }
-}
-- (void)dealloc{
-    [self removeObserver:self forKeyPath:@"contentOffset"];
-    [self removeObserver:self forKeyPath:@"RefreshStatus"];
-    [self removeObserver:self forKeyPath:@"contentSize"];
 }
 #pragma mark 动态添加属性
 // 利用runtime来添加视图属性

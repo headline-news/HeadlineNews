@@ -28,6 +28,7 @@ WKNavigationDelegate>
 //TableViews的数据源
 @property (strong, nonatomic) NSMutableArray *dataSource;
 
+
 @end
 
 @implementation ViewController{
@@ -37,16 +38,25 @@ WKNavigationDelegate>
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    [self.navigationController setNavigationBarHidden:NO animated:YES];
+    [self.navigationController setTitle:self.title];
     [self initValue];
     [self initView];
     [self addObservers];
     [self initDataSource];
+    
     NSString *path = @"https://www.jianshu.com/p/f31e39d3ce41";
     NSString *path2 = @"http://127.0.0.1/openItunes.html";
     
     NSMutableURLRequest *request = [[NSMutableURLRequest alloc] initWithURL:[NSURL URLWithString:path]];
     request.cachePolicy = NSURLRequestReloadIgnoringCacheData;
     [self.webView loadRequest:request];
+}
+
+- (void)viewWillAppear:(BOOL)animated{
+    
+    self.tabBarController.tabBar.hidden = YES;
+    
 }
 
 - (void)dealloc{

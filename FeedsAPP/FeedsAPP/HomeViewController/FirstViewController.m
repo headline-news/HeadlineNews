@@ -9,7 +9,7 @@
 #import "FirstViewController.h"
 #import "MultiTabView.h"
 
-@interface FirstViewController ()
+@interface FirstViewController ()<UINavigationControllerDelegate>
 
 @property (strong, nonatomic) MultiTabView *multiTabView;
 @property (strong, nonatomic) IBOutlet UIView *superView;
@@ -23,7 +23,21 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view, typically from a nib.
     _numOfTabs = 6;
+    self.navigationController.delegate = self;
     [self initSlideWithCount:_numOfTabs];
+}
+
+- (void)viewWillAppear:(BOOL)animated{
+    
+    self.tabBarController.tabBar.hidden = NO;
+    [self.navigationController setTitle:@"首页"];
+    
+}
+
+
+- (void)navigationController:(UINavigationController *)navigationController willShowViewController:(UIViewController *)viewController animated:(BOOL)animated {
+    BOOL isMYself = [viewController isKindOfClass:[self class]];
+    [self.navigationController setNavigationBarHidden:isMYself animated:YES];
 }
 
 -(void) initSlideWithCount: (NSInteger) count{
@@ -32,6 +46,8 @@
     screenBound.size.height -= 50;
     
     _multiTabView = [[MultiTabView alloc] initWithFrame: screenBound WithCount:count];
+    _multiTabView.homevc = self;
+    
     [self.view addSubview:_multiTabView];
 }
 
