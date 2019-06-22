@@ -34,7 +34,7 @@
     _posttime = [[UILabel alloc] initWithFrame:CGRectMake(57, 30, 250, 40)];
     _posttime.font=[UIFont systemFontOfSize:13];
     _posttime.textColor = [UIColor grayColor];
-    [_posttime setText:@"15分钟前   iPhone客户端 "];
+    [_posttime setText:@"15分钟前 · 艺人 "];
     [self addSubview:_posttime];
     
     //用户头像
@@ -58,6 +58,12 @@
     _zangBtn.titleLabel.font=[UIFont systemFontOfSize:13];
     [_zangBtn addTarget:self action:@selector(ZangClicked:) forControlEvents:UIControlEventTouchUpInside];
     
+    //点赞加一
+    _zangPlusImg = [[UIImageView alloc] initWithFrame:CGRectMake(60, 0, 18, 18)];
+    [_zangPlusImg setImage:[UIImage imageNamed:@"add"]];
+    [_zangBtn addSubview:_zangPlusImg];
+    _zangPlusImg.alpha = 0;
+    
     //评论button
     _commentBtn=[ZanButton new];
     [_commentBtn setImage:[UIImage imageNamed:@"comment_feed"] forState:UIControlStateNormal];
@@ -72,7 +78,7 @@
     
 }
 
--(void)ZangClicked:(id)sender
+-(void)ZangClicked:(UIButton *)btn//:(id)sender
 {
     _zangBtn.selected = !(_zangBtn.selected);
     int ZanNum = [_zangBtn.titleLabel.text intValue];
@@ -84,6 +90,9 @@
     NSString *NumToString = [NSString stringWithFormat:@"%d",ZanNum];
     [_zangBtn setTitle:NumToString forState:UIControlStateNormal];
     [self ZangAction];
+    if (!_zangBtn.selected) {
+        _zangPlusImg.alpha = 0;
+    }
 }
 
 -(void)ZangAction{
@@ -101,18 +110,23 @@
     } completion:nil];
     
     self.zangPlusImg.alpha=1;
-    self.zangPlusImg.frame=CGRectMake(66, 0, 15, 15);
     CAKeyframeAnimation *animation = [CAKeyframeAnimation animationWithKeyPath:@"position"];
     animation.duration = 1.5;
     animation.rotationMode = kCAAnimationRotateAuto;
     animation.removedOnCompletion = NO;
     animation.fillMode = kCAFillModeForwards;
-    NSValue *value1=[NSValue valueWithCGPoint:CGPointMake(66, 8)];
-    NSValue *value2=[NSValue valueWithCGPoint:CGPointMake(66, -6)];
+    NSValue *value1=[NSValue valueWithCGPoint:CGPointMake(60, 8)];
+    NSValue *value2=[NSValue valueWithCGPoint:CGPointMake(60, -5)];
     animation.delegate = self;
     animation.timingFunction=[CAMediaTimingFunction functionWithName:kCAMediaTimingFunctionEaseInEaseOut];
     animation.values=@[value1,value2];
     [self.zangPlusImg.layer addAnimation:animation forKey:nil];
+}
+
+-(void)animationDidStop:(CAAnimation *)theAnimation finished:(BOOL)flag {
+    
+    self.zangPlusImg.alpha=0;
+    
 }
 
 //赋值 and 自动换行,计算出cell的高度
