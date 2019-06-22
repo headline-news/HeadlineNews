@@ -28,7 +28,7 @@ static CGFloat const kBottomViewHeight = 50.0;
 @interface ViewController ()<UITableViewDelegate, UITableViewDataSource, UIScrollViewDelegate,
 WKNavigationDelegate,cmDelegate>
 
-@property (nonatomic, strong) WKWebView     *webView;
+@property (nonatomic, strong) UIWebView     *webView;
 
 @property (nonatomic, strong) UITableView   *tableView;
 
@@ -47,6 +47,12 @@ WKNavigationDelegate,cmDelegate>
     CGFloat _lastTableViewContentHeight;
 }
 
+//- (void)loadView {
+//    self.webView = [[UIWebView alloc] initWithFrame:[UIScreen mainScreen].bounds];
+//    //self.view = self.webView;
+//    [self.view addSubview:self.webView];
+//}
+
 - (void)viewDidLoad {
     [super viewDidLoad];
     [self.navigationController setNavigationBarHidden:NO animated:YES];
@@ -61,9 +67,70 @@ WKNavigationDelegate,cmDelegate>
     
     NSMutableURLRequest *request = [[NSMutableURLRequest alloc] initWithURL:[NSURL URLWithString:path]];
     request.cachePolicy = NSURLRequestReloadIgnoringCacheData;
-    [self.webView loadRequest:request];
+    //[self.webView loadRequest:request];
+    [self createUIWebViewTest];
     //cm
     [self.view addSubview:self.commentView];
+}
+
+- (void)createUIWebViewTest {
+    self.webView.backgroundColor = [UIColor whiteColor];
+    
+    NSString *htmlStr = [self filterImageUrlFromHTML:self.htmlString :self.prefix];
+    
+    // 加载本地HTML字符串
+    [self.webView loadHTMLString:htmlStr baseURL:nil];
+    
+    // 自动检测电话号码、网址、邮件地址
+    //self.webView.dataDetectorTypes = UIDataDetectorTypePhoneNumber;
+    // 缩放网页
+    //self.webView.scalesPageToFit = YES;
+}
+
+- (NSString *)filterImageUrlFromHTML:(NSString *)html :(NSString *)prefix
+{
+    NSMutableArray *resultArray = [NSMutableArray array];
+    
+    NSRegularExpression *regex = [NSRegularExpression regularExpressionWithPattern:@"<(img|IMG)(.*?)(/>|></img>|>)" options:NSRegularExpressionAllowCommentsAndWhitespace error:nil];
+    NSArray *result = [regex matchesInString:html options:NSMatchingReportCompletion range:NSMakeRange(0, html.length)];
+    NSString* temp2 = html;
+    temp2 = [temp2 stringByReplacingOccurrencesOfString:@"\"" withString:@"\\\""];
+    
+    for (NSTextCheckingResult *item in result) {
+        NSString *imgHtml = [html substringWithRange:[item rangeAtIndex:0]];
+        NSString* temp = imgHtml;
+        NSLog(@"%@", temp);
+        temp = [temp stringByReplacingOccurrencesOfString:@"\"" withString:@"\\\""];
+        
+        NSArray *tmpArray = nil;
+        if ([imgHtml rangeOfString:@"\""].location != NSNotFound) {
+            tmpArray = [imgHtml componentsSeparatedByString:@"\""];
+        }
+        
+        if (tmpArray.count >= 30) {
+            NSString *src = tmpArray[30];
+            
+            NSString* tempStr=@"<img src=\"";
+            NSString* str_1;
+            str_1 = [tempStr stringByAppendingString: prefix];
+            NSString* str_2;
+            str_2 = [str_1 stringByAppendingString: src];
+            str_1 = [str_2 stringByAppendingString: @"\" >"];
+            
+            temp2 = [temp2 stringByReplacingOccurrencesOfString:temp withString:str_1];
+            
+            NSUInteger loc = [src rangeOfString:@"\""].location;
+            if (loc != NSNotFound) {
+                src = [src substringToIndex:loc];
+                [resultArray addObject:src];
+                
+            }
+        }
+    }
+    //NSLog(@"%@", temp2);
+    temp2 = [temp2 stringByReplacingOccurrencesOfString:@"\\\"" withString:@"\""];
+    
+    return temp2;
 }
 
 - (void)viewWillAppear:(BOOL)animated{
@@ -217,15 +284,15 @@ WKNavigationDelegate,cmDelegate>
     return cell;
 }
 
-#pragma mark - private
-- (WKWebView *)webView{
+//#pragma mark - private
+- (UIWebView *)webView{
     if (_webView == nil) {
-        WKWebViewConfiguration *configuration = [[WKWebViewConfiguration alloc] init];
-        _webView = [[WKWebView alloc] initWithFrame:self.view.bounds configuration:configuration];
-        _webView.scrollView.scrollEnabled = NO;
-        _webView.navigationDelegate = self;
+        self.webView = [[UIWebView alloc] initWithFrame:[UIScreen mainScreen].bounds];
+        //    //self.view = self.webView;
+        
+        
     }
-    
+
     return _webView;
 }
 
