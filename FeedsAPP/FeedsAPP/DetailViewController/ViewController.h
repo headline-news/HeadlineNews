@@ -11,6 +11,8 @@
 @interface ViewController : UIViewController
 
 @property (strong, nonatomic) NSString *title;
+@property (strong, nonatomic) NSString *htmlString;
+@property (strong, nonatomic) NSString *prefix;
 
 @end
 
