@@ -424,6 +424,8 @@
     ViewController *detailView = [[ViewController alloc]init];
     HomeViewModel *theModel = _dataSource[_currentPage][indexPath.row];
     detailView.title = theModel.title;
+    detailView.htmlString = theModel.info;
+    detailView.prefix = theModel.prefix;
     
     [self.homevc.navigationController pushViewController:detailView animated:YES];
     
