@@ -10,7 +10,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "FeedsAPP/MultiTab/MultiTabView.m"
-            timestampString = "582267195.351896"
+            timestampString = "582861904.491369"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "340"
@@ -26,13 +26,13 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "FeedsAPP/MultiTab/MultiTabView.m"
-            timestampString = "582267195.372925"
+            timestampString = "582861904.491726"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "345"
             endingLineNumber = "345"
-            landmarkName = "MultiTabView"
-            landmarkType = "3">
+            landmarkName = "-scrollViewDidScroll:"
+            landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -58,7 +58,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "FeedsAPP/MultiTab/MultiTabView.m"
-            timestampString = "582267195.392362"
+            timestampString = "582861904.4922349"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "80"
@@ -74,7 +74,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "FeedsAPP/MultiTab/MultiTabView.m"
-            timestampString = "582267195.3991849"
+            timestampString = "582861904.492439"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "83"
@@ -90,12 +90,12 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "FeedsAPP/MultiTab/MultiTabView.m"
-            timestampString = "582267195.405683"
+            timestampString = "582861904.492637"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "318"
             endingLineNumber = "318"
-            landmarkName = "-scrollViewDidEndDecelerating:"
+            landmarkName = "-scrollViewDidEndScrollingAnimation:"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -106,12 +106,12 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "FeedsAPP/MultiTab/MultiTabView.m"
-            timestampString = "582267195.4107569"
+            timestampString = "582861904.4928499"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "320"
             endingLineNumber = "320"
-            landmarkName = "-scrollViewDidEndDecelerating:"
+            landmarkName = "-scrollViewDidEndScrollingAnimation:"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -122,12 +122,12 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "FeedsAPP/MultiTab/MultiTabView.m"
-            timestampString = "582267195.416099"
+            timestampString = "582861904.4932621"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "408"
             endingLineNumber = "408"
-            landmarkName = "-tableView:didSelectRowAtIndexPath:"
+            landmarkName = "-tableView:cellForRowAtIndexPath:"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -138,12 +138,12 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "FeedsAPP/MultiTab/MultiTabView.m"
-            timestampString = "582267195.4215029"
+            timestampString = "582861904.493474"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "413"
             endingLineNumber = "413"
-            landmarkName = "-tableView:didSelectRowAtIndexPath:"
+            landmarkName = "-tableView:cellForRowAtIndexPath:"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -154,12 +154,12 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "FeedsAPP/MultiTab/MultiTabView.m"
-            timestampString = "582267195.426459"
+            timestampString = "582861904.49366"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "412"
             endingLineNumber = "412"
-            landmarkName = "-tableView:didSelectRowAtIndexPath:"
+            landmarkName = "-tableView:cellForRowAtIndexPath:"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -170,12 +170,12 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "FeedsAPP/MultiTab/MultiTabView.m"
-            timestampString = "582267195.4314049"
+            timestampString = "582861904.493802"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "409"
             endingLineNumber = "409"
-            landmarkName = "-tableView:didSelectRowAtIndexPath:"
+            landmarkName = "-tableView:cellForRowAtIndexPath:"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -298,12 +298,12 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "FeedsAPP/MultiTab/MultiTabView.m"
-            timestampString = "582267195.500622"
+            timestampString = "582861904.494513"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "414"
             endingLineNumber = "414"
-            landmarkName = "-tableView:didSelectRowAtIndexPath:"
+            landmarkName = "-tableView:cellForRowAtIndexPath:"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -346,7 +346,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "FeedsAPP/PullToRefresh/UIScrollView+Refresh.m"
-            timestampString = "582267195.507149"
+            timestampString = "582861904.494972"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "41"
@@ -362,7 +362,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "FeedsAPP/PullToRefresh/UIScrollView+Refresh.m"
-            timestampString = "582267195.5453939"
+            timestampString = "582861904.495211"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "33"
@@ -378,7 +378,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "FeedsAPP/PullToRefresh/UIScrollView+Refresh.m"
-            timestampString = "582267195.552927"
+            timestampString = "582861904.495364"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "64"
@@ -394,7 +394,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "FeedsAPP/PullToRefresh/UIScrollView+Refresh.m"
-            timestampString = "582267195.559119"
+            timestampString = "582861904.495506"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "30"
@@ -410,7 +410,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "FeedsAPP/PullToRefresh/UIScrollView+Refresh.m"
-            timestampString = "582267195.568629"
+            timestampString = "582861904.495705"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "39"
@@ -426,7 +426,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "FeedsAPP/HomeViewController/FirstViewController.m"
-            timestampString = "582267195.5749331"
+            timestampString = "582861904.495988"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "27"

@@ -50,7 +50,6 @@
 		CFB99DF222A24CB6009CA2B0 /* DetailViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = CFB99DEF22A24CB6009CA2B0 /* DetailViewModel.m */; };
 		CFB99DF322A24CB6009CA2B0 /* DetailTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = CFB99DF122A24CB6009CA2B0 /* DetailTableViewCell.m */; };
 		CFF8CB3222952B7500289D7C /* HomeViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = CFF8CB3122952B7500289D7C /* HomeViewModel.m */; };
-		CFF8CB3522952B9400289D7C /* PicOnRightModel.m in Sources */ = {isa = PBXBuildFile; fileRef = CFF8CB3422952B9300289D7C /* PicOnRightModel.m */; };
 		CFF8CB3722952F2000289D7C /* data.plist in Resources */ = {isa = PBXBuildFile; fileRef = CFF8CB3622952F1F00289D7C /* data.plist */; };
 		D9F988542298F78400E8B3C2 /* XWScanImage.m in Sources */ = {isa = PBXBuildFile; fileRef = D9F988522298F78300E8B3C2 /* XWScanImage.m */; };
 		DFD59C442299212200D0788F /* ZanButton.m in Sources */ = {isa = PBXBuildFile; fileRef = DFD59C3C2299212200D0788F /* ZanButton.m */; };
@@ -148,8 +147,6 @@
 		CFB99DF122A24CB6009CA2B0 /* DetailTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DetailTableViewCell.m; sourceTree = "<group>"; };
 		CFF8CB3022952B7500289D7C /* HomeViewModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HomeViewModel.h; sourceTree = "<group>"; };
 		CFF8CB3122952B7500289D7C /* HomeViewModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HomeViewModel.m; sourceTree = "<group>"; };
-		CFF8CB3322952B9300289D7C /* PicOnRightModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PicOnRightModel.h; sourceTree = "<group>"; };
-		CFF8CB3422952B9300289D7C /* PicOnRightModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PicOnRightModel.m; sourceTree = "<group>"; };
 		CFF8CB3622952F1F00289D7C /* data.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = data.plist; sourceTree = "<group>"; };
 		D9F988522298F78300E8B3C2 /* XWScanImage.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XWScanImage.m; sourceTree = "<group>"; };
 		D9F988532298F78300E8B3C2 /* XWScanImage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XWScanImage.h; sourceTree = "<group>"; };
@@ -364,8 +361,6 @@
 			children = (
 				CFF8CB3022952B7500289D7C /* HomeViewModel.h */,
 				CFF8CB3122952B7500289D7C /* HomeViewModel.m */,
-				CFF8CB3322952B9300289D7C /* PicOnRightModel.h */,
-				CFF8CB3422952B9300289D7C /* PicOnRightModel.m */,
 			);
 			path = HomeViewModel;
 			sourceTree = "<group>";
@@ -554,7 +549,6 @@
 			files = (
 				1F001B7122B4CF7400547035 /* textView.m in Sources */,
 				D9F988542298F78400E8B3C2 /* XWScanImage.m in Sources */,
-				CFF8CB3522952B9400289D7C /* PicOnRightModel.m in Sources */,
 				CFB99DF322A24CB6009CA2B0 /* DetailTableViewCell.m in Sources */,
 				1F001B7222B4CF7400547035 /* CommentView.m in Sources */,
 				CF131F1722A20FF200E218D9 /* MultiTabView.m in Sources */,

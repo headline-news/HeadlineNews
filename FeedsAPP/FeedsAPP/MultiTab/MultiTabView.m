@@ -193,8 +193,8 @@
 #pragma mark -- 实例化下方的ScrollView
 -(void) initScrollView{
     //设置起点和宽高
-    _scrollView = [[UIScrollView alloc] initWithFrame:CGRectMake(0, _mViewFrame.origin.y, _mViewFrame.size.width, _mViewFrame.size.height - TABHEIGHT-50)];
-    _scrollView.contentSize = CGSizeMake(_mViewFrame.size.width * _numOfTabs, _mViewFrame.size.height - TABHEIGHT-50);
+    _scrollView = [[UIScrollView alloc] initWithFrame:CGRectMake(0, _mViewFrame.origin.y, _mViewFrame.size.width, _mViewFrame.size.height - TABHEIGHT)];
+    _scrollView.contentSize = CGSizeMake(_mViewFrame.size.width * _numOfTabs, _mViewFrame.size.height - TABHEIGHT);
     
     _scrollView.pagingEnabled = YES;
     
@@ -208,7 +208,7 @@
     
     for (int i = 0; i < 2; i ++) {
         
-        UITableView *tableView = [[UITableView alloc] initWithFrame:CGRectMake(i * _mViewFrame.size.width, 0, _mViewFrame.size.width, _mViewFrame.size.height - TABHEIGHT-50)];
+        UITableView *tableView = [[UITableView alloc] initWithFrame:CGRectMake(i * _mViewFrame.size.width, 0, _mViewFrame.size.width, _mViewFrame.size.height - TABHEIGHT)];
         tableView.delegate = self;
         tableView.dataSource = self;
         tableView.tag = i;
