@@ -21,7 +21,12 @@
     _titleLabel.text = _model.title;
     _model.imageType = 1;
     _rightImage.image = [UIImage imageWithData:[NSData dataWithContentsOfURL:[NSURL URLWithString:_model.rightImage]]];
-    _infoLabel.text = @"";
+    if([_model.info isEqualToString:@"Error"]){
+        _infoLabel.text = @"发布于6:00";
+    }
+    else{
+        _infoLabel.text = @"发布于14:00";
+    }
     
     //big img
     UITapGestureRecognizer *tapGestureRecognizer1 = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(imgClick:)];

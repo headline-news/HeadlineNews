@@ -19,7 +19,12 @@
     
     _title.text = _model.title;
     _model.imageType = 0;
-    _info.text = @"";
+    if([_model.info isEqualToString:@"Error"]){
+        _info.text = @"发布于6:00";
+    }
+    else{
+        _info.text = @"发布于14:00";
+    }
 }
 - (void)awakeFromNib {
     [super awakeFromNib];

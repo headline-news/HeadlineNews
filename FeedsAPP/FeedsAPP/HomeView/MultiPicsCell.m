@@ -19,7 +19,12 @@
     _leftImage.image = [UIImage imageWithData:[NSData dataWithContentsOfURL:[NSURL URLWithString:_model.leftImage]]];
     _rightImage.image = [UIImage imageWithData:[NSData dataWithContentsOfURL:[NSURL URLWithString:_model.rightImage]]];
     _middleImage.image = [UIImage imageWithData:[NSData dataWithContentsOfURL:[NSURL URLWithString:_model.middleImage]]];
-    _infoLabel.text = @"";
+    if([_model.info isEqualToString:@"Error"]){
+        _infoLabel.text = @"发布于6:00";
+    }
+    else{
+        _infoLabel.text = @"发布于14:00";
+    }
     
     //big img right
     //left
