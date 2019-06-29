@@ -8,6 +8,7 @@
 
 #import <Foundation/Foundation.h>
 #import "DetailTableViewCell.h"
+#import "YesManager.h"
 
 @implementation DetailTableViewCell
 {
@@ -81,6 +82,7 @@
     int ZanNum = [_zangBtn.titleLabel.text intValue];
     if (_zangBtn.selected) {
         ZanNum = ZanNum + 1;
+        
     } else {
         ZanNum = ZanNum - 1;
     }

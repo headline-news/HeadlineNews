@@ -17,7 +17,7 @@
     NSURLSession *delegateFreeSession = [NSURLSession sessionWithConfiguration: defaultConfigObject delegate: nil delegateQueue: [NSOperationQueue mainQueue]];
     
     
-    NSURL * url = [NSURL URLWithString:@"http://172.19.25.167:8080/HelloWeb/NewInq"];
+    NSURL * url = [NSURL URLWithString:@"http://172.19.50.212:8080/HelloWeb/NewInq"];
     NSMutableURLRequest * urlRequest = [NSMutableURLRequest requestWithURL:url];
     [urlRequest setHTTPMethod:@"POST"];
     NSString * params = [[NSString alloc] initWithString:[NSString stringWithFormat:@"id=%@&type=queryStatus",groupId]];
@@ -44,7 +44,7 @@
     NSURLSession *delegateFreeSession = [NSURLSession sessionWithConfiguration: defaultConfigObject delegate: nil delegateQueue: [NSOperationQueue mainQueue]];
     
     
-    NSURL * url = [NSURL URLWithString:@"http://172.19.25.167:8080/HelloWeb/NewInq"];
+    NSURL * url = [NSURL URLWithString:@"http://172.19.50.212:8080/HelloWeb/NewInq"];
     NSMutableURLRequest * urlRequest = [NSMutableURLRequest requestWithURL:url];
     [urlRequest setHTTPMethod:@"POST"];
     NSString * params = [[NSString alloc] initWithString:[NSString stringWithFormat:@"id=%@&type=add",groupId]];
@@ -70,7 +70,7 @@
     NSURLSession *delegateFreeSession = [NSURLSession sessionWithConfiguration: defaultConfigObject delegate: nil delegateQueue: [NSOperationQueue mainQueue]];
     
     
-    NSURL * url = [NSURL URLWithString:@"http://172.19.25.167:8080/HelloWeb/NewInq"];
+    NSURL * url = [NSURL URLWithString:@"http://172.19.50.212:8080/HelloWeb/NewInq"];
     NSMutableURLRequest * urlRequest = [NSMutableURLRequest requestWithURL:url];
     [urlRequest setHTTPMethod:@"POST"];
     NSString * params = [[NSString alloc] initWithString:[NSString stringWithFormat:@"id=%@&type=delete",groupId]];
@@ -96,7 +96,7 @@
     NSURLSession *delegateFreeSession = [NSURLSession sessionWithConfiguration: defaultConfigObject delegate: nil delegateQueue: [NSOperationQueue mainQueue]];
     
     
-    NSURL * url = [NSURL URLWithString:@"http://172.19.25.167:8080/HelloWeb/NewInq"];
+    NSURL * url = [NSURL URLWithString:@"http://172.19.50.212:8080/HelloWeb/NewInq"];
     NSMutableURLRequest * urlRequest = [NSMutableURLRequest requestWithURL:url];
     [urlRequest setHTTPMethod:@"POST"];
     NSString * params = [[NSString alloc] initWithString:[NSString stringWithFormat:@"id=%@&type=queryCount",groupId]];

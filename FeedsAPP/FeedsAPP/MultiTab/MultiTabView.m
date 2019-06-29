@@ -243,8 +243,11 @@
     
     dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(3.0 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
         NSMutableArray * data = [self refresh];
-        [self.dataSource replaceObjectAtIndex:self.currentPage withObject:data];
-        
+        // [self.dataSource replaceObjectAtIndex:self.currentPage withObject:data];
+        NSMutableSet *set = [NSMutableSet setWithArray:[self.dataSource objectAtIndex:self.currentPage]];
+        [set addObjectsFromArray:data];
+        NSMutableArray *array = [[NSMutableArray alloc]initWithArray:[set allObjects]];
+        [self.dataSource replaceObjectAtIndex:self.currentPage withObject:array];
         [self.tableViewNow endHeaderRefresh];
         [self.tableViewNow reloadData];
     });
