@@ -360,7 +360,8 @@ WKNavigationDelegate,cmDelegate>
     });
     
     DetailViewModel *model = [DetailViewModel newsWithStr:textView.commentTextView.text];
-    [_dataSource addObject:model];
+    //[_dataSource addObject:model];
+    [_dataSource insertObject:model atIndex:0];
    /*
     NSArray *paths=NSSearchPathForDirectoriesInDomains(NSDocumentDirectory,NSUserDomainMask,YES);
     NSString *path=[paths  objectAtIndex:0];
