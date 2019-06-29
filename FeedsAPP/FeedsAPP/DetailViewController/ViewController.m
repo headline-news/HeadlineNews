@@ -289,7 +289,7 @@ WKNavigationDelegate,cmDelegate>
     if (_webView == nil) {
         self.webView = [[UIWebView alloc] initWithFrame:[UIScreen mainScreen].bounds];
         //    //self.view = self.webView;
-        
+        self.webView.scrollView.scrollEnabled = NO;
         
     }
 
@@ -303,7 +303,7 @@ WKNavigationDelegate,cmDelegate>
         _tableView.delegate = self;
         _tableView.dataSource = self;
         _tableView.tableFooterView = [UIView new];
-        _tableView.scrollEnabled = YES;
+        _tableView.scrollEnabled = NO;
 
     }
     return _tableView;
