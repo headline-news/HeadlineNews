@@ -18,7 +18,7 @@
         self.username = dict[@"leftImage"];
         self.likeNum = [dict[@"imageType"] intValue];
         self.mainText = dict[@"title"];
-        self.headImage = dict[@"leftImage"];
+        self.headImage = dict[@"middleImage"];
         self.time = dict[@"info"];
     }
     return self;

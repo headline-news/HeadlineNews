@@ -19,7 +19,7 @@
     
     _title.text = _model.title;
     _model.imageType = 0;
-    _info.text = _model.info;
+    _info.text = @"";
 }
 - (void)awakeFromNib {
     [super awakeFromNib];

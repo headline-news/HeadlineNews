@@ -53,14 +53,14 @@
         // NSString * _info = [[NSString alloc] initWithFormat:@"Todo"];
         NSString * code = content[@"code"];
         if ([code isEqualToString:@"0"]) {
-            self.info = @"";
+            self.info = content[@"data"][@"article_content"];
             self.prefix = content[@"data"][@"image_url_prefix"];
         }
         else if ([code isEqualToString:@"-1"]) {
-            self.info = @"";
+            self.info = @"Error";
         }
         else {
-            self.info = @"";
+            self.info = @"Todo";
         }
         // self.info = @"Todo";
     }

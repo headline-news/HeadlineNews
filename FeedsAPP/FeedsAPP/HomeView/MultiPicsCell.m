@@ -19,7 +19,7 @@
     _leftImage.image = [UIImage imageWithData:[NSData dataWithContentsOfURL:[NSURL URLWithString:_model.leftImage]]];
     _rightImage.image = [UIImage imageWithData:[NSData dataWithContentsOfURL:[NSURL URLWithString:_model.rightImage]]];
     _middleImage.image = [UIImage imageWithData:[NSData dataWithContentsOfURL:[NSURL URLWithString:_model.middleImage]]];
-    _infoLabel.text = _model.info;
+    _infoLabel.text = @"";
     
     //big img right
     //left
